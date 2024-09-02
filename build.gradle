@@ -1,0 +1,44 @@
+plugins {
+    id 'org.jetbrains.kotlin.js' version '1.7.10'
+}
+
+group = 'com.nospoon'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.jetbrains.kotlin:kotlin-test'
+}
+
+kotlin {
+    js(LEGACY) {
+        browser {
+            binaries.executable()
+            commonWebpackConfig {
+                cssSupport.enabled = true
+            }
+            tasks.getByName(compilations.main.compileKotlinTaskName).kotlinOptions {
+                //sourceMap = true //create source maps for js files
+                //sourceMapEmbedSources = "always" //embed the kotlin files into the sourcemaps for viewing in the browser
+                moduleKind = 'commonjs' //module type to be loaded by webpack
+            }
+            //testTask {
+            //    enabled = false
+            //}
+            //dceTask {
+            //    dceOptions.devMode = true
+            //}
+        }
+        dependencies {
+            //implementation 'org.jetbrains.kotlin:kotlin-stdlib-js'
+            //implementation "org.jetbrains.kotlinx:kotlinx-serialization-core:$serialization_version"
+            //implementation "org.jetbrains.kotlinx:kotlinx-serialization-runtime-js:$serialization_version"
+
+            implementation npm('@zhobo63/imgui-ts', '0.1.45')
+            //implementation npm('karma', '4.3.1')
+        }
+    }
+}
