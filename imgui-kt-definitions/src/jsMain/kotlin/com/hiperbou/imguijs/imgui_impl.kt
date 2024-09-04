@@ -1,11 +1,7 @@
 package com.hiperbou.imguijs.ImGui_Bind
 
 import com.hiperbou.imguijs.*
-import com.hiperbou.imguijs.ImGui.ImVec2
 import com.hiperbou.imguijs.emscripten.*
-import com.hiperbou.imguijs.tsstdlib.Readonly
-import com.hiperbou.imguits.ImGuiGlobal
-import kotlin.js.*
 import org.khronos.webgl.*
 import org.w3c.dom.*
 import org.w3c.dom.events.*
@@ -18,6 +14,7 @@ import org.w3c.notifications.*
 import org.w3c.performance.*
 import org.w3c.workers.*
 import org.w3c.xhr.*
+import kotlin.js.*
 
 
 @JsName("ImGui_Impl")

@@ -1,13 +1,12 @@
 
-import com.hiperbou.imguits.mainTs
-import com.hiperbou.imguijs.mainJs
-import com.hiperbou.imguijs.mainJsDSL
+
+import com.hiperbou.imguijs.example.*
 
 suspend fun main()
 {
     println("new main ")
-    //mainTs()
-    //mainJs()
-    mainJsDSL()
+
+    example()
+    //exampleDSL()
 }
 

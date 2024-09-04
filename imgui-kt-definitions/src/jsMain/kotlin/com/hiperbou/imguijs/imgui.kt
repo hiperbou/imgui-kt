@@ -12,12 +12,10 @@
 
 package com.hiperbou.imguijs
 
-import com.hiperbou.imguijs.ImGui_Bind.*
 import com.hiperbou.imguijs.*
+import com.hiperbou.imguijs.ImGui_Bind.*
 import com.hiperbou.imguijs.tsstdlib.ArrayLike
-
-import kotlin.js.*
-import kotlin.js.Json
+import com.hiperbou.imguijs.tsstdlib.Readonly
 import org.khronos.webgl.*
 import org.w3c.dom.*
 import org.w3c.dom.events.*
@@ -30,8 +28,9 @@ import org.w3c.notifications.*
 import org.w3c.performance.*
 import org.w3c.workers.*
 import org.w3c.xhr.*
-import com.hiperbou.imguijs.tsstdlib.Readonly
+import kotlin.js.*
 
+@JsName("ImGui")
 external object ImGui {
     interface XY {
         var x: Number
@@ -1782,12 +1781,12 @@ external object ImGui {
 
     fun ImageButton(
         user_texture_id: WebGLTexture?,
-        size: ImGui.ImVec2? = definedExternally /* null */,
-        uv0: ImGui.ImVec2? = definedExternally /* null */,
-        uv1: ImGui.ImVec2? = definedExternally /* null */,
+        size: ImVec2? = definedExternally /* null */,
+        uv0: ImVec2? = definedExternally /* null */,
+        uv1: ImVec2? = definedExternally /* null */,
         frame_padding: Number? = definedExternally /* null */,
-        bg_col: ImGui.ImVec4? = definedExternally /* null */,
-        tint_col: ImGui.ImVec4? = definedExternally /* null */
+        bg_col: ImVec4? = definedExternally /* null */,
+        tint_col: ImVec4? = definedExternally /* null */
     ): Boolean = definedExternally
 
     //fun Checkbox(label: String, v: ImScalar<Boolean>): Boolean = definedExternally

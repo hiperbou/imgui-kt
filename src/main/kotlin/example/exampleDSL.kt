@@ -1,38 +1,24 @@
-package com.hiperbou.imguijs
+package com.hiperbou.imguijs.example
 
-import com.hiperbou.imguijs.ImGui.BeginTooltip
-import kotlinx.browser.window
-
-import com.hiperbou.imguijs.ImGui.ColorEdit4
+import com.hiperbou.imguijs.*
 import com.hiperbou.imguijs.ImGui.ImGuiWindowFlags
-import com.hiperbou.imguijs.ImGui.ImageButton
-import com.hiperbou.imguijs.ImGui.SameLine
-import com.hiperbou.imguijs.ImGui.SliderFloat
-import com.hiperbou.imguijs.ImGui_Bind.ImGui_Impl
 import com.hiperbou.imguijs.ImGui_Demo.ImGui_Demo
-import org.khronos.webgl.WebGLRenderingContext.Companion.COLOR_BUFFER_BIT
-
 import com.hiperbou.imguijs.dsl.*
 
-
-suspend fun mainJsDSL() {
-    console.log("Hello main JS")
-    ImGuiLoad()
-    println("ImGui Loaded! :)")
-    imgui_Init(::dsl_loop)
+suspend fun exampleDSL() {
+    ImGuiLib(::dslLoop, ::clean, clear_color).initialize()
+    initExample()
 }
 
-
-fun dsl_loop(time:Double) {
-    ImGuiNewFrame(time)
-
+fun dslLoop(time:Double):Boolean = with(ImGui) {
     // 1. Show the big demo window (Most of the sample code is in ImGui::ShowDemoWindow()! You can browse its code to learn more about Dear ImGui!).
     if (!done && show_demo_window) {
-        done = /*ImGui.*/ ImGui_Demo.ShowDemoWindow(ImAccess(::show_demo_window))
+        done = ImGui_Demo.ShowDemoWindow(ImAccess(::show_demo_window))
     }
     // 2. Show a simple window that we create ourselves. We use a Begin/End pair to created a named window.
         // static float f = 0.0f
         // static int counter = 0
+
     window("Hello, world!") { // Create a window called "Hello, world!" and append into it.
         text("This is some useful text.") // Display some text (you can use a format strings too)
         checkbox("Demo Window", ImAccess(::show_demo_window)) // Edit bools storing our windows open/close state
@@ -80,7 +66,7 @@ fun dsl_loop(time:Double) {
             show_sandbox_window = true
         }
         if (show_sandbox_window)
-            dsl_ShowSandboxWindow("Sandbox Window", ImAccess(::show_sandbox_window))
+            dslShowSandboxWindow("Sandbox Window", ImAccess(::show_sandbox_window))
         SameLine()
         button("Gamepad Window") {
             show_gamepad_window = true
@@ -117,32 +103,28 @@ fun dsl_loop(time:Double) {
         }
     }
 
-    ImGuiEndFrame()
-
-    if (window !== undefined) {
-        window.requestAnimationFrame(if (done) ::_done else ::dsl_loop)
-    }
+    return@with done
 }
 
-fun dsl_ShowSandboxWindow(title:String, p_open:ImAccess<Boolean>? = null) {
+fun dslShowSandboxWindow(title:String, p_open:ImAccess<Boolean>? = null) = with(ImGui) {
     fun showHelpMarker(desc:String) {
         textDisabled("(?)")
         onItemHovered {
             tooltip {
-                withTextWrapPos(ImGui.GetFontSize() * 35.0) {
-                    ImGui.TextUnformatted(desc)
+                withTextWrapPos(GetFontSize() * 35.0) {
+                    TextUnformatted(desc)
                 }
             }
         }
     }
 
-    ImGui.SetNextWindowSize(ImGui.ImVec2(320, 240), ImGui.ImGuiCond.FirstUseEver)
+    SetNextWindowSize(ImGui.ImVec2(320, 240), ImGui.ImGuiCond.FirstUseEver)
     window(title, p_open) {
         text("Source")
         SameLine()
         showHelpMarker("Contents evaluated and appended to the window.")
         withItemWidth(-1) {
-            ImGui.InputTextMultiline("##source", ImAccess(::source),1024, ImGui.ImVec2.ZERO, ImGui.ImGuiInputTextFlags.AllowTabInput)
+            InputTextMultiline("##source", ImAccess(::source),1024, ImGui.ImVec2.ZERO, ImGui.ImGuiInputTextFlags.AllowTabInput)
         }
         try {
             eval(source)

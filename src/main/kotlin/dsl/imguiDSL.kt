@@ -75,7 +75,6 @@ import com.hiperbou.imguijs.ImGui.TreeNode
 import com.hiperbou.imguijs.ImGui.TreeNodeEx
 import com.hiperbou.imguijs.ImGui.TreePop
 import com.hiperbou.imguijs.ImGui.Unindent
-import com.hiperbou.imguits.ImGui_Bind.ImGuiWindowFlags
 import org.khronos.webgl.WebGLTexture
 
 
@@ -83,7 +82,7 @@ import org.khronos.webgl.WebGLTexture
 
     // Tables
 
-    inline fun table(strId: String, columns: Int, flags: TableFlags = ImGui.ImGuiTableFlags.None.ordinal,
+    inline fun table(strId: String, columns: Int, flags: ImGuiTableFlags = ImGui.ImGuiTableFlags.None.ordinal,
                      outerSize: ImVec2 = ImVec2(), innerWidth: Float = 0f, block: () -> Unit = {}) {
         if (BeginTable(strId, columns, flags, outerSize, innerWidth)) { // ~open
             block()
@@ -93,7 +92,7 @@ import org.khronos.webgl.WebGLTexture
 
     // Windows
 
-    inline fun window(name: String, noinline open: ImAccess<Boolean>? = null, flags: WindowFlags = ImGui.ImGuiWindowFlags.None.ordinal, block: () -> Unit = {}) {
+    inline fun window(name: String, noinline open: ImAccess<Boolean>? = null, flags: ImGuiWindowFlags = ImGui.ImGuiWindowFlags.None.ordinal, block: () -> Unit = {}) {
         if (Begin(name, open, flags)) // ~open
             block()
         End()
@@ -101,7 +100,7 @@ import org.khronos.webgl.WebGLTexture
 
     // Child Windows
 
-    inline fun child(strId: String, size: ImVec2 = ImVec2(), border: Boolean = false, extraFlags: WindowFlags = ImGui.ImGuiWindowFlags.None.ordinal, block: () -> Unit = {}) {
+    inline fun child(strId: String, size: ImVec2 = ImVec2(), border: Boolean = false, extraFlags: ImGuiWindowFlags = ImGui.ImGuiWindowFlags.None.ordinal, block: () -> Unit = {}) {
         if (BeginChild(strId, size, border, extraFlags)) // ~open
             block()
         EndChild()

@@ -1,10 +1,13 @@
-@file:JsModule("@zhobo63/imgui-ts/src/bind-imgui")
-@file:JsNonModule
+//@file:JsModule("imgui-js")
+//@file:JsNonModule
 @file:Suppress("INTERFACE_WITH_SUPERCLASS", "OVERRIDING_FINAL_MEMBER", "RETURN_TYPE_MISMATCH_ON_OVERRIDE", "CONFLICTING_OVERLOADS")
+@file:JsQualifier("ImGui_Impl")
+package com.hiperbou.imguijs.ImGui_Bind
 
-package com.hiperbou.imguits.ImGui_Bind
-
-import com.hiperbou.imguits.emscripten.*
+import com.hiperbou.imguijs.*
+import com.hiperbou.imguijs.ImGui.ImVec2
+import com.hiperbou.imguijs.emscripten.*
+import com.hiperbou.imguijs.tsstdlib.Readonly
 import kotlin.js.*
 import org.khronos.webgl.*
 import org.w3c.dom.*
@@ -18,10 +21,9 @@ import org.w3c.notifications.*
 import org.w3c.performance.*
 import org.w3c.workers.*
 import org.w3c.xhr.*
-import com.hiperbou.imguits.tsstdlib.Readonly
 
-//@JsName("default")
-//external fun ImGuiDefault(Module: ModulePartial = definedExternally): Promise<Module>
+@JsName("default")
+external fun Module(Module: ModulePartial = definedExternally): Module
 
 external interface mallinfo {
     var arena: Number
@@ -49,51 +51,16 @@ external interface interface_ImVec2 {
 external interface reference_ImVec2 : EmscriptenClassReference, interface_ImVec2
 
 external interface interface_ImVec4 {
-    var x: Number
-    var y: Number
-    var z: Number
-    var w: Number
+    open var x: Number
+    open var y: Number
+    open var z: Number
+    open var w: Number
     fun Set(x: Number, y: Number, z: Number, w: Number): interface_ImVec4 /* this */
     fun Copy(other: Readonly<interface_ImVec4>): interface_ImVec4 /* this */
     fun Equals(other: Readonly<interface_ImVec4>): Boolean
 }
 
 external interface reference_ImVec4 : EmscriptenClassReference, interface_ImVec4
-
-external interface interface_ImMat2 {
-    var m11: Number
-    var m12: Number
-    var m21: Number
-    var m22: Number
-    fun Set(m11: Number, m12: Number, m21: Number, m22: Number): interface_ImMat2 /* this */
-    fun Copy(other: Readonly<interface_ImMat2>): interface_ImMat2 /* this */
-    fun Equals(other: Readonly<interface_ImMat2>): Boolean
-    fun Identity()
-    fun Transpose(): interface_ImMat2
-    fun SetRotate(radius: Number)
-    fun Multiply(other: Readonly<interface_ImMat2>): interface_ImMat2
-    fun Transform(p: Readonly<interface_ImVec2>): interface_ImVec2
-    fun TransposeTo(target: interface_ImMat2)
-    fun MultiplyTo(other: Readonly<interface_ImMat2>, target: interface_ImMat2)
-    fun TransformTo(p: Readonly<interface_ImVec2>, target: interface_ImVec2)
-}
-
-external interface reference_ImMat2 : EmscriptenClassReference, interface_ImMat2
-
-external interface interface_ImTransform {
-    var rotate: interface_ImMat2
-    var translate: interface_ImVec2
-    var scale: Number
-    fun Identity()
-    fun Multiply(transform: Readonly<interface_ImTransform>): interface_ImTransform
-    fun Transform(point: Readonly<interface_ImVec2>): interface_ImVec2
-    fun Invert(): interface_ImTransform
-    fun MultiplyTo(transform: Readonly<interface_ImTransform>, target: interface_ImTransform)
-    fun TransformTo(point: Readonly<interface_ImVec2>, target: interface_ImVec2)
-    fun InvertTo(target: interface_ImTransform)
-}
-
-external interface reference_ImTransform : EmscriptenClassReference, interface_ImTransform
 
 external interface reference_ImGuiInputTextCallbackData : EmscriptenClassReference {
     var EventFlag: ImGuiInputTextFlags
@@ -125,8 +92,6 @@ external open class ImGuiListClipper : EmscriptenClass {
     open var DisplayStart: Number
     open var DisplayEnd: Number
     open var ItemsCount: Number
-    open var StepNo: Number
-    open var ItemsFrozen: Number
     open var ItemsHeight: Number
     open var StartPosY: Number
     open fun Begin(items_count: Number, items_height: Number)
@@ -149,23 +114,24 @@ external interface reference_ImGuiTableSortSpecs : EmscriptenClassReference {
 
 external interface interface_ImGuiStyle {
     var Alpha: Number
-    var WindowPadding: interface_ImVec2
+    var DisabledAlpha: Number
+    var WindowPadding: reference_ImVec2
     var WindowRounding: Number
     var WindowBorderSize: Number
-    var WindowMinSize: interface_ImVec2
-    var WindowTitleAlign: interface_ImVec2
+    var WindowMinSize: reference_ImVec2
+    var WindowTitleAlign: reference_ImVec2
     var WindowMenuButtonPosition: ImGuiDir
     var ChildRounding: Number
     var ChildBorderSize: Number
     var PopupRounding: Number
     var PopupBorderSize: Number
-    var FramePadding: interface_ImVec2
+    var FramePadding: reference_ImVec2
     var FrameRounding: Number
     var FrameBorderSize: Number
-    var ItemSpacing: interface_ImVec2
-    var ItemInnerSpacing: interface_ImVec2
-    var TouchExtraPadding: interface_ImVec2
-    var CellPadding: interface_ImVec2
+    var ItemSpacing: reference_ImVec2
+    var ItemInnerSpacing: reference_ImVec2
+    var TouchExtraPadding: reference_ImVec2
+    var CellPadding: reference_ImVec2
     var IndentSpacing: Number
     var ColumnsMinSpacing: Number
     var ScrollbarSize: Number
@@ -177,16 +143,16 @@ external interface interface_ImGuiStyle {
     var TabBorderSize: Number
     var TabMinWidthForCloseButton: Number
     var ColorButtonPosition: Number
-    var ButtonTextAlign: interface_ImVec2
-    var SelectableTextAlign: interface_ImVec2
-    var DisplayWindowPadding: interface_ImVec2
-    var DisplaySafeAreaPadding: interface_ImVec2
+    var ButtonTextAlign: reference_ImVec2
+    var SelectableTextAlign: reference_ImVec2
+    var DisplayWindowPadding: reference_ImVec2
+    var DisplaySafeAreaPadding: reference_ImVec2
     var MouseCursorScale: Number
     var AntiAliasedLines: Boolean
     var AntiAliasedLinesUseTex: Boolean
     var AntiAliasedFill: Boolean
     var CurveTessellationTol: Number
-    var CircleSegmentMaxError: Number
+    var CircleTessellationMaxError: Number
     fun _getAt_Colors(idx: Number): interface_ImVec4
     fun _setAt_Colors(idx: Number, value: Readonly<interface_ImVec4>): Boolean
     fun ScaleAllSizes(scale_factor: Number)
@@ -194,23 +160,24 @@ external interface interface_ImGuiStyle {
 
 external open class ImGuiStyle : EmscriptenClass, interface_ImGuiStyle {
     override var Alpha: Number
-    override var WindowPadding: interface_ImVec2
+    override var DisabledAlpha: Number
+    override var WindowPadding: reference_ImVec2
     override var WindowRounding: Number
     override var WindowBorderSize: Number
-    override var WindowMinSize: interface_ImVec2
-    override var WindowTitleAlign: interface_ImVec2
+    override var WindowMinSize: reference_ImVec2
+    override var WindowTitleAlign: reference_ImVec2
     override var WindowMenuButtonPosition: ImGuiDir
     override var ChildRounding: Number
     override var ChildBorderSize: Number
     override var PopupRounding: Number
     override var PopupBorderSize: Number
-    override var FramePadding: interface_ImVec2
+    override var FramePadding: reference_ImVec2
     override var FrameRounding: Number
     override var FrameBorderSize: Number
-    override var ItemSpacing: interface_ImVec2
-    override var ItemInnerSpacing: interface_ImVec2
-    override var TouchExtraPadding: interface_ImVec2
-    override var CellPadding: interface_ImVec2
+    override var ItemSpacing: reference_ImVec2
+    override var ItemInnerSpacing: reference_ImVec2
+    override var TouchExtraPadding: reference_ImVec2
+    override var CellPadding: reference_ImVec2
     override var IndentSpacing: Number
     override var ColumnsMinSpacing: Number
     override var ScrollbarSize: Number
@@ -222,16 +189,16 @@ external open class ImGuiStyle : EmscriptenClass, interface_ImGuiStyle {
     override var TabBorderSize: Number
     override var TabMinWidthForCloseButton: Number
     override var ColorButtonPosition: ImGuiDir
-    override var ButtonTextAlign: interface_ImVec2
-    override var SelectableTextAlign: interface_ImVec2
-    override var DisplayWindowPadding: interface_ImVec2
-    override var DisplaySafeAreaPadding: interface_ImVec2 //reference_ImVec2
+    override var ButtonTextAlign: reference_ImVec2
+    override var SelectableTextAlign: reference_ImVec2
+    override var DisplayWindowPadding: reference_ImVec2
+    override var DisplaySafeAreaPadding: reference_ImVec2
     override var MouseCursorScale: Number
     override var AntiAliasedLines: Boolean
     override var AntiAliasedLinesUseTex: Boolean
     override var AntiAliasedFill: Boolean
     override var CurveTessellationTol: Number
-    override var CircleSegmentMaxError: Number
+    override var CircleTessellationMaxError: Number
     override fun _getAt_Colors(idx: Number): reference_ImVec4
     override fun _setAt_Colors(idx: Number, value: Readonly<interface_ImVec4>): Boolean
     override fun ScaleAllSizes(scale_factor: Number)
@@ -245,8 +212,6 @@ external interface reference_ImDrawCmd : EmscriptenClassReference {
     var TextureId: ImTextureID
     var VtxOffset: Number
     var IdxOffset: Number
-    var UserCallback: ImDrawCallback?
-    var UserCallbackData: Any
 }
 
 external interface reference_ImDrawListSharedData : EmscriptenClassReference
@@ -264,8 +229,8 @@ external interface reference_ImDrawList : EmscriptenClassReference {
     fun GetClipRectMin(out: interface_ImVec2): Any
     fun GetClipRectMax(out: interface_ImVec2): Any
     fun AddLine(a: Readonly<interface_ImVec2>, b: Readonly<interface_ImVec2>, col: ImU32, thickness: Number)
-    fun AddRect(a: Readonly<interface_ImVec2>, b: Readonly<interface_ImVec2>, col: ImU32, rounding: Number, rounding_corners_flags: ImDrawCornerFlags, thickness: Number)
-    fun AddRectFilled(a: Readonly<interface_ImVec2>, b: Readonly<interface_ImVec2>, col: ImU32, rounding: Number, rounding_corners_flags: ImDrawCornerFlags)
+    fun AddRect(a: Readonly<interface_ImVec2>, b: Readonly<interface_ImVec2>, col: ImU32, rounding: Number, rounding_corners_flags: ImDrawFlags, thickness: Number)
+    fun AddRectFilled(a: Readonly<interface_ImVec2>, b: Readonly<interface_ImVec2>, col: ImU32, rounding: Number, rounding_corners_flags: ImDrawFlags)
     fun AddRectFilledMultiColor(a: Readonly<interface_ImVec2>, b: Readonly<interface_ImVec2>, col_upr_left: ImU32, col_upr_right: ImU32, col_bot_right: ImU32, col_bot_left: ImU32)
     fun AddQuad(a: Readonly<interface_ImVec2>, b: Readonly<interface_ImVec2>, c: Readonly<interface_ImVec2>, d: Readonly<interface_ImVec2>, col: ImU32, thickness: Number)
     fun AddQuadFilled(a: Readonly<interface_ImVec2>, b: Readonly<interface_ImVec2>, c: Readonly<interface_ImVec2>, d: Readonly<interface_ImVec2>, col: ImU32)
@@ -279,8 +244,8 @@ external interface reference_ImDrawList : EmscriptenClassReference {
     fun AddText_B(font: reference_ImFont, font_size: Number, pos: Readonly<interface_ImVec2>, col: ImU32, text_begin: String, wrap_width: Number, cpu_fine_clip_rect: Readonly<interface_ImVec4>?)
     fun AddImage(user_texture_id: ImTextureID, a: Readonly<interface_ImVec2>, b: Readonly<interface_ImVec2>, uv_a: Readonly<interface_ImVec2>, uv_b: Readonly<interface_ImVec2>, col: ImU32)
     fun AddImageQuad(user_texture_id: ImTextureID, a: Readonly<interface_ImVec2>, b: Readonly<interface_ImVec2>, c: Readonly<interface_ImVec2>, d: Readonly<interface_ImVec2>, uv_a: Readonly<interface_ImVec2>, uv_b: Readonly<interface_ImVec2>, uv_c: Readonly<interface_ImVec2>, uv_d: Readonly<interface_ImVec2>, col: ImU32)
-    fun AddImageRounded(user_texture_id: ImTextureID, a: Readonly<interface_ImVec2>, b: Readonly<interface_ImVec2>, uv_a: Readonly<interface_ImVec2>, uv_b: Readonly<interface_ImVec2>, col: ImU32, rounding: Number, rounding_corners: ImDrawCornerFlags)
-    fun AddPolyline(points: Array<Readonly<interface_ImVec2>>, num_points: Number, col: ImU32, closed: Boolean, thickness: Number)
+    fun AddImageRounded(user_texture_id: ImTextureID, a: Readonly<interface_ImVec2>, b: Readonly<interface_ImVec2>, uv_a: Readonly<interface_ImVec2>, uv_b: Readonly<interface_ImVec2>, col: ImU32, rounding: Number, flags: ImDrawFlags)
+    fun AddPolyline(points: Array<Readonly<interface_ImVec2>>, num_points: Number, col: ImU32, flags: ImDrawFlags, thickness: Number)
     fun AddConvexPolyFilled(points: Array<Readonly<interface_ImVec2>>, num_points: Number, col: ImU32)
     fun AddBezierCubic(pos0: Readonly<interface_ImVec2>, cp0: Readonly<interface_ImVec2>, cp1: Readonly<interface_ImVec2>, pos1: Readonly<interface_ImVec2>, col: ImU32, thickness: Number, num_segments: Number)
     fun AddBezierQuadratic(pos0: Readonly<interface_ImVec2>, cp0: Readonly<interface_ImVec2>, cp1: Readonly<interface_ImVec2>, col: ImU32, thickness: Number, num_segments: Number)
@@ -288,12 +253,12 @@ external interface reference_ImDrawList : EmscriptenClassReference {
     fun PathLineTo(pos: Readonly<interface_ImVec2>)
     fun PathLineToMergeDuplicate(pos: Readonly<interface_ImVec2>)
     fun PathFillConvex(col: ImU32)
-    fun PathStroke(col: ImU32, closed: Boolean, thickness: Number)
+    fun PathStroke(col: ImU32, flags: ImDrawFlags, thickness: Number)
     fun PathArcTo(centre: Readonly<interface_ImVec2>, radius: Number, a_min: Number, a_max: Number, num_segments: Number)
     fun PathArcToFast(centre: Readonly<interface_ImVec2>, radius: Number, a_min_of_12: Number, a_max_of_12: Number)
     fun PathBezierCubicCurveTo(p1: Readonly<interface_ImVec2>, p2: Readonly<interface_ImVec2>, p3: Readonly<interface_ImVec2>, num_segments: Number)
     fun PathBezierQuadraticCurveTo(p2: Readonly<interface_ImVec2>, p3: Readonly<interface_ImVec2>, num_segments: Number)
-    fun PathRect(rect_min: Readonly<interface_ImVec2>, rect_max: Readonly<interface_ImVec2>, rounding: Number, rounding_corners_flags: ImDrawCornerFlags)
+    fun PathRect(rect_min: Readonly<interface_ImVec2>, rect_max: Readonly<interface_ImVec2>, rounding: Number, flags: ImDrawFlags)
     fun ChannelsSplit(channels_count: Number)
     fun ChannelsMerge()
     fun ChannelsSetCurrent(channel_index: Number)
@@ -311,9 +276,7 @@ external interface reference_ImDrawList : EmscriptenClassReference {
     fun PrimVtx(pos: Readonly<interface_ImVec2>, uv: Readonly<interface_ImVec2>, col: ImU32)
     fun UpdateClipRect()
     fun UpdateTextureID()
-    fun AddRectFilledMultiColorRound(a: Readonly<interface_ImVec2>, b: Readonly<interface_ImVec2>, col_lt: ImU32, col_rt: ImU32, col_lb: ImU32, col_rb: ImU32, rounding: Number, rounding_corners_flags: ImDrawCornerFlags)
-    fun GetVertexSize(): Number
-    fun Transform(tm: Readonly<interface_ImTransform>, start: Number, end: Number)
+    fun _CalcCircleAutoSegmentCount(radius: Number): Number
 }
 
 external interface reference_ImDrawData : EmscriptenClassReference {
@@ -330,11 +293,7 @@ external interface reference_ImDrawData : EmscriptenClassReference {
 }
 
 external interface reference_ImFont : EmscriptenClassReference {
-    var FontStyle: String
-    var FontName: String
     var FontSize: Number
-    var SpaceX0: Number
-    var SpaceX1: Number
     var Scale: Number
     var DisplayOffset: reference_ImVec2
     fun IterateGlyphs(callback: (cfg: reference_ImFontGlyph) -> Unit)
@@ -342,8 +301,9 @@ external interface reference_ImFont : EmscriptenClassReference {
     var FallbackAdvanceX: Number
     var FallbackChar: Number
     var EllipsisChar: Number
+    var DotChar: Number
     var ConfigDataCount: Number
-    var ConfigData: Readonly<reference_ImFontConfig>?
+    fun IterateConfigData(callback: (cfg: interface_ImFontConfig) -> Unit)
     var Ascent: Number
     var Descent: Number
     var MetricsTotalSurface: Number
@@ -351,24 +311,12 @@ external interface reference_ImFont : EmscriptenClassReference {
     fun BuildLookupTable()
     fun FindGlyph(c: Number): Readonly<reference_ImFontGlyph>?
     fun FindGlyphNoFallback(c: Number): Readonly<reference_ImFontGlyph>?
-    fun SetFallbackChar(c: Number)
     fun GetCharAdvance(c: Number): Number
     fun IsLoaded(): Boolean
     fun GetDebugName(): String
-    fun CalcTextSizeA(size: Number, max_width: Number, wrap_width: Number, text_begin: String, remaining: Any /* JsTuple<Number> */, isready: Any /* JsTuple<Boolean> */, out: interface_ImVec2): interface_ImVec2
+    fun CalcTextSizeA(size: Number, max_width: Number, wrap_width: Number, text_begin: String, remaining: Any /* JsTuple<Number> */, out: interface_ImVec2): interface_ImVec2
     fun CalcWordWrapPositionA(scale: Number, text: String, wrap_width: Number): Number
     fun RenderChar(draw_list: reference_ImDrawList, size: Number, pos: Readonly<interface_ImVec2>, col: ImU32, c: ImWchar)
-    fun RenderText(draw_list: reference_ImDrawList, size: Number, pos: Readonly<interface_ImVec2>, col: ImU32, clip_rect: Readonly<interface_ImVec4>, text: String, wrap_width: Number, cpu_fine_clip: Boolean)
-    fun CreateGlyph(text: String)
-    fun GlyphToCreate(): Readonly<reference_ImFontGlyph>?
-    fun IterateGlyphToCreate(callback: (glyph: reference_ImFontGlyph) -> Unit)
-    fun GlyphCreated(glyph: interface_ImFontGlyph)
-    fun ClearGlyphCreated()
-    fun AddFontRange(start: Number, end: Number)
-    fun ClearFontRange()
-    fun MergeFont(font: reference_ImFont)
-    fun ClearSubFont()
-    fun InRange(c: Number): Boolean
 }
 
 external interface interface_ImFontConfig {
@@ -379,13 +327,13 @@ external interface interface_ImFontConfig {
     var OversampleH: Number
     var OversampleV: Number
     var PixelSnapH: Boolean
-    var GlyphExtraSpacing: interface_ImVec2
-    var GlyphOffset: interface_ImVec2
+    var GlyphExtraSpacing: ImVec2
+    var GlyphOffset: ImVec2
     var GlyphRanges: Number?
     var GlyphMinAdvanceX: Number
     var GlyphMaxAdvanceX: Number
     var MergeMode: Boolean
-    var RasterizerFlags: Number
+    var FontBuilderFlags: Number
     var RasterizerMultiply: Number
     var Name: String
     var DstFont: reference_ImFont?
@@ -394,8 +342,9 @@ external interface interface_ImFontConfig {
 external interface reference_ImFontConfig : EmscriptenClassReference, interface_ImFontConfig
 
 external interface interface_ImFontGlyph {
-    var Codepoint: Number
+    var Colored: Boolean
     var Visible: Boolean
+    var Codepoint: Number
     var AdvanceX: Number
     var X0: Number
     var Y0: Number
@@ -405,8 +354,6 @@ external interface interface_ImFontGlyph {
     var V0: Number
     var U1: Number
     var V1: Number
-    var TexID: Number
-    var Char: Number
 }
 
 external interface reference_ImFontGlyph : EmscriptenClassReference, interface_ImFontGlyph
@@ -447,7 +394,14 @@ external interface reference_ImFontAtlas : EmscriptenClassReference {
     var TexUvScale: Readonly<reference_ImVec2>
     var TexUvWhitePixel: Readonly<reference_ImVec2>
     fun IterateFonts(callback: (font: reference_ImFont) -> Unit)
-    var CurrentFont: Readonly<reference_ImFont>
+}
+
+external interface reference_ImGuiViewport : EmscriptenClassReference {
+    var Flags: ImGuiViewportFlags
+    var Pos: interface_ImVec2
+    var Size: interface_ImVec2
+    var WorkPos: interface_ImVec2
+    var WorkSize: interface_ImVec2
 }
 
 external interface reference_ImGuiIO : EmscriptenClassReference {
@@ -510,63 +464,24 @@ external interface reference_ImGuiIO : EmscriptenClassReference {
     var WantSaveIniSettings: Boolean
     var NavActive: Boolean
     var NavVisible: Boolean
-    var Framerate: Number
+    var Framerate: Double
     var MetricsRenderVertices: Number
     var MetricsRenderIndices: Number
     var MetricsRenderWindows: Number
     var MetricsActiveWindows: Number
     var MetricsActiveAllocations: Number
     var MouseDelta: Readonly<reference_ImVec2>
+    var WantCaptureMouseUnlessPopupClose: Boolean
     fun _getAt_MouseClickedPos(index: Number): Readonly<reference_ImVec2>
     fun _getAt_MouseDownDuration(index: Number): Number
     fun _getAt_KeysDownDuration(index: Number): Number
     fun _getAt_NavInputsDownDuration(index: Number): Number
 }
 
-external interface reference_ImGuiWindow : EmscriptenClassReference {
-    var ID: ImGuiID
-    var Flags: ImGuiWindowFlags
-    var Pos: reference_ImVec2
-    var Size: reference_ImVec2
-    var SizeFull: reference_ImVec2
-    var ContentSize: reference_ImVec2
-    var ContentSizeIdeal: reference_ImVec2
-    var ContentSizeExplicit: reference_ImVec2
-    var WindowPadding: reference_ImVec2
-    var WindowRounding: Number
-    var WindowBorderSize: Number
-    var Scroll: reference_ImVec2
-    var ScrollMax: reference_ImVec2
-    var ScrollTarget: reference_ImVec2
-    var ScrollTargetCenterRatio: reference_ImVec2
-    var ScrollTargetEdgeSnapDist: reference_ImVec2
-    var ScrollbarSizes: reference_ImVec2
-    var ScrollbarX: Boolean
-    var ScrollbarY: Boolean
-    var Active: Boolean
-    var WasActive: Boolean
-    var ItemWidthDefault: Number
-    var ParentWindow: Readonly<reference_ImGuiWindow>
-    var RootWindow: Readonly<reference_ImGuiWindow>
-    var RootWindowForTitleBarHighlight: Readonly<reference_ImGuiWindow>
-    var RootWindowForNav: Readonly<reference_ImGuiWindow>
-}
-
-external interface interface_ImRect {
-    var Min: Readonly<reference_ImVec2>
-    var Max: Readonly<reference_ImVec2>
-}
-
-external interface reference_ImRect : EmscriptenClassReference, interface_ImRect
-
-external interface reference_ImGuiInputTextState : EmscriptenClassReference {
-    var ID: ImGuiID
-    var Flags: ImGuiInputTextFlags
-    var FrameBB: Readonly<reference_ImRect>
-    var Text: String
-}
-
 external interface Module : EmscriptenModule {
+    var __EMSCRIPTEN_major__: Number
+    var __EMSCRIPTEN_minor__: Number
+    var __EMSCRIPTEN_tiny__: Number
     fun mallinfo(): mallinfo
     var IMGUI_VERSION: String
     fun IMGUI_CHECKVERSION(): Boolean
@@ -579,11 +494,9 @@ external interface Module : EmscriptenModule {
     var ImDrawVertPosOffset: Number
     var ImDrawVertUVOffset: Number
     var ImDrawVertColOffset: Number
-    var FLT_MIN: Number
-    var FLT_MAX: Number
     var ImGuiListClipper: Any
     var ImGuiStyle: Any
-    fun CreateContext(shared_font_atlas: reference_ImFontAtlas? = definedExternally): WrapImGuiContext
+    fun CreateContext(shared_font_atlas: reference_ImFontAtlas?): WrapImGuiContext
     fun DestroyContext(ctx: WrapImGuiContext?)
     fun GetCurrentContext(): WrapImGuiContext?
     fun SetCurrentContext(ctx: WrapImGuiContext?)
@@ -595,16 +508,17 @@ external interface Module : EmscriptenModule {
     fun GetDrawData(): reference_ImDrawData?
     fun ShowDemoWindow(p_open: Any /* JsTuple<Boolean> */)
     fun ShowMetricsWindow(p_open: Any /* JsTuple<Boolean> */)
+    fun ShowStackToolWindow(p_open: Any /* JsTuple<Boolean> */)
     fun ShowAboutWindow(p_open: Any /* JsTuple<Boolean> */)
     fun ShowStyleEditor(ref: ImGuiStyle?)
     fun ShowStyleSelector(label: String): Boolean
     fun ShowFontSelector(label: String)
     fun ShowUserGuide()
     fun GetVersion(): String
-    fun StyleColorsDark(dst: ImGuiStyle? = definedExternally)
+    fun StyleColorsDark(dst: ImGuiStyle?)
     fun StyleColorsLight(dst: ImGuiStyle?)
     fun StyleColorsClassic(dst: ImGuiStyle?)
-    fun Begin(name: String, p_open: Any? = definedExternally /* JsTuple<Boolean> */, flags: ImGuiWindowFlags?= definedExternally): Boolean
+    fun Begin(name: String, p_open: Any /* JsTuple<Boolean> */, flags: ImGuiWindowFlags): Boolean
     fun End()
     fun BeginChild(id: String, size: Readonly<interface_ImVec2>, border: Boolean, flags: ImGuiWindowFlags): Boolean
     fun BeginChild(id: ImGuiID, size: Readonly<interface_ImVec2>, border: Boolean, flags: ImGuiWindowFlags): Boolean
@@ -638,7 +552,6 @@ external interface Module : EmscriptenModule {
     fun GetContentRegionMax(out: interface_ImVec2): Any
     fun GetWindowContentRegionMin(out: interface_ImVec2): Any
     fun GetWindowContentRegionMax(out: interface_ImVec2): Any
-    fun GetWindowContentRegionWidth(): Number
     fun GetScrollX(): Number
     fun GetScrollY(): Number
     fun SetScrollX(scroll_x: Number)
@@ -709,7 +622,7 @@ external interface Module : EmscriptenModule {
     fun TextWrapped(fmt: String)
     fun LabelText(label: String, fmt: String)
     fun BulletText(fmt: String)
-    fun Button(label: String, size: Readonly<interface_ImVec2>? = definedExternally): Boolean
+    fun Button(label: String, size: Readonly<interface_ImVec2>): Boolean
     fun SmallButton(label: String): Boolean
     fun InvisibleButton(str_id: String, size: Readonly<interface_ImVec2>, flags: ImGuiButtonFlags): Boolean
     fun ArrowButton(label: String, dir: ImGuiDir): Boolean
@@ -769,8 +682,8 @@ external interface Module : EmscriptenModule {
     fun VSliderScalar(label: String, size: Readonly<interface_ImVec2>, data_type: ImGuiDataType, v: Uint32Array, v_min: Number?, v_max: Number?, format: String?, flags: ImGuiSliderFlags): Boolean
     fun VSliderScalar(label: String, size: Readonly<interface_ImVec2>, data_type: ImGuiDataType, v: Float32Array, v_min: Number?, v_max: Number?, format: String?, flags: ImGuiSliderFlags): Boolean
     fun VSliderScalar(label: String, size: Readonly<interface_ImVec2>, data_type: ImGuiDataType, v: Float64Array, v_min: Number?, v_max: Number?, format: String?, flags: ImGuiSliderFlags): Boolean
-    fun InputText(label: String, buf: Any /* JsTuple<String> */, buf_size: Number = definedExternally, flags: ImGuiInputTextFlags = definedExternally, callback: ImGuiInputTextCallback? = definedExternally, user_data: Any = definedExternally): Boolean
-    fun InputTextMultiline(label: String, buf: Any /* JsTuple<String> */, buf_size: Number = definedExternally, size: Readonly<interface_ImVec2> = definedExternally, flags: ImGuiInputTextFlags = definedExternally, callback: ImGuiInputTextCallback? = definedExternally, user_data: Any = definedExternally): Boolean
+    fun InputText(label: String, buf: Any /* JsTuple<String> */, buf_size: Number, flags: ImGuiInputTextFlags, callback: ImGuiInputTextCallback?, user_data: Any): Boolean
+    fun InputTextMultiline(label: String, buf: Any /* JsTuple<String> */, buf_size: Number, size: Readonly<interface_ImVec2>, flags: ImGuiInputTextFlags, callback: ImGuiInputTextCallback?, user_data: Any): Boolean
     fun InputTextWithHint(label: String, hint: String, buf: Any /* JsTuple<String> */, buf_size: Number, flags: ImGuiInputTextFlags, callback: ImGuiInputTextCallback?, user_data: Any): Boolean
     fun InputFloat(label: String, v: Any /* JsTuple<Number> | JsTuple<Number, Number> | JsTuple<Number, Number, Number> | JsTuple<Number, Number, Number, Number> */, step: Number, step_fast: Number, format: String, flags: ImGuiInputTextFlags): Boolean
     fun InputFloat2(label: String, v: Any /* JsTuple<Number, Number> | JsTuple<Number, Number, Number> | JsTuple<Number, Number, Number, Number> */, format: String, flags: ImGuiInputTextFlags): Boolean
@@ -810,11 +723,10 @@ external interface Module : EmscriptenModule {
     fun SetNextItemOpen(is_open: Boolean, cond: ImGuiCond)
     fun Selectable_A(label: String, selected: Boolean, flags: ImGuiSelectableFlags, size: interface_ImVec2): Boolean
     fun Selectable_B(label: String, p_selected: Any /* JsTuple<Boolean> */, flags: ImGuiSelectableFlags, size: interface_ImVec2): Boolean
+    fun BeginListBox(label: String, size: Readonly<interface_ImVec2>): Boolean
+    fun EndListBox()
     fun ListBox_A(label: String, current_item: Any /* JsTuple<Number> */, items: Array<String>, items_count: Number, height_in_items: Number): Boolean
     fun <T> ListBox_B(label: String, current_item: Any /* JsTuple<Number> */, items_getter: (data: T, idx: Number, out_text: Any /* JsTuple<String> */) -> Boolean, data: T, items_count: Number, height_in_items: Number): Boolean
-    fun ListBoxHeader_A(label: String, size: Readonly<interface_ImVec2>): Boolean
-    fun ListBoxHeader_B(label: String, items_count: Number, height_in_items: Number): Boolean
-    fun ListBoxFooter()
     fun <T> PlotLines(label: String, values_getter: (data: T, idx: Number) -> Number, data: T, values_count: Number, value_offset: Number, overlay_text: String?, scale_min: Number, scale_max: Number, graph_size: Readonly<interface_ImVec2>)
     fun <T> PlotHistogram(label: String, values_getter: (data: T, idx: Number) -> Number, data: T, values_count: Number, value_offset: Number, overlay_text: String?, scale_min: Number, scale_max: Number, graph_size: Readonly<interface_ImVec2>)
     fun Value_A(prefix: String, b: Boolean)
@@ -857,6 +769,7 @@ external interface Module : EmscriptenModule {
     fun TableGetRowIndex(): Number
     fun TableGetColumnName(column_n: Number): String
     fun TableGetColumnFlags(column_n: Number): ImGuiTableColumnFlags
+    fun TableSetColumnEnabled(column_n: Number, v: Boolean)
     fun TableSetBgColor(target: ImGuiTableBgTarget, color: ImU32, column_n: Number)
     fun Columns(count: Number, id: String?, border: Boolean)
     fun NextColumn()
@@ -885,6 +798,8 @@ external interface Module : EmscriptenModule {
     fun AcceptDragDropPayload(type: String, flags: ImGuiDragDropFlags): Boolean
     fun EndDragDropTarget()
     fun GetDragDropPayload(): Nothing?
+    fun BeginDisabled(disabled: Boolean)
+    fun EndDisabled()
     fun PushClipRect(clip_rect_min: Readonly<interface_ImVec2>, clip_rect_max: Readonly<interface_ImVec2>, intersect_with_current_clip_rect: Boolean)
     fun PopClipRect()
     fun SetItemDefaultFocus()
@@ -906,6 +821,7 @@ external interface Module : EmscriptenModule {
     fun GetItemRectMax(out: interface_ImVec2): Any
     fun GetItemRectSize(out: interface_ImVec2): Any
     fun SetItemAllowOverlap()
+    fun GetMainViewport(): reference_ImGuiViewport
     fun IsRectVisible_A(size: Readonly<interface_ImVec2>): Boolean
     fun IsRectVisible_B(rect_min: Readonly<interface_ImVec2>, rect_max: Readonly<interface_ImVec2>): Boolean
     fun GetTime(): Number
@@ -914,7 +830,6 @@ external interface Module : EmscriptenModule {
     fun GetForegroundDrawList(): reference_ImDrawList
     fun GetDrawListSharedData(): reference_ImDrawListSharedData
     fun GetStyleColorName(idx: ImGuiCol): String
-    fun CalcListClipping(items_count: Number, items_height: Number, out_items_display_start: Any /* JsTuple<Number> */, out_items_display_end: Any /* JsTuple<Number> */)
     fun BeginChildFrame(id: ImGuiID, size: Readonly<interface_ImVec2>, flags: ImGuiWindowFlags): Boolean
     fun EndChildFrame()
     fun CalcTextSize(text: String, hide_text_after_double_hash: Boolean, wrap_width: Number, out: interface_ImVec2): Any
@@ -932,6 +847,7 @@ external interface Module : EmscriptenModule {
     fun IsMouseClicked(button: ImGuiMouseButton, repeat: Boolean): Boolean
     fun IsMouseReleased(button: ImGuiMouseButton): Boolean
     fun IsMouseDoubleClicked(button: ImGuiMouseButton): Boolean
+    fun GetMouseClickedCount(button: ImGuiMouseButton): Number
     fun IsMouseHoveringRect(r_min: Readonly<interface_ImVec2>, r_max: Readonly<interface_ImVec2>, clip: Boolean): Boolean
     fun IsMousePosValid(mouse_pos: Readonly<interface_ImVec2>?): Boolean
     fun IsAnyMouseDown(): Boolean
@@ -951,21 +867,18 @@ external interface Module : EmscriptenModule {
     fun SetAllocatorFunctions(alloc_func: (sz: Number, user_data: Any) -> Number, free_func: (ptr: Number, user_data: Any) -> Unit, user_data: Any)
     fun MemAlloc(sz: Number): Any
     fun MemFree(ptr: Any)
-    fun GetCurrentWindow(): reference_ImGuiWindow
-    fun GetHoveredWindow(): reference_ImGuiWindow
-    fun GetHoveredRootWindow(): reference_ImGuiWindow
-    fun GetActiveWindow(): reference_ImGuiWindow
-    fun GetHoveredId(): ImGuiID
-    fun GetHoveredIdPreviousFrame(): ImGuiID
-    fun GetActiveId(): ImGuiID
-    fun GetActiveIdPreviousFrame(): ImGuiID
-    fun SetActiveId(id: ImGuiID)
-    fun GetInputTextState(id: ImGuiID): reference_ImGuiInputTextState
-    fun GetInputTextId(): ImGuiID
-    fun ImTransform(): reference_ImTransform
 }
 
-external interface ModulePartial /*: Emscripten.EmscriptenModulePartial*/ {
+external interface ModulePartial /*: Emscripten.EmscriptenModulePartial */{
+    var __EMSCRIPTEN_major__: Number?
+        get() = definedExternally
+        set(value) = definedExternally
+    var __EMSCRIPTEN_minor__: Number?
+        get() = definedExternally
+        set(value) = definedExternally
+    var __EMSCRIPTEN_tiny__: Number?
+        get() = definedExternally
+        set(value) = definedExternally
     var mallinfo: (() -> mallinfo)?
         get() = definedExternally
         set(value) = definedExternally
@@ -1000,12 +913,6 @@ external interface ModulePartial /*: Emscripten.EmscriptenModulePartial*/ {
         get() = definedExternally
         set(value) = definedExternally
     var ImDrawVertColOffset: Number?
-        get() = definedExternally
-        set(value) = definedExternally
-    var FLT_MIN: Number?
-        get() = definedExternally
-        set(value) = definedExternally
-    var FLT_MAX: Number?
         get() = definedExternally
         set(value) = definedExternally
     var ImGuiListClipper: Any?
@@ -1048,6 +955,9 @@ external interface ModulePartial /*: Emscripten.EmscriptenModulePartial*/ {
         get() = definedExternally
         set(value) = definedExternally
     var ShowMetricsWindow: ((p_open: dynamic /* JsTuple<Boolean> */) -> Unit)?
+        get() = definedExternally
+        set(value) = definedExternally
+    var ShowStackToolWindow: ((p_open: dynamic /* JsTuple<Boolean> */) -> Unit)?
         get() = definedExternally
         set(value) = definedExternally
     var ShowAboutWindow: ((p_open: dynamic /* JsTuple<Boolean> */) -> Unit)?
@@ -1174,9 +1084,6 @@ external interface ModulePartial /*: Emscripten.EmscriptenModulePartial*/ {
         get() = definedExternally
         set(value) = definedExternally
     var GetWindowContentRegionMax: ((out: interface_ImVec2) -> Any)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var GetWindowContentRegionWidth: (() -> Number)?
         get() = definedExternally
         set(value) = definedExternally
     var GetScrollX: (() -> Number)?
@@ -1419,9 +1326,9 @@ external interface ModulePartial /*: Emscripten.EmscriptenModulePartial*/ {
     var EndCombo: (() -> Unit)?
         get() = definedExternally
         set(value) = definedExternally
-    fun <T> Combo (label: String, current_item: dynamic /* JsTuple<Number> */, items_getter: (data: T, idx: Number, out_text: dynamic /* JsTuple<String> */) -> Boolean, data: T, items_count: Number, popup_max_height_in_items: Number) : Boolean?
-        //get() = definedExternally
-        //set(value) = definedExternally
+    var /*<T>*/ Combo: ((label: String, current_item: dynamic /* JsTuple<Number> */, items_getter: (data: dynamic, idx: Number, out_text: dynamic /* JsTuple<String> */) -> Boolean, data: dynamic, items_count: Number, popup_max_height_in_items: Number) -> Boolean)?
+        get() = definedExternally
+        set(value) = definedExternally
     var DragFloat: ((label: String, v: dynamic /* JsTuple<Number> | JsTuple<Number, Number> | JsTuple<Number, Number, Number> | JsTuple<Number, Number, Number, Number> */, v_speed: Number, v_min: Number, v_max: Number, format: String?, flags: ImGuiSliderFlags) -> Boolean)?
         get() = definedExternally
         set(value) = definedExternally
@@ -1596,22 +1503,24 @@ external interface ModulePartial /*: Emscripten.EmscriptenModulePartial*/ {
     var Selectable_B: ((label: String, p_selected: dynamic /* JsTuple<Boolean> */, flags: ImGuiSelectableFlags, size: interface_ImVec2) -> Boolean)?
         get() = definedExternally
         set(value) = definedExternally
+    var BeginListBox: ((label: String, size: Readonly<interface_ImVec2>) -> Boolean)?
+        get() = definedExternally
+        set(value) = definedExternally
+    var EndListBox: (() -> Unit)?
+        get() = definedExternally
+        set(value) = definedExternally
     var ListBox_A: ((label: String, current_item: dynamic /* JsTuple<Number> */, items: Array<String>, items_count: Number, height_in_items: Number) -> Boolean)?
         get() = definedExternally
         set(value) = definedExternally
-    fun <T> ListBox_B(label: String, current_item: dynamic /* JsTuple<Number> */, items_getter: (data: T, idx: Number, out_text: dynamic /* JsTuple<String> */) -> Boolean, data: T, items_count: Number, height_in_items: Number) : Boolean?
-
-    var ListBoxHeader_A: ((label: String, size: Readonly<interface_ImVec2>) -> Boolean)?
+    var /*<T>*/ ListBox_B: ((label: String, current_item: dynamic /* JsTuple<Number> */, items_getter: (data: dynamic, idx: Number, out_text: dynamic /* JsTuple<String> */) -> Boolean, data: dynamic, items_count: Number, height_in_items: Number) -> Boolean)?
         get() = definedExternally
         set(value) = definedExternally
-    var ListBoxHeader_B: ((label: String, items_count: Number, height_in_items: Number) -> Boolean)?
+    var /*<T>*/ PlotLines: ((label: String, values_getter: (data: dynamic, idx: Number) -> Number, data: dynamic, values_count: Number, value_offset: Number, overlay_text: String?, scale_min: Number, scale_max: Number, graph_size: Readonly<interface_ImVec2>) -> Unit)?
         get() = definedExternally
         set(value) = definedExternally
-    var ListBoxFooter: (() -> Unit)?
+    var /*<T>*/ PlotHistogram: ((label: String, values_getter: (data: dynamic, idx: Number) -> Number, data: dynamic, values_count: Number, value_offset: Number, overlay_text: String?, scale_min: Number, scale_max: Number, graph_size: Readonly<interface_ImVec2>) -> Unit)?
         get() = definedExternally
         set(value) = definedExternally
-    fun <T> PlotLines(label: String, values_getter: (data: T, idx: Number) -> Number, data: T, values_count: Number, value_offset: Number, overlay_text: String?, scale_min: Number, scale_max: Number, graph_size: Readonly<interface_ImVec2>) : Unit?
-    fun <T> PlotHistogram (label: String, values_getter: (data: T, idx: Number) -> Number, data: T, values_count: Number, value_offset: Number, overlay_text: String?, scale_min: Number, scale_max: Number, graph_size: Readonly<interface_ImVec2>) : Unit?
     var Value_A: ((prefix: String, b: Boolean) -> Unit)?
         get() = definedExternally
         set(value) = definedExternally
@@ -1732,6 +1641,9 @@ external interface ModulePartial /*: Emscripten.EmscriptenModulePartial*/ {
     var TableGetColumnFlags: ((column_n: Number) -> ImGuiTableColumnFlags)?
         get() = definedExternally
         set(value) = definedExternally
+    var TableSetColumnEnabled: ((column_n: Number, v: Boolean) -> Unit)?
+        get() = definedExternally
+        set(value) = definedExternally
     var TableSetBgColor: ((target: ImGuiTableBgTarget, color: ImU32, column_n: Number) -> Unit)?
         get() = definedExternally
         set(value) = definedExternally
@@ -1816,6 +1728,12 @@ external interface ModulePartial /*: Emscripten.EmscriptenModulePartial*/ {
     var GetDragDropPayload: (() -> Nothing?)?
         get() = definedExternally
         set(value) = definedExternally
+    var BeginDisabled: ((disabled: Boolean) -> Unit)?
+        get() = definedExternally
+        set(value) = definedExternally
+    var EndDisabled: (() -> Unit)?
+        get() = definedExternally
+        set(value) = definedExternally
     var PushClipRect: ((clip_rect_min: Readonly<interface_ImVec2>, clip_rect_max: Readonly<interface_ImVec2>, intersect_with_current_clip_rect: Boolean) -> Unit)?
         get() = definedExternally
         set(value) = definedExternally
@@ -1879,6 +1797,9 @@ external interface ModulePartial /*: Emscripten.EmscriptenModulePartial*/ {
     var SetItemAllowOverlap: (() -> Unit)?
         get() = definedExternally
         set(value) = definedExternally
+    var GetMainViewport: (() -> reference_ImGuiViewport)?
+        get() = definedExternally
+        set(value) = definedExternally
     var IsRectVisible_A: ((size: Readonly<interface_ImVec2>) -> Boolean)?
         get() = definedExternally
         set(value) = definedExternally
@@ -1901,9 +1822,6 @@ external interface ModulePartial /*: Emscripten.EmscriptenModulePartial*/ {
         get() = definedExternally
         set(value) = definedExternally
     var GetStyleColorName: ((idx: ImGuiCol) -> String)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var CalcListClipping: ((items_count: Number, items_height: Number, out_items_display_start: dynamic /* JsTuple<Number> */, out_items_display_end: dynamic /* JsTuple<Number> */) -> Unit)?
         get() = definedExternally
         set(value) = definedExternally
     var BeginChildFrame: ((id: ImGuiID, size: Readonly<interface_ImVec2>, flags: ImGuiWindowFlags) -> Boolean)?
@@ -1955,6 +1873,9 @@ external interface ModulePartial /*: Emscripten.EmscriptenModulePartial*/ {
         get() = definedExternally
         set(value) = definedExternally
     var IsMouseDoubleClicked: ((button: ImGuiMouseButton) -> Boolean)?
+        get() = definedExternally
+        set(value) = definedExternally
+    var GetMouseClickedCount: ((button: ImGuiMouseButton) -> Number)?
         get() = definedExternally
         set(value) = definedExternally
     var IsMouseHoveringRect: ((r_min: Readonly<interface_ImVec2>, r_max: Readonly<interface_ImVec2>, clip: Boolean) -> Boolean)?
@@ -2012,42 +1933,6 @@ external interface ModulePartial /*: Emscripten.EmscriptenModulePartial*/ {
         get() = definedExternally
         set(value) = definedExternally
     var MemFree: ((ptr: Any) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var GetCurrentWindow: (() -> reference_ImGuiWindow)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var GetHoveredWindow: (() -> reference_ImGuiWindow)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var GetHoveredRootWindow: (() -> reference_ImGuiWindow)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var GetActiveWindow: (() -> reference_ImGuiWindow)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var GetHoveredId: (() -> ImGuiID)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var GetHoveredIdPreviousFrame: (() -> ImGuiID)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var GetActiveId: (() -> ImGuiID)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var GetActiveIdPreviousFrame: (() -> ImGuiID)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var SetActiveId: ((id: ImGuiID) -> Unit)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var GetInputTextState: ((id: ImGuiID) -> reference_ImGuiInputTextState)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var GetInputTextId: (() -> ImGuiID)?
-        get() = definedExternally
-        set(value) = definedExternally
-    var ImTransform: (() -> reference_ImTransform)?
         get() = definedExternally
         set(value) = definedExternally
 }

@@ -26,6 +26,8 @@ fun <T>ImAccess(currentValue: KMutableProperty0<T>):ImAccess<T>/*:ImAccess<dynam
     }
 }
 
+fun <T>ImAccess<T>.value():T = this.asDynamic()()
+
 typealias ImScalar<T> = Array<T>//[ T ];
 typealias ImTuple2<T> = Array<T>//[ T, T ];
 typealias ImTuple3<T> = Array<T>//[ T, T, T ];
@@ -89,7 +91,7 @@ typealias ImGuiTabBarFlags = Number
 
 typealias ImGuiTabItemFlags = Number
 
-typealias TableFlags = Number
+typealias ImGuiTableFlags = Number
 
 typealias ImGuiTableColumnFlags = Number
 
@@ -99,7 +101,7 @@ typealias ImGuiTreeNodeFlags = Number
 
 typealias ImGuiViewportFlags = Number
 
-typealias WindowFlags = Number
+typealias ImGuiWindowFlags = Number
 
 typealias ImTextureID = Number
 
