@@ -14,7 +14,7 @@ import kotlin.coroutines.suspendCoroutine
 
 class ImGuiLib(
     val loopCallback: (Double) -> Boolean,
-    val doneCallback: (Double) -> Unit,
+    val doneCallback: (Double) -> Unit = {},
     var clear_color:ImGui.ImVec4 = ImGui.ImVec4(0.0f, 0.0f, 0.0f, 0.00f)
 ) {
 

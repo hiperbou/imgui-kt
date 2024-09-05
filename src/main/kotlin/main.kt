@@ -6,7 +6,8 @@ suspend fun main()
 {
     println("new main ")
 
-    example()
-    //exampleDSL()
+    Example().init()
+    //DslExample().init()
+    //SimpleExample().init()
 }
 
