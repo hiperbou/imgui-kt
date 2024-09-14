@@ -38,8 +38,8 @@ kotlin {
             //implementation "org.jetbrains.kotlinx:kotlinx-serialization-core:$serialization_version"
             //implementation "org.jetbrains.kotlinx:kotlinx-serialization-runtime-js:$serialization_version"
             implementation "io.github.hiperbou.imgui-kt:imgui-kt-definitions:0.0.1"
+            implementation "io.github.hiperbou.imgui-kt:imgui-kt:0.0.1"
 
-            implementation npm('@zhobo63/imgui-ts', '0.1.45')
             //implementation npm('karma', '4.3.1')
         }
     }

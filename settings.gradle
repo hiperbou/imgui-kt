@@ -5,5 +5,5 @@ pluginManagement {
     }
     
 }
-rootProject.name = 'imgui-kt'
+rootProject.name = 'imgui-kt-examples'
 
