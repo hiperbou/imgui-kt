@@ -28,6 +28,7 @@ import com.hiperbou.imguijs.ImGui.Checkbox
 import com.hiperbou.imguijs.ImGui.CheckboxFlags
 import com.hiperbou.imguijs.ImGui.CollapsingHeader
 import com.hiperbou.imguijs.ImGui.Combo
+import com.hiperbou.imguijs.ImGui.Combo_Items_Array
 import com.hiperbou.imguijs.ImGui.End
 import com.hiperbou.imguijs.ImGui.EndChild
 import com.hiperbou.imguijs.ImGui.EndChildFrame
@@ -303,9 +304,16 @@ import org.khronos.webgl.WebGLTexture
         }
     }
 
-    inline fun combo(label: String, noinline currentItem: ImAccess<Int>, itemsSeparatedByZeros: String,
+    inline fun combo(label: String, noinline currentItem: ImAccess<Int>, items: Array<String>,
                      heightInItems: Int = -1, block: () -> Unit = {}) {
-        if (Combo(label, currentItem, itemsSeparatedByZeros, heightInItems))
+        if (Combo_Items_Array(label, currentItem, items, items.size, heightInItems))
+            block()
+    }
+
+    fun <T:Enum<T>>comboEnum(label:String, enumValues:Array<T>, selectedIndex: ImAccess<Int>,
+                             heightInItems: Int = -1, block: () -> Unit = {}) {
+        val enumComboItems = enumValues.map{ it.name }.toTypedArray()
+        if (Combo_Items_Array(label, selectedIndex, enumComboItems, enumComboItems.size, heightInItems))
             block()
     }
 

@@ -1859,18 +1859,18 @@ external object ImGui {
     @JsName("Combo")
     fun Combo_Items_Array(
         label: String,
-        current_item: ImAccess<Number>,
+        current_item: ImAccess<Int>,
         items: Array<String>,
-        items_count: Number? = definedExternally /* null */,
+        items_count: Int? = definedExternally /* null */,
         popup_max_height_in_items: Number? = definedExternally /* null */
     ): Boolean = definedExternally
 
     @JsName("Combo")
     fun Combo_Scalar(
         label: String,
-        current_item: ImScalar<Number>,
+        current_item: ImScalar<Int>,
         items: Array<String>,
-        items_count: Number? = definedExternally /* null */,
+        items_count: Int? = definedExternally /* null */,
         popup_max_height_in_items: Number? = definedExternally /* null */
     ): Boolean = definedExternally
 
@@ -1884,24 +1884,24 @@ external object ImGui {
     @JsName("Combo")
     fun <T>Combo_Scalar(
         label: String,
-        current_item: ImScalar<Number>,
+        current_item: ImScalar<Int>,
         items_separated_by_zeros: String,
         popup_max_height_in_items: Number? = definedExternally /* null */
     ): Boolean = definedExternally
 
     fun <T> Combo(
         label: String,
-        current_item: ImAccess<Number>,
+        current_item: ImAccess<Int>,
         items_getter: (data: T, idx: Number, out_text: dynamic /* JsTuple<String> */) -> Boolean,
         data: T,
-        items_count: Number,
+        items_count: Int,
         popup_max_height_in_items: Number? = definedExternally /* null */
     ): Boolean = definedExternally
 
     @JsName("Combo")
     fun <T>Combo_Scalar(
         label: String,
-        current_item: ImScalar<Number>,
+        current_item: ImScalar<Int>,
         items_getter: (data: T, idx: Number, out_text: dynamic /* JsTuple<String> */) -> Boolean,
         data: T,
         items_count: Number,
@@ -4129,35 +4129,35 @@ external object ImGui {
     fun EndListBox(): Unit = definedExternally
     fun ListBox(
         label: String,
-        current_item: ImAccess<Number>,
+        current_item: ImAccess<Int>,
         items: Array<String>,
-        items_count: Number? = definedExternally /* null */,
+        items_count: Int? = definedExternally /* null */,
         height_in_items: Number? = definedExternally /* null */
     ): Boolean = definedExternally
 
     fun ListBox(
         label: String,
-        current_item: ImScalar<Number>,
+        current_item: ImScalar<Int>,
         items: Array<String>,
-        items_count: Number? = definedExternally /* null */,
+        items_count: Int? = definedExternally /* null */,
         height_in_items: Number? = definedExternally /* null */
     ): Boolean = definedExternally
 
     fun <T> ListBox(
         label: String,
-        current_item: ImAccess<Number>,
+        current_item: ImAccess<Int>,
         items_getter: (data: T, idx: Number, out_text: dynamic /* JsTuple<String> */) -> Boolean,
         data: T,
-        items_count: Number,
+        items_count: Int,
         height_in_items: Number? = definedExternally /* null */
     ): Boolean = definedExternally
 
     fun <T> ListBox(
         label: String,
-        current_item: ImScalar<Number>,
+        current_item: ImScalar<Int>,
         items_getter: (data: T, idx: Number, out_text: dynamic /* JsTuple<String> */) -> Boolean,
         data: T,
-        items_count: Number,
+        items_count: Int,
         height_in_items: Number? = definedExternally /* null */
     ): Boolean = definedExternally
 
