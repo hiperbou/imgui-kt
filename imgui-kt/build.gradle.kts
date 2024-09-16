@@ -20,7 +20,7 @@ kotlin {
         val jsMain by getting
 
         jsMain.dependencies {
-            implementation("io.github.hiperbou.imgui-kt:imgui-kt-definitions:0.0.1")
+            implementation("io.github.hiperbou.imgui-kt:imgui-kt-definitions:0.0.2")
         }
     }
 

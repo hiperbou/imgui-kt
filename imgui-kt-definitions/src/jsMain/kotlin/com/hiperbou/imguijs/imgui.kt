@@ -72,139 +72,139 @@ external object ImGui {
         open var buffer: String = definedExternally
     }
 
-    enum class ImGuiWindowFlags {
-        None /* = 0 */, NoTitleBar /* = 1 */, NoResize /* = 2 */, NoMove /* = 4 */, NoScrollbar /* = 8 */, NoScrollWithMouse /* = 16 */, NoCollapse /* = 32 */, AlwaysAutoResize /* = 64 */, NoBackground /* = 128 */, NoSavedSettings /* = 256 */, NoMouseInputs /* = 512 */, MenuBar /* = 1024 */, HorizontalScrollbar /* = 2048 */, NoFocusOnAppearing /* = 4096 */, NoBringToFrontOnFocus /* = 8192 */, AlwaysVerticalScrollbar /* = 16384 */, AlwaysHorizontalScrollbar /* = 32768 */, AlwaysUseWindowPadding /* = 65536 */, NoNavInputs /* = 262144 */, NoNavFocus /* = 524288 */, UnsavedDocument /* = 1048576 */, NoNav /* = 786432 */, NoDecoration /* = 43 */, NoInputs /* = 786944 */, NavFlattened /* = 8388608 */, ChildWindow /* = 16777216 */, Tooltip /* = 33554432 */, Popup /* = 67108864 */, Modal /* = 134217728 */, ChildMenu /* = 268435456 */
+    object ImGuiWindowFlags {
+        val None :Int = definedExternally /*0 */; val NoTitleBar :Int = definedExternally /*1 */; val NoResize :Int = definedExternally /*2 */; val NoMove :Int = definedExternally /*4 */; val NoScrollbar :Int = definedExternally /*8 */; val NoScrollWithMouse :Int = definedExternally /*16 */; val NoCollapse :Int = definedExternally /*32 */; val AlwaysAutoResize :Int = definedExternally /*64 */; val NoBackground :Int = definedExternally /*128 */; val NoSavedSettings :Int = definedExternally /*256 */; val NoMouseInputs :Int = definedExternally /*512 */; val MenuBar :Int = definedExternally /*1024 */; val HorizontalScrollbar :Int = definedExternally /*2048 */; val NoFocusOnAppearing :Int = definedExternally /*4096 */; val NoBringToFrontOnFocus :Int = definedExternally /*8192 */; val AlwaysVerticalScrollbar :Int = definedExternally /*16384 */; val AlwaysHorizontalScrollbar :Int = definedExternally /*32768 */; val AlwaysUseWindowPadding :Int = definedExternally /*65536 */; val NoNavInputs :Int = definedExternally /*262144 */; val NoNavFocus :Int = definedExternally /*524288 */; val UnsavedDocument :Int = definedExternally /*1048576 */; val NoNav :Int = definedExternally /*786432 */; val NoDecoration :Int = definedExternally /*43 */; val NoInputs :Int = definedExternally /*786944 */; val NavFlattened :Int = definedExternally /*8388608 */; val ChildWindow :Int = definedExternally /*16777216 */; val Tooltip :Int = definedExternally /*33554432 */; val Popup :Int = definedExternally /*67108864 */; val Modal :Int = definedExternally /*134217728 */; val ChildMenu :Int = definedExternally /*268435456 */
     }
 
-    enum class ImGuiInputTextFlags {
-        None /* = 0 */, CharsDecimal /* = 1 */, CharsHexadecimal /* = 2 */, CharsUppercase /* = 4 */, CharsNoBlank /* = 8 */, AutoSelectAll /* = 16 */, EnterReturnsTrue /* = 32 */, CallbackCompletion /* = 64 */, CallbackHistory /* = 128 */, CallbackAlways /* = 256 */, CallbackCharFilter /* = 512 */, AllowTabInput /* = 1024 */, CtrlEnterForNewLine /* = 2048 */, NoHorizontalScroll /* = 4096 */, AlwaysOverwrite /* = 8192 */, ReadOnly /* = 16384 */, Password /* = 32768 */, NoUndoRedo /* = 65536 */, CharsScientific /* = 131072 */, CallbackResize /* = 262144 */, CallbackEdit /* = 524288 */, Multiline /* = 1048576 */, NoMarkEdited /* = 2097152 */
+    object ImGuiInputTextFlags {
+        val None :Int = definedExternally /*0 */; val CharsDecimal :Int = definedExternally /*1 */; val CharsHexadecimal :Int = definedExternally /*2 */; val CharsUppercase :Int = definedExternally /*4 */; val CharsNoBlank :Int = definedExternally /*8 */; val AutoSelectAll :Int = definedExternally /*16 */; val EnterReturnsTrue :Int = definedExternally /*32 */; val CallbackCompletion :Int = definedExternally /*64 */; val CallbackHistory :Int = definedExternally /*128 */; val CallbackAlways :Int = definedExternally /*256 */; val CallbackCharFilter :Int = definedExternally /*512 */; val AllowTabInput :Int = definedExternally /*1024 */; val CtrlEnterForNewLine :Int = definedExternally /*2048 */; val NoHorizontalScroll :Int = definedExternally /*4096 */; val AlwaysOverwrite :Int = definedExternally /*8192 */; val ReadOnly :Int = definedExternally /*16384 */; val Password :Int = definedExternally /*32768 */; val NoUndoRedo :Int = definedExternally /*65536 */; val CharsScientific :Int = definedExternally /*131072 */; val CallbackResize :Int = definedExternally /*262144 */; val CallbackEdit :Int = definedExternally /*524288 */; val Multiline :Int = definedExternally /*1048576 */; val NoMarkEdited :Int = definedExternally /*2097152 */
     }
 
-    enum class ImGuiTreeNodeFlags {
-        None /* = 0 */, Selected /* = 1 */, Framed /* = 2 */, AllowItemOverlap /* = 4 */, NoTreePushOnOpen /* = 8 */, NoAutoOpenOnLog /* = 16 */, DefaultOpen /* = 32 */, OpenOnDoubleClick /* = 64 */, OpenOnArrow /* = 128 */, Leaf /* = 256 */, Bullet /* = 512 */, FramePadding /* = 1024 */, SpanAvailWidth /* = 2048 */, SpanFullWidth /* = 4096 */, NavLeftJumpsBackHere /* = 8192 */, CollapsingHeader /* = 26 */
+    object ImGuiTreeNodeFlags {
+        val None :Int = definedExternally /*0 */; val Selected :Int = definedExternally /*1 */; val Framed :Int = definedExternally /*2 */; val AllowItemOverlap :Int = definedExternally /*4 */; val NoTreePushOnOpen :Int = definedExternally /*8 */; val NoAutoOpenOnLog :Int = definedExternally /*16 */; val DefaultOpen :Int = definedExternally /*32 */; val OpenOnDoubleClick :Int = definedExternally /*64 */; val OpenOnArrow :Int = definedExternally /*128 */; val Leaf :Int = definedExternally /*256 */; val Bullet :Int = definedExternally /*512 */; val FramePadding :Int = definedExternally /*1024 */; val SpanAvailWidth :Int = definedExternally /*2048 */; val SpanFullWidth :Int = definedExternally /*4096 */; val NavLeftJumpsBackHere :Int = definedExternally /*8192 */; val CollapsingHeader :Int = definedExternally /*26 */
     }
 
-    enum class ImGuiPopupFlags {
-        None /* = 0 */, MouseButtonLeft /* = 0 */, MouseButtonRight /* = 1 */, MouseButtonMiddle /* = 2 */, MouseButtonMask_ /* = 31 */, MouseButtonDefault_ /* = 1 */, NoOpenOverExistingPopup /* = 32 */, NoOpenOverItems /* = 64 */, AnyPopupId /* = 128 */, AnyPopupLevel /* = 256 */, AnyPopup /* = 384 */
+    object ImGuiPopupFlags {
+        val None :Int = definedExternally /*0 */; val MouseButtonLeft :Int = definedExternally /*0 */; val MouseButtonRight :Int = definedExternally /*1 */; val MouseButtonMiddle :Int = definedExternally /*2 */; val MouseButtonMask_ :Int = definedExternally /*31 */; val MouseButtonDefault_ :Int = definedExternally /*1 */; val NoOpenOverExistingPopup :Int = definedExternally /*32 */; val NoOpenOverItems :Int = definedExternally /*64 */; val AnyPopupId :Int = definedExternally /*128 */; val AnyPopupLevel :Int = definedExternally /*256 */; val AnyPopup :Int = definedExternally /*384 */
     }
 
-    enum class ImGuiSelectableFlags {
-        None /* = 0 */, DontClosePopups /* = 1 */, SpanAllColumns /* = 2 */, AllowDoubleClick /* = 4 */, Disabled /* = 8 */, AllowItemOverlap /* = 16 */
+    object ImGuiSelectableFlags {
+        val None :Int = definedExternally /*0 */; val DontClosePopups :Int = definedExternally /*1 */; val SpanAllColumns :Int = definedExternally /*2 */; val AllowDoubleClick :Int = definedExternally /*4 */; val Disabled :Int = definedExternally /*8 */; val AllowItemOverlap :Int = definedExternally /*16 */
     }
 
-    enum class ImGuiComboFlags {
-        None /* = 0 */, PopupAlignLeft /* = 1 */, HeightSmall /* = 2 */, HeightRegular /* = 4 */, HeightLarge /* = 8 */, HeightLargest /* = 16 */, NoArrowButton /* = 32 */, NoPreview /* = 64 */, HeightMask_ /* = 30 */
+    object ImGuiComboFlags {
+        val None :Int = definedExternally /*0 */; val PopupAlignLeft :Int = definedExternally /*1 */; val HeightSmall :Int = definedExternally /*2 */; val HeightRegular :Int = definedExternally /*4 */; val HeightLarge :Int = definedExternally /*8 */; val HeightLargest :Int = definedExternally /*16 */; val NoArrowButton :Int = definedExternally /*32 */; val NoPreview :Int = definedExternally /*64 */; val HeightMask_ :Int = definedExternally /*30 */
     }
 
-    enum class ImGuiTabBarFlags {
-        None /* = 0 */, Reorderable /* = 1 */, AutoSelectNewTabs /* = 2 */, TabListPopupButton /* = 4 */, NoCloseWithMiddleMouseButton /* = 8 */, NoTabListScrollingButtons /* = 16 */, NoTooltip /* = 32 */, FittingPolicyResizeDown /* = 64 */, FittingPolicyScroll /* = 128 */, FittingPolicyMask_ /* = 192 */, FittingPolicyDefault_ /* = 64 */
+    object ImGuiTabBarFlags {
+        val None :Int = definedExternally /*0 */; val Reorderable :Int = definedExternally /*1 */; val AutoSelectNewTabs :Int = definedExternally /*2 */; val TabListPopupButton :Int = definedExternally /*4 */; val NoCloseWithMiddleMouseButton :Int = definedExternally /*8 */; val NoTabListScrollingButtons :Int = definedExternally /*16 */; val NoTooltip :Int = definedExternally /*32 */; val FittingPolicyResizeDown :Int = definedExternally /*64 */; val FittingPolicyScroll :Int = definedExternally /*128 */; val FittingPolicyMask_ :Int = definedExternally /*192 */; val FittingPolicyDefault_ :Int = definedExternally /*64 */
     }
 
-    enum class ImGuiTabItemFlags {
-        None /* = 0 */, UnsavedDocument /* = 1 */, SetSelected /* = 2 */, NoCloseWithMiddleMouseButton /* = 4 */, NoPushId /* = 8 */, NoTooltip /* = 16 */, NoReorder /* = 32 */, Leading /* = 64 */, Trailing /* = 128 */
+    object ImGuiTabItemFlags {
+        val None :Int = definedExternally /*0 */; val UnsavedDocument :Int = definedExternally /*1 */; val SetSelected :Int = definedExternally /*2 */; val NoCloseWithMiddleMouseButton :Int = definedExternally /*4 */; val NoPushId :Int = definedExternally /*8 */; val NoTooltip :Int = definedExternally /*16 */; val NoReorder :Int = definedExternally /*32 */; val Leading :Int = definedExternally /*64 */; val Trailing :Int = definedExternally /*128 */
     }
 
-    enum class ImGuiTableFlags {
-        None /* = 0 */, Resizable /* = 1 */, Reorderable /* = 2 */, Hideable /* = 4 */, Sortable /* = 8 */, NoSavedSettings /* = 16 */, ContextMenuInBody /* = 32 */, RowBg /* = 64 */, BordersInnerH /* = 128 */, BordersOuterH /* = 256 */, BordersInnerV /* = 512 */, BordersOuterV /* = 1024 */, BordersH /* = 384 */, BordersV /* = 1536 */, BordersInner /* = 640 */, BordersOuter /* = 1280 */, Borders /* = 1920 */, NoBordersInBody /* = 2048 */, NoBordersInBodyUntilResize /* = 4096 */, SizingFixedFit /* = 8192 */, SizingFixedSame /* = 16384 */, SizingStretchProp /* = 24576 */, SizingStretchSame /* = 32768 */, NoHostExtendX /* = 65536 */, NoHostExtendY /* = 131072 */, NoKeepColumnsVisible /* = 262144 */, PreciseWidths /* = 524288 */, NoClip /* = 1048576 */, PadOuterX /* = 2097152 */, NoPadOuterX /* = 4194304 */, NoPadInnerX /* = 8388608 */, ScrollX /* = 16777216 */, ScrollY /* = 33554432 */, SortMulti /* = 67108864 */, SortTristate /* = 134217728 */, SizingMask_ /* = 57344 */
+    object ImGuiTableFlags {
+        val None :Int = definedExternally /*0 */; val Resizable :Int = definedExternally /*1 */; val Reorderable :Int = definedExternally /*2 */; val Hideable :Int = definedExternally /*4 */; val Sortable :Int = definedExternally /*8 */; val NoSavedSettings :Int = definedExternally /*16 */; val ContextMenuInBody :Int = definedExternally /*32 */; val RowBg :Int = definedExternally /*64 */; val BordersInnerH :Int = definedExternally /*128 */; val BordersOuterH :Int = definedExternally /*256 */; val BordersInnerV :Int = definedExternally /*512 */; val BordersOuterV :Int = definedExternally /*1024 */; val BordersH :Int = definedExternally /*384 */; val BordersV :Int = definedExternally /*1536 */; val BordersInner :Int = definedExternally /*640 */; val BordersOuter :Int = definedExternally /*1280 */; val Borders :Int = definedExternally /*1920 */; val NoBordersInBody :Int = definedExternally /*2048 */; val NoBordersInBodyUntilResize :Int = definedExternally /*4096 */; val SizingFixedFit :Int = definedExternally /*8192 */; val SizingFixedSame :Int = definedExternally /*16384 */; val SizingStretchProp :Int = definedExternally /*24576 */; val SizingStretchSame :Int = definedExternally /*32768 */; val NoHostExtendX :Int = definedExternally /*65536 */; val NoHostExtendY :Int = definedExternally /*131072 */; val NoKeepColumnsVisible :Int = definedExternally /*262144 */; val PreciseWidths :Int = definedExternally /*524288 */; val NoClip :Int = definedExternally /*1048576 */; val PadOuterX :Int = definedExternally /*2097152 */; val NoPadOuterX :Int = definedExternally /*4194304 */; val NoPadInnerX :Int = definedExternally /*8388608 */; val ScrollX :Int = definedExternally /*16777216 */; val ScrollY :Int = definedExternally /*33554432 */; val SortMulti :Int = definedExternally /*67108864 */; val SortTristate :Int = definedExternally /*134217728 */; val SizingMask_ :Int = definedExternally /*57344 */
     }
 
-    enum class ImGuiTableColumnFlags {
-        None /* = 0 */, Disabled /* = 1 */, DefaultHide /* = 2 */, DefaultSort /* = 4 */, WidthStretch /* = 8 */, WidthFixed /* = 16 */, NoResize /* = 32 */, NoReorder /* = 64 */, NoHide /* = 128 */, NoClip /* = 256 */, NoSort /* = 512 */, NoSortAscending /* = 1024 */, NoSortDescending /* = 2048 */, NoHeaderLabel /* = 4096 */, NoHeaderWidth /* = 8192 */, PreferSortAscending /* = 16384 */, PreferSortDescending /* = 32768 */, IndentEnable /* = 65536 */, IndentDisable /* = 131072 */, IsEnabled /* = 16777216 */, IsVisible /* = 33554432 */, IsSorted /* = 67108864 */, IsHovered /* = 134217728 */, WidthMask_ /* = 24 */, IndentMask_ /* = 196608 */, StatusMask_ /* = 251658240 */, NoDirectResize_ /* = 1073741824 */
+    object ImGuiTableColumnFlags {
+        val None :Int = definedExternally /*0 */; val Disabled :Int = definedExternally /*1 */; val DefaultHide :Int = definedExternally /*2 */; val DefaultSort :Int = definedExternally /*4 */; val WidthStretch :Int = definedExternally /*8 */; val WidthFixed :Int = definedExternally /*16 */; val NoResize :Int = definedExternally /*32 */; val NoReorder :Int = definedExternally /*64 */; val NoHide :Int = definedExternally /*128 */; val NoClip :Int = definedExternally /*256 */; val NoSort :Int = definedExternally /*512 */; val NoSortAscending :Int = definedExternally /*1024 */; val NoSortDescending :Int = definedExternally /*2048 */; val NoHeaderLabel :Int = definedExternally /*4096 */; val NoHeaderWidth :Int = definedExternally /*8192 */; val PreferSortAscending :Int = definedExternally /*16384 */; val PreferSortDescending :Int = definedExternally /*32768 */; val IndentEnable :Int = definedExternally /*65536 */; val IndentDisable :Int = definedExternally /*131072 */; val IsEnabled :Int = definedExternally /*16777216 */; val IsVisible :Int = definedExternally /*33554432 */; val IsSorted :Int = definedExternally /*67108864 */; val IsHovered :Int = definedExternally /*134217728 */; val WidthMask_ :Int = definedExternally /*24 */; val IndentMask_ :Int = definedExternally /*196608 */; val StatusMask_ :Int = definedExternally /*251658240 */; val NoDirectResize_ :Int = definedExternally /*1073741824 */
     }
 
-    enum class ImGuiTableRowFlags {
-        None /* = 0 */, Headers /* = 1 */
+    object ImGuiTableRowFlags {
+        val None :Int = definedExternally /*0 */; val Headers :Int = definedExternally /*1 */
     }
 
-    enum class ImGuiTableBgTarget {
-        None /* = 0 */, RowBg0 /* = 1 */, RowBg1 /* = 2 */, CellBg /* = 3 */
+    object ImGuiTableBgTarget {
+        val None :Int = definedExternally /*0 */; val RowBg0 :Int = definedExternally /*1 */; val RowBg1 :Int = definedExternally /*2 */; val CellBg :Int = definedExternally /*3 */
     }
 
-    enum class ImGuiFocusedFlags {
-        None /* = 0 */, ChildWindows /* = 1 */, RootWindow /* = 2 */, AnyWindow /* = 4 */, NoPopupHierarchy /* = 8 */, RootAndChildWindows /* = 3 */
+    object ImGuiFocusedFlags {
+        val None :Int = definedExternally /*0 */; val ChildWindows :Int = definedExternally /*1 */; val RootWindow :Int = definedExternally /*2 */; val AnyWindow :Int = definedExternally /*4 */; val NoPopupHierarchy :Int = definedExternally /*8 */; val RootAndChildWindows :Int = definedExternally /*3 */
     }
 
-    enum class ImGuiHoveredFlags {
-        None /* = 0 */, ChildWindows /* = 1 */, RootWindow /* = 2 */, AnyWindow /* = 4 */, NoPopupHierarchy /* = 8 */, AllowWhenBlockedByPopup /* = 32 */, AllowWhenBlockedByActiveItem /* = 128 */, AllowWhenOverlapped /* = 256 */, AllowWhenDisabled /* = 512 */, RectOnly /* = 416 */, RootAndChildWindows /* = 3 */
+    object ImGuiHoveredFlags {
+        val None :Int = definedExternally /*0 */; val ChildWindows :Int = definedExternally /*1 */; val RootWindow :Int = definedExternally /*2 */; val AnyWindow :Int = definedExternally /*4 */; val NoPopupHierarchy :Int = definedExternally /*8 */; val AllowWhenBlockedByPopup :Int = definedExternally /*32 */; val AllowWhenBlockedByActiveItem :Int = definedExternally /*128 */; val AllowWhenOverlapped :Int = definedExternally /*256 */; val AllowWhenDisabled :Int = definedExternally /*512 */; val RectOnly :Int = definedExternally /*416 */; val RootAndChildWindows :Int = definedExternally /*3 */
     }
 
-    enum class ImGuiDragDropFlags {
-        None /* = 0 */, SourceNoPreviewTooltip /* = 1 */, SourceNoDisableHover /* = 2 */, SourceNoHoldToOpenOthers /* = 4 */, SourceAllowNullID /* = 8 */, SourceExtern /* = 16 */, SourceAutoExpirePayload /* = 32 */, AcceptBeforeDelivery /* = 1024 */, AcceptNoDrawDefaultRect /* = 2048 */, AcceptNoPreviewTooltip /* = 4096 */, AcceptPeekOnly /* = 3072 */
+    object ImGuiDragDropFlags {
+        val None :Int = definedExternally /*0 */; val SourceNoPreviewTooltip :Int = definedExternally /*1 */; val SourceNoDisableHover :Int = definedExternally /*2 */; val SourceNoHoldToOpenOthers :Int = definedExternally /*4 */; val SourceAllowNullID :Int = definedExternally /*8 */; val SourceExtern :Int = definedExternally /*16 */; val SourceAutoExpirePayload :Int = definedExternally /*32 */; val AcceptBeforeDelivery :Int = definedExternally /*1024 */; val AcceptNoDrawDefaultRect :Int = definedExternally /*2048 */; val AcceptNoPreviewTooltip :Int = definedExternally /*4096 */; val AcceptPeekOnly :Int = definedExternally /*3072 */
     }
 
     var IMGUI_PAYLOAD_TYPE_COLOR_3F: String = definedExternally
     var IMGUI_PAYLOAD_TYPE_COLOR_4F: String = definedExternally
 
-    enum class ImGuiDataType {
-        S8 /* = 0 */, U8 /* = 1 */, S16 /* = 2 */, U16 /* = 3 */, S32 /* = 4 */, U32 /* = 5 */, S64 /* = 6 */, U64 /* = 7 */, Float /* = 8 */, Double /* = 9 */, COUNT /* = 10 */
+    object ImGuiDataType {
+        val S8 :Int = definedExternally /*0 */; val U8 :Int = definedExternally /*1 */; val S16 :Int = definedExternally /*2 */; val U16 :Int = definedExternally /*3 */; val S32 :Int = definedExternally /*4 */; val U32 :Int = definedExternally /*5 */; val S64 :Int = definedExternally /*6 */; val U64 :Int = definedExternally /*7 */; val Float :Int = definedExternally /*8 */; val Double :Int = definedExternally /*9 */; val COUNT :Int = definedExternally /*10 */
     }
 
-    enum class ImGuiDir {
-        None /* = -1 */, Left /* = 0 */, Right /* = 1 */, Up /* = 2 */, Down /* = 3 */, COUNT /* = 4 */
+    object ImGuiDir {
+        val None:Int = definedExternally /*-1 */; val Left :Int = definedExternally /*0 */; val Right :Int = definedExternally /*1 */; val Up :Int = definedExternally /*2 */; val Down :Int = definedExternally /*3 */; val COUNT :Int = definedExternally /*4 */
     }
 
-    enum class ImGuiSortDirection {
-        None /* = 0 */, Ascending /* = 1 */, Descending /* = 2 */
+    object ImGuiSortDirection {
+        val None :Int = definedExternally /*0 */; val Ascending :Int = definedExternally /*1 */; val Descending :Int = definedExternally /*2 */
     }
 
-    enum class ImGuiKey {
-        Tab /* = 0 */, LeftArrow /* = 1 */, RightArrow /* = 2 */, UpArrow /* = 3 */, DownArrow /* = 4 */, PageUp /* = 5 */, PageDown /* = 6 */, Home /* = 7 */, End /* = 8 */, Insert /* = 9 */, Delete /* = 10 */, Backspace /* = 11 */, Space /* = 12 */, Enter /* = 13 */, Escape /* = 14 */, KeyPadEnter /* = 15 */, A /* = 16 */, C /* = 17 */, V /* = 18 */, X /* = 19 */, Y /* = 20 */, Z /* = 21 */, COUNT /* = 22 */
+    object ImGuiKey {
+        val Tab :Int = definedExternally /*0 */; val LeftArrow :Int = definedExternally /*1 */; val RightArrow :Int = definedExternally /*2 */; val UpArrow :Int = definedExternally /*3 */; val DownArrow :Int = definedExternally /*4 */; val PageUp :Int = definedExternally /*5 */; val PageDown :Int = definedExternally /*6 */; val Home :Int = definedExternally /*7 */; val End :Int = definedExternally /*8 */; val Insert :Int = definedExternally /*9 */; val Delete :Int = definedExternally /*10 */; val Backspace :Int = definedExternally /*11 */; val Space :Int = definedExternally /*12 */; val Enter :Int = definedExternally /*13 */; val Escape :Int = definedExternally /*14 */; val KeyPadEnter :Int = definedExternally /*15 */; val A :Int = definedExternally /*16 */; val C :Int = definedExternally /*17 */; val V :Int = definedExternally /*18 */; val X :Int = definedExternally /*19 */; val Y :Int = definedExternally /*20 */; val Z :Int = definedExternally /*21 */; val COUNT :Int = definedExternally /*22 */
     }
 
-    enum class ImGuiKeyModFlags {
-        None /* = 0 */, Ctrl /* = 1 */, Shift /* = 2 */, Alt /* = 4 */, Super /* = 8 */
+    object ImGuiKeyModFlags {
+        val None :Int = definedExternally /*0 */; val Ctrl :Int = definedExternally /*1 */; val Shift :Int = definedExternally /*2 */; val Alt :Int = definedExternally /*4 */; val Super :Int = definedExternally /*8 */
     }
 
-    enum class ImGuiNavInput {
-        Activate /* = 0 */, Cancel /* = 1 */, Input /* = 2 */, Menu /* = 3 */, DpadLeft /* = 4 */, DpadRight /* = 5 */, DpadUp /* = 6 */, DpadDown /* = 7 */, LStickLeft /* = 8 */, LStickRight /* = 9 */, LStickUp /* = 10 */, LStickDown /* = 11 */, FocusPrev /* = 12 */, FocusNext /* = 13 */, TweakSlow /* = 14 */, TweakFast /* = 15 */, KeyLeft_ /* = 16 */, KeyRight_ /* = 17 */, KeyUp_ /* = 18 */, KeyDown_ /* = 19 */, COUNT /* = 20 */, InternalStart_ /* = 16 */
+    object ImGuiNavInput {
+        val Activate :Int = definedExternally /*0 */; val Cancel :Int = definedExternally /*1 */; val Input :Int = definedExternally /*2 */; val Menu :Int = definedExternally /*3 */; val DpadLeft :Int = definedExternally /*4 */; val DpadRight :Int = definedExternally /*5 */; val DpadUp :Int = definedExternally /*6 */; val DpadDown :Int = definedExternally /*7 */; val LStickLeft :Int = definedExternally /*8 */; val LStickRight :Int = definedExternally /*9 */; val LStickUp :Int = definedExternally /*10 */; val LStickDown :Int = definedExternally /*11 */; val FocusPrev :Int = definedExternally /*12 */; val FocusNext :Int = definedExternally /*13 */; val TweakSlow :Int = definedExternally /*14 */; val TweakFast :Int = definedExternally /*15 */; val KeyLeft_ :Int = definedExternally /*16 */; val KeyRight_ :Int = definedExternally /*17 */; val KeyUp_ :Int = definedExternally /*18 */; val KeyDown_ :Int = definedExternally /*19 */; val COUNT :Int = definedExternally /*20 */; val InternalStart_ :Int = definedExternally /*16 */
     }
 
-    enum class ImGuiConfigFlags {
-        None /* = 0 */, NavEnableKeyboard /* = 1 */, NavEnableGamepad /* = 2 */, NavEnableSetMousePos /* = 4 */, NavNoCaptureKeyboard /* = 8 */, NoMouse /* = 16 */, NoMouseCursorChange /* = 32 */, IsSRGB /* = 1048576 */, IsTouchScreen /* = 2097152 */
+    object ImGuiConfigFlags {
+        val None :Int = definedExternally /*0 */; val NavEnableKeyboard :Int = definedExternally /*1 */; val NavEnableGamepad :Int = definedExternally /*2 */; val NavEnableSetMousePos :Int = definedExternally /*4 */; val NavNoCaptureKeyboard :Int = definedExternally /*8 */; val NoMouse :Int = definedExternally /*16 */; val NoMouseCursorChange :Int = definedExternally /*32 */; val IsSRGB :Int = definedExternally /*1048576 */; val IsTouchScreen :Int = definedExternally /*2097152 */
     }
 
-    enum class ImGuiCol {
-        Text /* = 0 */, TextDisabled /* = 1 */, WindowBg /* = 2 */, ChildBg /* = 3 */, PopupBg /* = 4 */, Border /* = 5 */, BorderShadow /* = 6 */, FrameBg /* = 7 */, FrameBgHovered /* = 8 */, FrameBgActive /* = 9 */, TitleBg /* = 10 */, TitleBgActive /* = 11 */, TitleBgCollapsed /* = 12 */, MenuBarBg /* = 13 */, ScrollbarBg /* = 14 */, ScrollbarGrab /* = 15 */, ScrollbarGrabHovered /* = 16 */, ScrollbarGrabActive /* = 17 */, CheckMark /* = 18 */, SliderGrab /* = 19 */, SliderGrabActive /* = 20 */, Button /* = 21 */, ButtonHovered /* = 22 */, ButtonActive /* = 23 */, Header /* = 24 */, HeaderHovered /* = 25 */, HeaderActive /* = 26 */, Separator /* = 27 */, SeparatorHovered /* = 28 */, SeparatorActive /* = 29 */, ResizeGrip /* = 30 */, ResizeGripHovered /* = 31 */, ResizeGripActive /* = 32 */, Tab /* = 33 */, TabHovered /* = 34 */, TabActive /* = 35 */, TabUnfocused /* = 36 */, TabUnfocusedActive /* = 37 */, PlotLines /* = 38 */, PlotLinesHovered /* = 39 */, PlotHistogram /* = 40 */, PlotHistogramHovered /* = 41 */, TableHeaderBg /* = 42 */, TableBorderStrong /* = 43 */, TableBorderLight /* = 44 */, TableRowBg /* = 45 */, TableRowBgAlt /* = 46 */, TextSelectedBg /* = 47 */, DragDropTarget /* = 48 */, NavHighlight /* = 49 */, NavWindowingHighlight /* = 50 */, NavWindowingDimBg /* = 51 */, ModalWindowDimBg /* = 52 */, COUNT /* = 53 */
+    object ImGuiCol {
+        val Text :Int = definedExternally /*0 */; val TextDisabled :Int = definedExternally /*1 */; val WindowBg :Int = definedExternally /*2 */; val ChildBg :Int = definedExternally /*3 */; val PopupBg :Int = definedExternally /*4 */; val Border :Int = definedExternally /*5 */; val BorderShadow :Int = definedExternally /*6 */; val FrameBg :Int = definedExternally /*7 */; val FrameBgHovered :Int = definedExternally /*8 */; val FrameBgActive :Int = definedExternally /*9 */; val TitleBg :Int = definedExternally /*10 */; val TitleBgActive :Int = definedExternally /*11 */; val TitleBgCollapsed :Int = definedExternally /*12 */; val MenuBarBg :Int = definedExternally /*13 */; val ScrollbarBg :Int = definedExternally /*14 */; val ScrollbarGrab :Int = definedExternally /*15 */; val ScrollbarGrabHovered :Int = definedExternally /*16 */; val ScrollbarGrabActive :Int = definedExternally /*17 */; val CheckMark :Int = definedExternally /*18 */; val SliderGrab :Int = definedExternally /*19 */; val SliderGrabActive :Int = definedExternally /*20 */; val Button :Int = definedExternally /*21 */; val ButtonHovered :Int = definedExternally /*22 */; val ButtonActive :Int = definedExternally /*23 */; val Header :Int = definedExternally /*24 */; val HeaderHovered :Int = definedExternally /*25 */; val HeaderActive :Int = definedExternally /*26 */; val Separator :Int = definedExternally /*27 */; val SeparatorHovered :Int = definedExternally /*28 */; val SeparatorActive :Int = definedExternally /*29 */; val ResizeGrip :Int = definedExternally /*30 */; val ResizeGripHovered :Int = definedExternally /*31 */; val ResizeGripActive :Int = definedExternally /*32 */; val Tab :Int = definedExternally /*33 */; val TabHovered :Int = definedExternally /*34 */; val TabActive :Int = definedExternally /*35 */; val TabUnfocused :Int = definedExternally /*36 */; val TabUnfocusedActive :Int = definedExternally /*37 */; val PlotLines :Int = definedExternally /*38 */; val PlotLinesHovered :Int = definedExternally /*39 */; val PlotHistogram :Int = definedExternally /*40 */; val PlotHistogramHovered :Int = definedExternally /*41 */; val TableHeaderBg :Int = definedExternally /*42 */; val TableBorderStrong :Int = definedExternally /*43 */; val TableBorderLight :Int = definedExternally /*44 */; val TableRowBg :Int = definedExternally /*45 */; val TableRowBgAlt :Int = definedExternally /*46 */; val TextSelectedBg :Int = definedExternally /*47 */; val DragDropTarget :Int = definedExternally /*48 */; val NavHighlight :Int = definedExternally /*49 */; val NavWindowingHighlight :Int = definedExternally /*50 */; val NavWindowingDimBg :Int = definedExternally /*51 */; val ModalWindowDimBg :Int = definedExternally /*52 */; val COUNT :Int = definedExternally /*53 */
     }
 
-    enum class ImGuiStyleVar {
-        Alpha /* = 0 */, DisabledAlpha /* = 1 */, WindowPadding /* = 2 */, WindowRounding /* = 3 */, WindowBorderSize /* = 4 */, WindowMinSize /* = 5 */, WindowTitleAlign /* = 6 */, ChildRounding /* = 7 */, ChildBorderSize /* = 8 */, PopupRounding /* = 9 */, PopupBorderSize /* = 10 */, FramePadding /* = 11 */, FrameRounding /* = 12 */, FrameBorderSize /* = 13 */, ItemSpacing /* = 14 */, ItemInnerSpacing /* = 15 */, IndentSpacing /* = 16 */, CellPadding /* = 17 */, ScrollbarSize /* = 18 */, ScrollbarRounding /* = 19 */, GrabMinSize /* = 20 */, GrabRounding /* = 21 */, TabRounding /* = 22 */, ButtonTextAlign /* = 23 */, SelectableTextAlign /* = 24 */, COUNT /* = 25 */
+    object ImGuiStyleVar {
+        val Alpha :Int = definedExternally /*0 */; val DisabledAlpha :Int = definedExternally /*1 */; val WindowPadding :Int = definedExternally /*2 */; val WindowRounding :Int = definedExternally /*3 */; val WindowBorderSize :Int = definedExternally /*4 */; val WindowMinSize :Int = definedExternally /*5 */; val WindowTitleAlign :Int = definedExternally /*6 */; val ChildRounding :Int = definedExternally /*7 */; val ChildBorderSize :Int = definedExternally /*8 */; val PopupRounding :Int = definedExternally /*9 */; val PopupBorderSize :Int = definedExternally /*10 */; val FramePadding :Int = definedExternally /*11 */; val FrameRounding :Int = definedExternally /*12 */; val FrameBorderSize :Int = definedExternally /*13 */; val ItemSpacing :Int = definedExternally /*14 */; val ItemInnerSpacing :Int = definedExternally /*15 */; val IndentSpacing :Int = definedExternally /*16 */; val CellPadding :Int = definedExternally /*17 */; val ScrollbarSize :Int = definedExternally /*18 */; val ScrollbarRounding :Int = definedExternally /*19 */; val GrabMinSize :Int = definedExternally /*20 */; val GrabRounding :Int = definedExternally /*21 */; val TabRounding :Int = definedExternally /*22 */; val ButtonTextAlign :Int = definedExternally /*23 */; val SelectableTextAlign :Int = definedExternally /*24 */; val COUNT :Int = definedExternally /*25 */
     }
 
-    enum class ImGuiBackendFlags {
-        None /* = 0 */, HasGamepad /* = 1 */, HasMouseCursors /* = 2 */, HasSetMousePos /* = 4 */, RendererHasVtxOffset /* = 8 */
+    object ImGuiBackendFlags {
+        val None :Int = definedExternally /*0 */; val HasGamepad :Int = definedExternally /*1 */; val HasMouseCursors :Int = definedExternally /*2 */; val HasSetMousePos :Int = definedExternally /*4 */; val RendererHasVtxOffset :Int = definedExternally /*8 */
     }
 
-    enum class ImGuiButtonFlags {
-        None /* = 0 */, MouseButtonLeft /* = 1 */, MouseButtonRight /* = 2 */, MouseButtonMiddle /* = 4 */, MouseButtonMask_ /* = 7 */, MouseButtonDefault_ /* = 1 */
+    object ImGuiButtonFlags {
+        val None :Int = definedExternally /*0 */; val MouseButtonLeft :Int = definedExternally /*1 */; val MouseButtonRight :Int = definedExternally /*2 */; val MouseButtonMiddle :Int = definedExternally /*4 */; val MouseButtonMask_ :Int = definedExternally /*7 */; val MouseButtonDefault_ :Int = definedExternally /*1 */
     }
 
-    enum class ImGuiColorEditFlags {
-        None /* = 0 */, NoAlpha /* = 2 */, NoPicker /* = 4 */, NoOptions /* = 8 */, NoSmallPreview /* = 16 */, NoInputs /* = 32 */, NoTooltip /* = 64 */, NoLabel /* = 128 */, NoSidePreview /* = 256 */, NoDragDrop /* = 512 */, NoBorder /* = 1024 */, AlphaBar /* = 65536 */, AlphaPreview /* = 131072 */, AlphaPreviewHalf /* = 262144 */, HDR /* = 524288 */, DisplayRGB /* = 1048576 */, DisplayHSV /* = 2097152 */, DisplayHex /* = 4194304 */, Uint8 /* = 8388608 */, Float /* = 16777216 */, PickerHueBar /* = 33554432 */, PickerHueWheel /* = 67108864 */, InputRGB /* = 134217728 */, InputHSV /* = 268435456 */, DefaultOptions_ /* = 177209344 */, DisplayMask_ /* = 7340032 */, DataTypeMask_ /* = 25165824 */, PickerMask_ /* = 100663296 */, InputMask_ /* = 402653184 */
+    object ImGuiColorEditFlags {
+        val None :Int = definedExternally /*0 */; val NoAlpha :Int = definedExternally /*2 */; val NoPicker :Int = definedExternally /*4 */; val NoOptions :Int = definedExternally /*8 */; val NoSmallPreview :Int = definedExternally /*16 */; val NoInputs :Int = definedExternally /*32 */; val NoTooltip :Int = definedExternally /*64 */; val NoLabel :Int = definedExternally /*128 */; val NoSidePreview :Int = definedExternally /*256 */; val NoDragDrop :Int = definedExternally /*512 */; val NoBorder :Int = definedExternally /*1024 */; val AlphaBar :Int = definedExternally /*65536 */; val AlphaPreview :Int = definedExternally /*131072 */; val AlphaPreviewHalf :Int = definedExternally /*262144 */; val HDR :Int = definedExternally /*524288 */; val DisplayRGB :Int = definedExternally /*1048576 */; val DisplayHSV :Int = definedExternally /*2097152 */; val DisplayHex :Int = definedExternally /*4194304 */; val Uint8 :Int = definedExternally /*8388608 */; val Float :Int = definedExternally /*16777216 */; val PickerHueBar :Int = definedExternally /*33554432 */; val PickerHueWheel :Int = definedExternally /*67108864 */; val InputRGB :Int = definedExternally /*134217728 */; val InputHSV :Int = definedExternally /*268435456 */; val DefaultOptions_ :Int = definedExternally /*177209344 */; val DisplayMask_ :Int = definedExternally /*7340032 */; val DataTypeMask_ :Int = definedExternally /*25165824 */; val PickerMask_ :Int = definedExternally /*100663296 */; val InputMask_ :Int = definedExternally /*402653184 */
     }
 
-    enum class ImGuiSliderFlags {
-        None /* = 0 */, AlwaysClamp /* = 16 */, Logarithmic /* = 32 */, NoRoundToFormat /* = 64 */, NoInput /* = 128 */, InvalidMask_ /* = 1879048207 */
+    object ImGuiSliderFlags {
+        val None :Int = definedExternally /*0 */; val AlwaysClamp :Int = definedExternally /*16 */; val Logarithmic :Int = definedExternally /*32 */; val NoRoundToFormat :Int = definedExternally /*64 */; val NoInput :Int = definedExternally /*128 */; val InvalidMask_ :Int = definedExternally /*1879048207 */
     }
 
-    enum class ImGuiMouseButton {
-        Left /* = 0 */, Right /* = 1 */, Middle /* = 2 */, COUNT /* = 5 */
+    object ImGuiMouseButton {
+        val Left :Int = definedExternally /*0 */; val Right :Int = definedExternally /*1 */; val Middle :Int = definedExternally /*2 */; val COUNT :Int = definedExternally /*5 */
     }
 
-    enum class ImGuiMouseCursor {
-        None /* = -1 */, Arrow /* = 0 */, TextInput /* = 1 */, ResizeAll /* = 2 */, ResizeNS /* = 3 */, ResizeEW /* = 4 */, ResizeNESW /* = 5 */, ResizeNWSE /* = 6 */, Hand /* = 7 */, NotAllowed /* = 8 */, COUNT /* = 9 */
+    object ImGuiMouseCursor {
+        val None :Int /*-1 */; val Arrow :Int = definedExternally /*0 */; val TextInput :Int = definedExternally /*1 */; val ResizeAll :Int = definedExternally /*2 */; val ResizeNS :Int = definedExternally /*3 */; val ResizeEW :Int = definedExternally /*4 */; val ResizeNESW :Int = definedExternally /*5 */; val ResizeNWSE :Int = definedExternally /*6 */; val Hand :Int = definedExternally /*7 */; val NotAllowed :Int = definedExternally /*8 */; val COUNT :Int = definedExternally /*9 */
     }
 
-    enum class ImGuiCond {
-        None /* = 0 */, Always /* = 1 */, Once /* = 2 */, FirstUseEver /* = 4 */, Appearing /* = 8 */
+    object ImGuiCond {
+        val None :Int = definedExternally /*0 */; val Always :Int = definedExternally /*1 */; val Once :Int = definedExternally /*2 */; val FirstUseEver :Int = definedExternally /*4 */; val Appearing :Int = definedExternally /*8 */
     }
 
-    enum class ImDrawFlags {
-        None /* = 0 */, Closed /* = 1 */, RoundCornersTopLeft /* = 16 */, RoundCornersTopRight /* = 32 */, RoundCornersBottomLeft /* = 64 */, RoundCornersBottomRight /* = 128 */, RoundCornersNone /* = 256 */, RoundCornersTop /* = 48 */, RoundCornersBottom /* = 192 */, RoundCornersLeft /* = 80 */, RoundCornersRight /* = 160 */, RoundCornersAll /* = 240 */, RoundCornersDefault_ /* = 240 */, RoundCornersMask_ /* = 496 */
+    object ImDrawFlags {
+        val None :Int = definedExternally /*0 */; val Closed :Int = definedExternally /*1 */; val RoundCornersTopLeft :Int = definedExternally /*16 */; val RoundCornersTopRight :Int = definedExternally /*32 */; val RoundCornersBottomLeft :Int = definedExternally /*64 */; val RoundCornersBottomRight :Int = definedExternally /*128 */; val RoundCornersNone :Int = definedExternally /*256 */; val RoundCornersTop :Int = definedExternally /*48 */; val RoundCornersBottom :Int = definedExternally /*192 */; val RoundCornersLeft :Int = definedExternally /*80 */; val RoundCornersRight :Int = definedExternally /*160 */; val RoundCornersAll :Int = definedExternally /*240 */; val RoundCornersDefault_ :Int = definedExternally /*240 */; val RoundCornersMask_ :Int = definedExternally /*496 */
     }
 
-    enum class ImDrawListFlags {
-        None /* = 0 */, AntiAliasedLines /* = 1 */, AntiAliasedLinesUseTex /* = 2 */, AntiAliasedFill /* = 4 */, AllowVtxOffset /* = 8 */
+    object ImDrawListFlags {
+        val None :Int = definedExternally /*0 */; val AntiAliasedLines :Int = definedExternally /*1 */; val AntiAliasedLinesUseTex :Int = definedExternally /*2 */; val AntiAliasedFill :Int = definedExternally /*4 */; val AllowVtxOffset :Int = definedExternally /*8 */
     }
 
     open class ImVec2(x: Number? = definedExternally /* null */, y: Number? = definedExternally /* null */) :
@@ -974,8 +974,8 @@ external object ImGui {
     }
 
     open class ImFontAtlasCustomRect
-    enum class ImFontAtlasFlags {
-        None /* = 0 */, NoPowerOfTwoHeight /* = 1 */, NoMouseCursors /* = 2 */, NoBakedLines /* = 4 */
+    object ImFontAtlasFlags {
+        val None :Int = definedExternally /*0 */; val NoPowerOfTwoHeight :Int = definedExternally /*1 */; val NoMouseCursors :Int = definedExternally /*2 */; val NoBakedLines :Int = definedExternally /*4 */
     }
 
     interface `T$0` {
@@ -1127,8 +1127,8 @@ external object ImGui {
         ) = definedExternally
     }
 
-    enum class ImGuiViewportFlags {
-        None /* = 0 */, IsPlatformWindow /* = 1 */, IsPlatformMonitor /* = 2 */, OwnedByApp /* = 4 */
+    object ImGuiViewportFlags {
+        val None :Int = definedExternally /*0 */; val IsPlatformWindow :Int = definedExternally /*1 */; val IsPlatformMonitor :Int = definedExternally /*2 */; val OwnedByApp :Int = definedExternally /*4 */
     }
 
     open class ImGuiViewport(native: reference_ImGuiViewport) : reference_ImGuiViewport {
