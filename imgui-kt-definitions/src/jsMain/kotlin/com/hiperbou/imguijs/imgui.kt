@@ -1399,7 +1399,7 @@ external object ImGui {
         pos: Any?, cond: Number? /* 8 */ = definedExternally /* null */, pivot: Any? = definedExternally /* null */
     ): Unit = definedExternally
 
-    fun SetNextWindowSize(pos: Any?, cond: ImGuiCond? /* 0 */ = definedExternally /* null */): Unit = definedExternally
+    fun SetNextWindowSize(pos: Any?, cond: com.hiperbou.imguijs.ImGuiCond? /* 0 */ = definedExternally /* null */): Unit = definedExternally
 
     /*fun SetNextWindowSize(pos: Any?, cond: Number? /* 1 */ = definedExternally /* null */): Unit =
         definedExternally

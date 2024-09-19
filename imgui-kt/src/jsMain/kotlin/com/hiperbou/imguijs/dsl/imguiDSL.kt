@@ -83,7 +83,7 @@ import org.khronos.webgl.WebGLTexture
 
     // Tables
 
-    inline fun table(strId: String, columns: Int, flags: ImGuiTableFlags = ImGui.ImGuiTableFlags.None.ordinal,
+    inline fun table(strId: String, columns: Int, flags: ImGuiTableFlags = ImGui.ImGuiTableFlags.None,
                      outerSize: ImVec2 = ImVec2(), innerWidth: Float = 0f, block: () -> Unit = {}) {
         if (BeginTable(strId, columns, flags, outerSize, innerWidth)) { // ~open
             block()
@@ -93,7 +93,7 @@ import org.khronos.webgl.WebGLTexture
 
     // Windows
 
-    inline fun window(name: String, noinline open: ImAccess<Boolean>? = null, flags: ImGuiWindowFlags = ImGui.ImGuiWindowFlags.None.ordinal, block: () -> Unit = {}) {
+    inline fun window(name: String, noinline open: ImAccess<Boolean>? = null, flags: ImGuiWindowFlags = ImGui.ImGuiWindowFlags.None, block: () -> Unit = {}) {
         if (Begin(name, open, flags)) // ~open
             block()
         End()
@@ -101,7 +101,7 @@ import org.khronos.webgl.WebGLTexture
 
     // Child Windows
 
-    inline fun child(strId: String, size: ImVec2 = ImVec2(), border: Boolean = false, extraFlags: ImGuiWindowFlags = ImGui.ImGuiWindowFlags.None.ordinal, block: () -> Unit = {}) {
+    inline fun child(strId: String, size: ImVec2 = ImVec2(), border: Boolean = false, extraFlags: ImGuiWindowFlags = ImGui.ImGuiWindowFlags.None, block: () -> Unit = {}) {
         if (BeginChild(strId, size, border, extraFlags)) // ~open
             block()
         EndChild()
@@ -297,7 +297,7 @@ import org.khronos.webgl.WebGLTexture
     // Widgets: Combo Box
 
 
-    inline fun useCombo(label: String, previewValue: String?, flags: ImGuiComboFlags = ImGui.ImGuiComboFlags.None.ordinal, block: () -> Unit = {}) {
+    inline fun useCombo(label: String, previewValue: String?, flags: ImGuiComboFlags = ImGui.ImGuiComboFlags.None, block: () -> Unit = {}) {
         if (BeginCombo(label, previewValue, flags)) {
             block()
             EndCombo()
@@ -341,7 +341,7 @@ import org.khronos.webgl.WebGLTexture
         }
     }
 
-    inline fun treeNodeEx(strID: String, flags: ImGuiTreeNodeFlags = ImGui.ImGuiTreeNodeFlags.None.ordinal, block: () -> Unit = {}) {
+    inline fun treeNodeEx(strID: String, flags: ImGuiTreeNodeFlags = ImGui.ImGuiTreeNodeFlags.None, block: () -> Unit = {}) {
         if (TreeNodeEx(strID, flags)) {
             block()
             TreePop()
@@ -374,12 +374,12 @@ import org.khronos.webgl.WebGLTexture
     //        try { block() } finally { TreePop() }
     //    }
 
-    inline fun collapsingHeader(label: String, flags: ImGuiTreeNodeFlags = ImGui.ImGuiTreeNodeFlags.None.ordinal, block: () -> Unit = {}) {
+    inline fun collapsingHeader(label: String, flags: ImGuiTreeNodeFlags = ImGui.ImGuiTreeNodeFlags.None, block: () -> Unit = {}) {
         if (CollapsingHeader(label, flags))
             block()
     }
 
-    inline fun collapsingHeader(label: String, noinline open: ImAccess<Boolean>, flags: ImGuiTreeNodeFlags = ImGui.ImGuiTreeNodeFlags.None.ordinal, block: () -> Unit = {}) {
+    inline fun collapsingHeader(label: String, noinline open: ImAccess<Boolean>, flags: ImGuiTreeNodeFlags = ImGui.ImGuiTreeNodeFlags.None, block: () -> Unit = {}) {
         if (CollapsingHeader(label, open, flags))
             block()
     }
@@ -387,12 +387,12 @@ import org.khronos.webgl.WebGLTexture
 
     // Widgets: Selectables
 
-    inline fun selectable(label: String, selected: Boolean = false, flags: ImGuiSelectableFlags = ImGui.ImGuiSelectableFlags.None.ordinal, sizeArg: ImVec2 = ImVec2(), block: () -> Unit = {}) {
+    inline fun selectable(label: String, selected: Boolean = false, flags: ImGuiSelectableFlags = ImGui.ImGuiSelectableFlags.None, sizeArg: ImVec2 = ImVec2(), block: () -> Unit = {}) {
         if (Selectable(label, selected, flags, sizeArg))
             block()
     }
 
-    inline fun selectable(label: String, noinline selected: ImAccess<Boolean>, flags: ImGuiSelectableFlags = ImGui.ImGuiSelectableFlags.None.ordinal, sizeArg: ImVec2 = ImVec2(), block: () -> Unit = {}) {
+    inline fun selectable(label: String, noinline selected: ImAccess<Boolean>, flags: ImGuiSelectableFlags = ImGui.ImGuiSelectableFlags.None, sizeArg: ImVec2 = ImVec2(), block: () -> Unit = {}) {
         if (Selectable(label, selected, flags, sizeArg))
             block()
     }
@@ -443,35 +443,35 @@ import org.khronos.webgl.WebGLTexture
 
     // Popups, Modals
 
-    inline fun popup(strId: String, flags: ImGuiWindowFlags = ImGui.ImGuiWindowFlags.None.ordinal, block: () -> Unit = {}) {
+    inline fun popup(strId: String, flags: ImGuiWindowFlags = ImGui.ImGuiWindowFlags.None, block: () -> Unit = {}) {
         if (BeginPopup(strId, flags)) {
             block()
             EndPopup()
         }
     }
 
-    inline fun popupContextItem(strId: String = "", popupFlags: ImGuiPopupFlags = ImGui.ImGuiPopupFlags.MouseButtonRight.ordinal, block: () -> Unit = {}) {
+    inline fun popupContextItem(strId: String = "", popupFlags: ImGuiPopupFlags = ImGui.ImGuiPopupFlags.MouseButtonRight, block: () -> Unit = {}) {
         if (BeginPopupContextItem(strId, popupFlags)) {
             block()
             EndPopup()
         }
     }
 
-    inline fun popupContextWindow(strId: String = "", popupFlags: ImGuiPopupFlags = ImGui.ImGuiPopupFlags.MouseButtonRight.ordinal, block: () -> Unit = {}) {
+    inline fun popupContextWindow(strId: String = "", popupFlags: ImGuiPopupFlags = ImGui.ImGuiPopupFlags.MouseButtonRight, block: () -> Unit = {}) {
         if (BeginPopupContextWindow(strId, popupFlags)) {
             block()
             EndPopup()
         }
     }
 
-    inline fun popupContextVoid(strId: String = "", popupFlags: ImGuiPopupFlags = ImGui.ImGuiPopupFlags.MouseButtonRight.ordinal, block: () -> Unit = {}) {
+    inline fun popupContextVoid(strId: String = "", popupFlags: ImGuiPopupFlags = ImGui.ImGuiPopupFlags.MouseButtonRight, block: () -> Unit = {}) {
         if (BeginPopupContextVoid(strId, popupFlags)) {
             block()
             EndPopup()
         }
     }
 
-    inline fun popupModal(name: String, noinline pOpen: ImAccess<Boolean>? = null, extraFlags: ImGuiWindowFlags = ImGui.ImGuiWindowFlags.None.ordinal, block: () -> Unit = {}) {
+    inline fun popupModal(name: String, noinline pOpen: ImAccess<Boolean>? = null, extraFlags: ImGuiWindowFlags = ImGui.ImGuiWindowFlags.None, block: () -> Unit = {}) {
         if (BeginPopupModal(name, pOpen, extraFlags)) {
             block()
             EndPopup()
@@ -481,14 +481,14 @@ import org.khronos.webgl.WebGLTexture
 
     // Tab Bars, Tabs
 
-    inline fun tabBar(strId: String, flags: ImGuiTabBarFlags = ImGui.ImGuiTabBarFlags.None.ordinal, block: () -> Unit = {}) {
+    inline fun tabBar(strId: String, flags: ImGuiTabBarFlags = ImGui.ImGuiTabBarFlags.None, block: () -> Unit = {}) {
         if (BeginTabBar(strId, flags)) {
             block()
             EndTabBar()
         }
     }
 
-    inline fun tabItem(label: String, noinline pOpen: ImAccess<Boolean>? = null, flags: ImGuiTabItemFlags = ImGui.ImGuiTabItemFlags.None.ordinal, block: () -> Unit = {}) {
+    inline fun tabItem(label: String, noinline pOpen: ImAccess<Boolean>? = null, flags: ImGuiTabItemFlags = ImGui.ImGuiTabItemFlags.None, block: () -> Unit = {}) {
         if (BeginTabItem(label, pOpen, flags)) {
             block()
             EndTabItem()
@@ -498,7 +498,7 @@ import org.khronos.webgl.WebGLTexture
 
     // Drag and Drop
 
-    inline fun dragDropSource(flags: ImGuiDragDropFlags = ImGui.ImGuiDragDropFlags.None.ordinal, block: () -> Unit = {}) {
+    inline fun dragDropSource(flags: ImGuiDragDropFlags = ImGui.ImGuiDragDropFlags.None, block: () -> Unit = {}) {
         if (BeginDragDropSource(flags)) {
             block()
             EndDragDropSource()
@@ -524,7 +524,7 @@ import org.khronos.webgl.WebGLTexture
 
     // Miscellaneous Utilities
 
-    inline fun childFrame(id: ImGuiID, size: ImVec2, extraFlags: ImGuiWindowFlags = ImGui.ImGuiWindowFlags.None.ordinal, block: () -> Unit = {}) {
+    inline fun childFrame(id: ImGuiID, size: ImVec2, extraFlags: ImGuiWindowFlags = ImGui.ImGuiWindowFlags.None, block: () -> Unit = {}) {
         if (BeginChildFrame(id, size, extraFlags))
             block()
         EndChildFrame()
@@ -532,7 +532,7 @@ import org.khronos.webgl.WebGLTexture
 
     // Columns
 
-    /*inline fun columns(strId: String = "", columnsCount: Int, flags: ImGuiOldColumnFlags = ImGui.OldColumnFlags.None.ordinal, block: () -> Unit = {}) {
+    /*inline fun columns(strId: String = "", columnsCount: Int, flags: ImGuiOldColumnFlags = ImGui.OldColumnFlags.None, block: () -> Unit = {}) {
         BeginColumns(strId, columnsCount, flags)
         block()
         EndColumns()
