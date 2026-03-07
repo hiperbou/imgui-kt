@@ -1380,24 +1380,12 @@ external object ImGui {
     fun GetWindowWidth(): Number = definedExternally
     fun GetWindowHeight(): Number = definedExternally
     fun SetNextWindowPos(
-        pos: Any?, cond: Number? /* 0 */ = definedExternally /* null */, pivot: Any? = definedExternally /* null */
+        pos: Any?, cond: Number? /* 0, 1, 2, 4, 8 */ = definedExternally /* null */, pivot: Any? = definedExternally /* null */
     ): Unit = definedExternally
 
-    fun SetNextWindowPos(
-        pos: Any?, cond: Number? /* 1 */ = definedExternally /* null */, pivot: Any? = definedExternally /* null */
-    ): Unit = definedExternally
 
-    fun SetNextWindowPos(
-        pos: Any?, cond: Number? /* 2 */ = definedExternally /* null */, pivot: Any? = definedExternally /* null */
-    ): Unit = definedExternally
 
-    fun SetNextWindowPos(
-        pos: Any?, cond: Number? /* 4 */ = definedExternally /* null */, pivot: Any? = definedExternally /* null */
-    ): Unit = definedExternally
 
-    fun SetNextWindowPos(
-        pos: Any?, cond: Number? /* 8 */ = definedExternally /* null */, pivot: Any? = definedExternally /* null */
-    ): Unit = definedExternally
 
     fun SetNextWindowSize(pos: Any?, cond: com.hiperbou.imguijs.ImGuiCond? /* 0 */ = definedExternally /* null */): Unit = definedExternally
 
@@ -1423,206 +1411,74 @@ external object ImGui {
 
     fun SetNextWindowContentSize(size: Any?): Unit = definedExternally
     fun SetNextWindowCollapsed(
-        collapsed: Boolean, cond: Number? /* 0 */ = definedExternally /* null */
+        collapsed: Boolean, cond: Number? /* 0, 1, 2, 4, 8 */ = definedExternally /* null */
     ): Unit = definedExternally
 
-    fun SetNextWindowCollapsed(
-        collapsed: Boolean, cond: Number? /* 1 */ = definedExternally /* null */
-    ): Unit = definedExternally
 
-    fun SetNextWindowCollapsed(
-        collapsed: Boolean, cond: Number? /* 2 */ = definedExternally /* null */
-    ): Unit = definedExternally
 
-    fun SetNextWindowCollapsed(
-        collapsed: Boolean, cond: Number? /* 4 */ = definedExternally /* null */
-    ): Unit = definedExternally
 
-    fun SetNextWindowCollapsed(
-        collapsed: Boolean, cond: Number? /* 8 */ = definedExternally /* null */
-    ): Unit = definedExternally
 
     fun SetNextWindowFocus(): Unit = definedExternally
     fun SetNextWindowBgAlpha(alpha: Number): Unit = definedExternally
     fun SetWindowPos(
         name_or_pos: String,
         pos_or_cond: dynamic /* Any? | Number? /* 0 */ | Number? /* 1 */ | Number? /* 2 */ | Number? /* 4 */ | Number? /* 8 */ */ = definedExternally /* null */,
-        cond: Number? /* 0 */ = definedExternally /* null */
+        cond: Number? /* 0, 1, 2, 4, 8 */ = definedExternally /* null */
     ): Unit = definedExternally
 
-    fun SetWindowPos(
-        name_or_pos: String,
-        pos_or_cond: dynamic /* Any? | Number? /* 0 */ | Number? /* 1 */ | Number? /* 2 */ | Number? /* 4 */ | Number? /* 8 */ */ = definedExternally /* null */,
-        cond: Number? /* 1 */ = definedExternally /* null */
-    ): Unit = definedExternally
 
-    fun SetWindowPos(
-        name_or_pos: String,
-        pos_or_cond: dynamic /* Any? | Number? /* 0 */ | Number? /* 1 */ | Number? /* 2 */ | Number? /* 4 */ | Number? /* 8 */ */ = definedExternally /* null */,
-        cond: Number? /* 2 */ = definedExternally /* null */
-    ): Unit = definedExternally
 
-    fun SetWindowPos(
-        name_or_pos: String,
-        pos_or_cond: dynamic /* Any? | Number? /* 0 */ | Number? /* 1 */ | Number? /* 2 */ | Number? /* 4 */ | Number? /* 8 */ */ = definedExternally /* null */,
-        cond: Number? /* 4 */ = definedExternally /* null */
-    ): Unit = definedExternally
 
-    fun SetWindowPos(
-        name_or_pos: String,
-        pos_or_cond: dynamic /* Any? | Number? /* 0 */ | Number? /* 1 */ | Number? /* 2 */ | Number? /* 4 */ | Number? /* 8 */ */ = definedExternally /* null */,
-        cond: Number? /* 8 */ = definedExternally /* null */
-    ): Unit = definedExternally
 
     fun SetWindowPos(
         name_or_pos: Any?,
         pos_or_cond: dynamic /* Any? | Number? /* 0 */ | Number? /* 1 */ | Number? /* 2 */ | Number? /* 4 */ | Number? /* 8 */ */ = definedExternally /* null */,
-        cond: Number? /* 0 */ = definedExternally /* null */
+        cond: Number? /* 0, 1, 2, 4, 8 */ = definedExternally /* null */
     ): Unit = definedExternally
 
-    fun SetWindowPos(
-        name_or_pos: Any?,
-        pos_or_cond: dynamic /* Any? | Number? /* 0 */ | Number? /* 1 */ | Number? /* 2 */ | Number? /* 4 */ | Number? /* 8 */ */ = definedExternally /* null */,
-        cond: Number? /* 1 */ = definedExternally /* null */
-    ): Unit = definedExternally
 
-    fun SetWindowPos(
-        name_or_pos: Any?,
-        pos_or_cond: dynamic /* Any? | Number? /* 0 */ | Number? /* 1 */ | Number? /* 2 */ | Number? /* 4 */ | Number? /* 8 */ */ = definedExternally /* null */,
-        cond: Number? /* 2 */ = definedExternally /* null */
-    ): Unit = definedExternally
 
-    fun SetWindowPos(
-        name_or_pos: Any?,
-        pos_or_cond: dynamic /* Any? | Number? /* 0 */ | Number? /* 1 */ | Number? /* 2 */ | Number? /* 4 */ | Number? /* 8 */ */ = definedExternally /* null */,
-        cond: Number? /* 4 */ = definedExternally /* null */
-    ): Unit = definedExternally
 
-    fun SetWindowPos(
-        name_or_pos: Any?,
-        pos_or_cond: dynamic /* Any? | Number? /* 0 */ | Number? /* 1 */ | Number? /* 2 */ | Number? /* 4 */ | Number? /* 8 */ */ = definedExternally /* null */,
-        cond: Number? /* 8 */ = definedExternally /* null */
-    ): Unit = definedExternally
 
     fun SetWindowSize(
         name_or_size: String,
         size_or_cond: dynamic /* Any? | Number? /* 0 */ | Number? /* 1 */ | Number? /* 2 */ | Number? /* 4 */ | Number? /* 8 */ */ = definedExternally /* null */,
-        cond: Number? /* 0 */ = definedExternally /* null */
+        cond: Number? /* 0, 1, 2, 4, 8 */ = definedExternally /* null */
     ): Unit = definedExternally
 
-    fun SetWindowSize(
-        name_or_size: String,
-        size_or_cond: dynamic /* Any? | Number? /* 0 */ | Number? /* 1 */ | Number? /* 2 */ | Number? /* 4 */ | Number? /* 8 */ */ = definedExternally /* null */,
-        cond: Number? /* 1 */ = definedExternally /* null */
-    ): Unit = definedExternally
 
-    fun SetWindowSize(
-        name_or_size: String,
-        size_or_cond: dynamic /* Any? | Number? /* 0 */ | Number? /* 1 */ | Number? /* 2 */ | Number? /* 4 */ | Number? /* 8 */ */ = definedExternally /* null */,
-        cond: Number? /* 2 */ = definedExternally /* null */
-    ): Unit = definedExternally
 
-    fun SetWindowSize(
-        name_or_size: String,
-        size_or_cond: dynamic /* Any? | Number? /* 0 */ | Number? /* 1 */ | Number? /* 2 */ | Number? /* 4 */ | Number? /* 8 */ */ = definedExternally /* null */,
-        cond: Number? /* 4 */ = definedExternally /* null */
-    ): Unit = definedExternally
 
-    fun SetWindowSize(
-        name_or_size: String,
-        size_or_cond: dynamic /* Any? | Number? /* 0 */ | Number? /* 1 */ | Number? /* 2 */ | Number? /* 4 */ | Number? /* 8 */ */ = definedExternally /* null */,
-        cond: Number? /* 8 */ = definedExternally /* null */
-    ): Unit = definedExternally
 
     fun SetWindowSize(
         name_or_size: Any?,
         size_or_cond: dynamic /* Any? | Number? /* 0 */ | Number? /* 1 */ | Number? /* 2 */ | Number? /* 4 */ | Number? /* 8 */ */ = definedExternally /* null */,
-        cond: Number? /* 0 */ = definedExternally /* null */
+        cond: Number? /* 0, 1, 2, 4, 8 */ = definedExternally /* null */
     ): Unit = definedExternally
 
-    fun SetWindowSize(
-        name_or_size: Any?,
-        size_or_cond: dynamic /* Any? | Number? /* 0 */ | Number? /* 1 */ | Number? /* 2 */ | Number? /* 4 */ | Number? /* 8 */ */ = definedExternally /* null */,
-        cond: Number? /* 1 */ = definedExternally /* null */
-    ): Unit = definedExternally
 
-    fun SetWindowSize(
-        name_or_size: Any?,
-        size_or_cond: dynamic /* Any? | Number? /* 0 */ | Number? /* 1 */ | Number? /* 2 */ | Number? /* 4 */ | Number? /* 8 */ */ = definedExternally /* null */,
-        cond: Number? /* 2 */ = definedExternally /* null */
-    ): Unit = definedExternally
 
-    fun SetWindowSize(
-        name_or_size: Any?,
-        size_or_cond: dynamic /* Any? | Number? /* 0 */ | Number? /* 1 */ | Number? /* 2 */ | Number? /* 4 */ | Number? /* 8 */ */ = definedExternally /* null */,
-        cond: Number? /* 4 */ = definedExternally /* null */
-    ): Unit = definedExternally
 
-    fun SetWindowSize(
-        name_or_size: Any?,
-        size_or_cond: dynamic /* Any? | Number? /* 0 */ | Number? /* 1 */ | Number? /* 2 */ | Number? /* 4 */ | Number? /* 8 */ */ = definedExternally /* null */,
-        cond: Number? /* 8 */ = definedExternally /* null */
-    ): Unit = definedExternally
 
     fun SetWindowCollapsed(
         name_or_collapsed: String,
         collapsed_or_cond: dynamic /* Boolean? | Number? /* 0 */ | Number? /* 1 */ | Number? /* 2 */ | Number? /* 4 */ | Number? /* 8 */ */ = definedExternally /* null */,
-        cond: Number? /* 0 */ = definedExternally /* null */
+        cond: Number? /* 0, 1, 2, 4, 8 */ = definedExternally /* null */
     ): Unit = definedExternally
 
-    fun SetWindowCollapsed(
-        name_or_collapsed: String,
-        collapsed_or_cond: dynamic /* Boolean? | Number? /* 0 */ | Number? /* 1 */ | Number? /* 2 */ | Number? /* 4 */ | Number? /* 8 */ */ = definedExternally /* null */,
-        cond: Number? /* 1 */ = definedExternally /* null */
-    ): Unit = definedExternally
 
-    fun SetWindowCollapsed(
-        name_or_collapsed: String,
-        collapsed_or_cond: dynamic /* Boolean? | Number? /* 0 */ | Number? /* 1 */ | Number? /* 2 */ | Number? /* 4 */ | Number? /* 8 */ */ = definedExternally /* null */,
-        cond: Number? /* 2 */ = definedExternally /* null */
-    ): Unit = definedExternally
 
-    fun SetWindowCollapsed(
-        name_or_collapsed: String,
-        collapsed_or_cond: dynamic /* Boolean? | Number? /* 0 */ | Number? /* 1 */ | Number? /* 2 */ | Number? /* 4 */ | Number? /* 8 */ */ = definedExternally /* null */,
-        cond: Number? /* 4 */ = definedExternally /* null */
-    ): Unit = definedExternally
 
-    fun SetWindowCollapsed(
-        name_or_collapsed: String,
-        collapsed_or_cond: dynamic /* Boolean? | Number? /* 0 */ | Number? /* 1 */ | Number? /* 2 */ | Number? /* 4 */ | Number? /* 8 */ */ = definedExternally /* null */,
-        cond: Number? /* 8 */ = definedExternally /* null */
-    ): Unit = definedExternally
 
     fun SetWindowCollapsed(
         name_or_collapsed: Boolean,
         collapsed_or_cond: dynamic /* Boolean? | Number? /* 0 */ | Number? /* 1 */ | Number? /* 2 */ | Number? /* 4 */ | Number? /* 8 */ */ = definedExternally /* null */,
-        cond: Number? /* 0 */ = definedExternally /* null */
+        cond: Number? /* 0, 1, 2, 4, 8 */ = definedExternally /* null */
     ): Unit = definedExternally
 
-    fun SetWindowCollapsed(
-        name_or_collapsed: Boolean,
-        collapsed_or_cond: dynamic /* Boolean? | Number? /* 0 */ | Number? /* 1 */ | Number? /* 2 */ | Number? /* 4 */ | Number? /* 8 */ */ = definedExternally /* null */,
-        cond: Number? /* 1 */ = definedExternally /* null */
-    ): Unit = definedExternally
 
-    fun SetWindowCollapsed(
-        name_or_collapsed: Boolean,
-        collapsed_or_cond: dynamic /* Boolean? | Number? /* 0 */ | Number? /* 1 */ | Number? /* 2 */ | Number? /* 4 */ | Number? /* 8 */ */ = definedExternally /* null */,
-        cond: Number? /* 2 */ = definedExternally /* null */
-    ): Unit = definedExternally
 
-    fun SetWindowCollapsed(
-        name_or_collapsed: Boolean,
-        collapsed_or_cond: dynamic /* Boolean? | Number? /* 0 */ | Number? /* 1 */ | Number? /* 2 */ | Number? /* 4 */ | Number? /* 8 */ */ = definedExternally /* null */,
-        cond: Number? /* 4 */ = definedExternally /* null */
-    ): Unit = definedExternally
 
-    fun SetWindowCollapsed(
-        name_or_collapsed: Boolean,
-        collapsed_or_cond: dynamic /* Boolean? | Number? /* 0 */ | Number? /* 1 */ | Number? /* 2 */ | Number? /* 4 */ | Number? /* 8 */ */ = definedExternally /* null */,
-        cond: Number? /* 8 */ = definedExternally /* null */
-    ): Unit = definedExternally
 
     fun SetWindowFocus(name: String? = definedExternally /* null */): Unit = definedExternally
     fun SetWindowFontScale(scale: Number): Unit = definedExternally
@@ -1920,7 +1776,7 @@ external object ImGui {
 
     fun DragFloat(
         label: String,
-        v: ImScalar<Number>,
+        v: ImTuple<Number>, // allowed legacy aliases: ImScalar<Number> | ImTuple2<Number> | ImTuple3<Number> | ImTuple4<Number>
         v_speed: Number? = definedExternally /* null */,
         v_min: Number? = definedExternally /* null */,
         v_max: Number? = definedExternally /* null */,
@@ -1958,35 +1814,8 @@ external object ImGui {
         flags: com.hiperbou.imguijs.ImGuiSliderFlags /* Number? /* 0 */ | Number? /* 16 */ | Number? /* 32 */ | Number? /* 64 */ | Number? /* 128 */ | Number? /* 1879048207 */ */ = definedExternally /* null */
     ): Boolean = definedExternally
 
-    fun DragFloat(
-        label: String,
-        v: ImTuple2<Number>,
-        v_speed: Number? = definedExternally /* null */,
-        v_min: Number? = definedExternally /* null */,
-        v_max: Number? = definedExternally /* null */,
-        display_format: String? = definedExternally /* null */,
-        flags: com.hiperbou.imguijs.ImGuiSliderFlags /* Number? /* 0 */ | Number? /* 16 */ | Number? /* 32 */ | Number? /* 64 */ | Number? /* 128 */ | Number? /* 1879048207 */ */ = definedExternally /* null */
-    ): Boolean = definedExternally
 
-    fun DragFloat(
-        label: String,
-        v: ImTuple3<Number>,
-        v_speed: Number? = definedExternally /* null */,
-        v_min: Number? = definedExternally /* null */,
-        v_max: Number? = definedExternally /* null */,
-        display_format: String? = definedExternally /* null */,
-        flags: com.hiperbou.imguijs.ImGuiSliderFlags /* Number? /* 0 */ | Number? /* 16 */ | Number? /* 32 */ | Number? /* 64 */ | Number? /* 128 */ | Number? /* 1879048207 */ */ = definedExternally /* null */
-    ): Boolean = definedExternally
 
-    fun DragFloat(
-        label: String,
-        v: ImTuple4<Number>,
-        v_speed: Number? = definedExternally /* null */,
-        v_min: Number? = definedExternally /* null */,
-        v_max: Number? = definedExternally /* null */,
-        display_format: String? = definedExternally /* null */,
-        flags: com.hiperbou.imguijs.ImGuiSliderFlags /* Number? /* 0 */ | Number? /* 16 */ | Number? /* 32 */ | Number? /* 64 */ | Number? /* 128 */ | Number? /* 1879048207 */ */ = definedExternally /* null */
-    ): Boolean = definedExternally
 
     fun DragFloat2(
         label: String,
@@ -2020,7 +1849,7 @@ external object ImGui {
 
     fun DragFloat2(
         label: String,
-        v: ImTuple2<Number>,
+        v: ImTuple<Number>, // allowed legacy aliases: ImTuple2<Number> | ImTuple3<Number> | ImTuple4<Number>
         v_speed: Number? = definedExternally /* null */,
         v_min: Number? = definedExternally /* null */,
         v_max: Number? = definedExternally /* null */,
@@ -2030,7 +1859,7 @@ external object ImGui {
 
     fun DragFloat2(
         label: String,
-        v: ImTuple3<Number>,
+        v: ImTuple<Number>, // allowed legacy aliases: ImTuple2<Number> | ImTuple3<Number> | ImTuple4<Number>
         v_speed: Number? = definedExternally /* null */,
         v_min: Number? = definedExternally /* null */,
         v_max: Number? = definedExternally /* null */,
@@ -2038,15 +1867,6 @@ external object ImGui {
         flags: com.hiperbou.imguijs.ImGuiSliderFlags /* Number? /* 0 */ | Number? /* 16 */ | Number? /* 32 */ | Number? /* 64 */ | Number? /* 128 */ | Number? /* 1879048207 */ */ = definedExternally /* null */
     ): Boolean = definedExternally
 
-    fun DragFloat2(
-        label: String,
-        v: ImTuple4<Number>,
-        v_speed: Number? = definedExternally /* null */,
-        v_min: Number? = definedExternally /* null */,
-        v_max: Number? = definedExternally /* null */,
-        display_format: String? = definedExternally /* null */,
-        flags: com.hiperbou.imguijs.ImGuiSliderFlags /* Number? /* 0 */ | Number? /* 16 */ | Number? /* 32 */ | Number? /* 64 */ | Number? /* 128 */ | Number? /* 1879048207 */ */ = definedExternally /* null */
-    ): Boolean = definedExternally
 
     fun DragFloat2(
         label: String,
@@ -2080,7 +1900,7 @@ external object ImGui {
 
     fun DragFloat3(
         label: String,
-        v: ImTuple3<Number>,
+        v: ImTuple<Number>, // allowed legacy aliases: ImTuple3<Number> | ImTuple4<Number>
         v_speed: Number? = definedExternally /* null */,
         v_min: Number? = definedExternally /* null */,
         v_max: Number? = definedExternally /* null */,
@@ -2088,15 +1908,6 @@ external object ImGui {
         flags: com.hiperbou.imguijs.ImGuiSliderFlags /* Number? /* 0 */ | Number? /* 16 */ | Number? /* 32 */ | Number? /* 64 */ | Number? /* 128 */ | Number? /* 1879048207 */ */ = definedExternally /* null */
     ): Boolean = definedExternally
 
-    fun DragFloat3(
-        label: String,
-        v: ImTuple4<Number>,
-        v_speed: Number? = definedExternally /* null */,
-        v_min: Number? = definedExternally /* null */,
-        v_max: Number? = definedExternally /* null */,
-        display_format: String? = definedExternally /* null */,
-        flags: com.hiperbou.imguijs.ImGuiSliderFlags /* Number? /* 0 */ | Number? /* 16 */ | Number? /* 32 */ | Number? /* 64 */ | Number? /* 128 */ | Number? /* 1879048207 */ */ = definedExternally /* null */
-    ): Boolean = definedExternally
 
     fun DragFloat4(
         label: String,
@@ -2142,7 +1953,7 @@ external object ImGui {
 
     fun DragFloatRange2(
         label: String,
-        v_current_min: ImScalar<Number>,
+        v_current_min: ImTuple<Number>, // allowed legacy aliases: ImScalar<Number> | ImTuple2<Number> | ImTuple3<Number> | ImTuple4<Number>
         v_current_max: dynamic /*ImAccess<Number> |ImScalar<Number> | XY | XYZ | XYZW |ImTuple2<Number> |ImTuple3<Number> |ImTuple4<Number> */,
         v_speed: Number? = definedExternally /* null */,
         v_min: Number? = definedExternally /* null */,
@@ -2188,41 +1999,8 @@ external object ImGui {
         flags: com.hiperbou.imguijs.ImGuiSliderFlags /* Number? /* 0 */ | Number? /* 16 */ | Number? /* 32 */ | Number? /* 64 */ | Number? /* 128 */ | Number? /* 1879048207 */ */ = definedExternally /* null */
     ): Boolean = definedExternally
 
-    fun DragFloatRange2(
-        label: String,
-        v_current_min: ImTuple2<Number>,
-        v_current_max: dynamic /*ImAccess<Number> |ImScalar<Number> | XY | XYZ | XYZW |ImTuple2<Number> |ImTuple3<Number> |ImTuple4<Number> */,
-        v_speed: Number? = definedExternally /* null */,
-        v_min: Number? = definedExternally /* null */,
-        v_max: Number? = definedExternally /* null */,
-        display_format: String? = definedExternally /* null */,
-        display_format_max: String? = definedExternally /* null */,
-        flags: com.hiperbou.imguijs.ImGuiSliderFlags /* Number? /* 0 */ | Number? /* 16 */ | Number? /* 32 */ | Number? /* 64 */ | Number? /* 128 */ | Number? /* 1879048207 */ */ = definedExternally /* null */
-    ): Boolean = definedExternally
 
-    fun DragFloatRange2(
-        label: String,
-        v_current_min: ImTuple3<Number>,
-        v_current_max: dynamic /*ImAccess<Number> |ImScalar<Number> | XY | XYZ | XYZW |ImTuple2<Number> |ImTuple3<Number> |ImTuple4<Number> */,
-        v_speed: Number? = definedExternally /* null */,
-        v_min: Number? = definedExternally /* null */,
-        v_max: Number? = definedExternally /* null */,
-        display_format: String? = definedExternally /* null */,
-        display_format_max: String? = definedExternally /* null */,
-        flags: com.hiperbou.imguijs.ImGuiSliderFlags /* Number? /* 0 */ | Number? /* 16 */ | Number? /* 32 */ | Number? /* 64 */ | Number? /* 128 */ | Number? /* 1879048207 */ */ = definedExternally /* null */
-    ): Boolean = definedExternally
 
-    fun DragFloatRange2(
-        label: String,
-        v_current_min: ImTuple4<Number>,
-        v_current_max: dynamic /*ImAccess<Number> |ImScalar<Number> | XY | XYZ | XYZW |ImTuple2<Number> |ImTuple3<Number> |ImTuple4<Number> */,
-        v_speed: Number? = definedExternally /* null */,
-        v_min: Number? = definedExternally /* null */,
-        v_max: Number? = definedExternally /* null */,
-        display_format: String? = definedExternally /* null */,
-        display_format_max: String? = definedExternally /* null */,
-        flags: com.hiperbou.imguijs.ImGuiSliderFlags /* Number? /* 0 */ | Number? /* 16 */ | Number? /* 32 */ | Number? /* 64 */ | Number? /* 128 */ | Number? /* 1879048207 */ */ = definedExternally /* null */
-    ): Boolean = definedExternally
 
     fun DragInt(
         label: String,
@@ -2236,7 +2014,7 @@ external object ImGui {
 
     fun DragInt(
         label: String,
-        v: ImScalar<Number>,
+        v: ImTuple<Number>, // allowed legacy aliases: ImScalar<Number> | ImTuple2<Number> | ImTuple3<Number> | ImTuple4<Number>
         v_speed: Number? = definedExternally /* null */,
         v_min: Number? = definedExternally /* null */,
         v_max: Number? = definedExternally /* null */,
@@ -2274,35 +2052,8 @@ external object ImGui {
         flags: com.hiperbou.imguijs.ImGuiSliderFlags /* Number? /* 0 */ | Number? /* 16 */ | Number? /* 32 */ | Number? /* 64 */ | Number? /* 128 */ | Number? /* 1879048207 */ */ = definedExternally /* null */
     ): Boolean = definedExternally
 
-    fun DragInt(
-        label: String,
-        v: ImTuple2<Number>,
-        v_speed: Number? = definedExternally /* null */,
-        v_min: Number? = definedExternally /* null */,
-        v_max: Number? = definedExternally /* null */,
-        format: String? = definedExternally /* null */,
-        flags: com.hiperbou.imguijs.ImGuiSliderFlags /* Number? /* 0 */ | Number? /* 16 */ | Number? /* 32 */ | Number? /* 64 */ | Number? /* 128 */ | Number? /* 1879048207 */ */ = definedExternally /* null */
-    ): Boolean = definedExternally
 
-    fun DragInt(
-        label: String,
-        v: ImTuple3<Number>,
-        v_speed: Number? = definedExternally /* null */,
-        v_min: Number? = definedExternally /* null */,
-        v_max: Number? = definedExternally /* null */,
-        format: String? = definedExternally /* null */,
-        flags: com.hiperbou.imguijs.ImGuiSliderFlags /* Number? /* 0 */ | Number? /* 16 */ | Number? /* 32 */ | Number? /* 64 */ | Number? /* 128 */ | Number? /* 1879048207 */ */ = definedExternally /* null */
-    ): Boolean = definedExternally
 
-    fun DragInt(
-        label: String,
-        v: ImTuple4<Number>,
-        v_speed: Number? = definedExternally /* null */,
-        v_min: Number? = definedExternally /* null */,
-        v_max: Number? = definedExternally /* null */,
-        format: String? = definedExternally /* null */,
-        flags: com.hiperbou.imguijs.ImGuiSliderFlags /* Number? /* 0 */ | Number? /* 16 */ | Number? /* 32 */ | Number? /* 64 */ | Number? /* 128 */ | Number? /* 1879048207 */ */ = definedExternally /* null */
-    ): Boolean = definedExternally
 
     fun DragInt2(
         label: String,
@@ -2336,7 +2087,7 @@ external object ImGui {
 
     fun DragInt2(
         label: String,
-        v: ImTuple2<Number>,
+        v: ImTuple<Number>, // allowed legacy aliases: ImTuple2<Number> | ImTuple3<Number> | ImTuple4<Number>
         v_speed: Number? = definedExternally /* null */,
         v_min: Number? = definedExternally /* null */,
         v_max: Number? = definedExternally /* null */,
@@ -2344,25 +2095,7 @@ external object ImGui {
         flags: com.hiperbou.imguijs.ImGuiSliderFlags /* Number? /* 0 */ | Number? /* 16 */ | Number? /* 32 */ | Number? /* 64 */ | Number? /* 128 */ | Number? /* 1879048207 */ */ = definedExternally /* null */
     ): Boolean = definedExternally
 
-    fun DragInt2(
-        label: String,
-        v: ImTuple3<Number>,
-        v_speed: Number? = definedExternally /* null */,
-        v_min: Number? = definedExternally /* null */,
-        v_max: Number? = definedExternally /* null */,
-        format: String? = definedExternally /* null */,
-        flags: com.hiperbou.imguijs.ImGuiSliderFlags /* Number? /* 0 */ | Number? /* 16 */ | Number? /* 32 */ | Number? /* 64 */ | Number? /* 128 */ | Number? /* 1879048207 */ */ = definedExternally /* null */
-    ): Boolean = definedExternally
 
-    fun DragInt2(
-        label: String,
-        v: ImTuple4<Number>,
-        v_speed: Number? = definedExternally /* null */,
-        v_min: Number? = definedExternally /* null */,
-        v_max: Number? = definedExternally /* null */,
-        format: String? = definedExternally /* null */,
-        flags: com.hiperbou.imguijs.ImGuiSliderFlags /* Number? /* 0 */ | Number? /* 16 */ | Number? /* 32 */ | Number? /* 64 */ | Number? /* 128 */ | Number? /* 1879048207 */ */ = definedExternally /* null */
-    ): Boolean = definedExternally
 
     fun DragInt3(
         label: String,
@@ -2386,7 +2119,7 @@ external object ImGui {
 
     fun DragInt3(
         label: String,
-        v: ImTuple3<Number>,
+        v: ImTuple<Number>, // allowed legacy aliases: ImTuple3<Number> | ImTuple4<Number>
         v_speed: Number? = definedExternally /* null */,
         v_min: Number? = definedExternally /* null */,
         v_max: Number? = definedExternally /* null */,
@@ -2394,15 +2127,6 @@ external object ImGui {
         flags: com.hiperbou.imguijs.ImGuiSliderFlags /* Number? /* 0 */ | Number? /* 16 */ | Number? /* 32 */ | Number? /* 64 */ | Number? /* 128 */ | Number? /* 1879048207 */ */ = definedExternally /* null */
     ): Boolean = definedExternally
 
-    fun DragInt3(
-        label: String,
-        v: ImTuple4<Number>,
-        v_speed: Number? = definedExternally /* null */,
-        v_min: Number? = definedExternally /* null */,
-        v_max: Number? = definedExternally /* null */,
-        format: String? = definedExternally /* null */,
-        flags: com.hiperbou.imguijs.ImGuiSliderFlags /* Number? /* 0 */ | Number? /* 16 */ | Number? /* 32 */ | Number? /* 64 */ | Number? /* 128 */ | Number? /* 1879048207 */ */ = definedExternally /* null */
-    ): Boolean = definedExternally
 
     fun DragInt4(
         label: String,
@@ -2438,7 +2162,7 @@ external object ImGui {
 
     fun DragIntRange2(
         label: String,
-        v_current_min: ImScalar<Number>,
+        v_current_min: ImTuple<Number>, // allowed legacy aliases: ImScalar<Number> | ImTuple2<Number> | ImTuple3<Number> | ImTuple4<Number>
         v_current_max: dynamic /*ImAccess<Number> |ImScalar<Number> | XY | XYZ | XYZW |ImTuple2<Number> |ImTuple3<Number> |ImTuple4<Number> */,
         v_speed: Number? = definedExternally /* null */,
         v_min: Number? = definedExternally /* null */,
@@ -2484,41 +2208,8 @@ external object ImGui {
         flags: com.hiperbou.imguijs.ImGuiSliderFlags /* Number? /* 0 */ | Number? /* 16 */ | Number? /* 32 */ | Number? /* 64 */ | Number? /* 128 */ | Number? /* 1879048207 */ */ = definedExternally /* null */
     ): Boolean = definedExternally
 
-    fun DragIntRange2(
-        label: String,
-        v_current_min: ImTuple2<Number>,
-        v_current_max: dynamic /*ImAccess<Number> |ImScalar<Number> | XY | XYZ | XYZW |ImTuple2<Number> |ImTuple3<Number> |ImTuple4<Number> */,
-        v_speed: Number? = definedExternally /* null */,
-        v_min: Number? = definedExternally /* null */,
-        v_max: Number? = definedExternally /* null */,
-        format: String? = definedExternally /* null */,
-        format_max: String? = definedExternally /* null */,
-        flags: com.hiperbou.imguijs.ImGuiSliderFlags /* Number? /* 0 */ | Number? /* 16 */ | Number? /* 32 */ | Number? /* 64 */ | Number? /* 128 */ | Number? /* 1879048207 */ */ = definedExternally /* null */
-    ): Boolean = definedExternally
 
-    fun DragIntRange2(
-        label: String,
-        v_current_min: ImTuple3<Number>,
-        v_current_max: dynamic /*ImAccess<Number> |ImScalar<Number> | XY | XYZ | XYZW |ImTuple2<Number> |ImTuple3<Number> |ImTuple4<Number> */,
-        v_speed: Number? = definedExternally /* null */,
-        v_min: Number? = definedExternally /* null */,
-        v_max: Number? = definedExternally /* null */,
-        format: String? = definedExternally /* null */,
-        format_max: String? = definedExternally /* null */,
-        flags: com.hiperbou.imguijs.ImGuiSliderFlags /* Number? /* 0 */ | Number? /* 16 */ | Number? /* 32 */ | Number? /* 64 */ | Number? /* 128 */ | Number? /* 1879048207 */ */ = definedExternally /* null */
-    ): Boolean = definedExternally
 
-    fun DragIntRange2(
-        label: String,
-        v_current_min: ImTuple4<Number>,
-        v_current_max: dynamic /*ImAccess<Number> |ImScalar<Number> | XY | XYZ | XYZW |ImTuple2<Number> |ImTuple3<Number> |ImTuple4<Number> */,
-        v_speed: Number? = definedExternally /* null */,
-        v_min: Number? = definedExternally /* null */,
-        v_max: Number? = definedExternally /* null */,
-        format: String? = definedExternally /* null */,
-        format_max: String? = definedExternally /* null */,
-        flags: com.hiperbou.imguijs.ImGuiSliderFlags /* Number? /* 0 */ | Number? /* 16 */ | Number? /* 32 */ | Number? /* 64 */ | Number? /* 128 */ | Number? /* 1879048207 */ */ = definedExternally /* null */
-    ): Boolean = definedExternally
 
     fun DragScalar(
         label: String,
@@ -2613,7 +2304,7 @@ external object ImGui {
     @JsName("SliderFloat")
     fun SliderFloat2(
         label: String,
-        v: ImScalar<Number>,
+        v: ImTuple<Number>, // allowed legacy aliases: ImScalar<Number> | ImTuple2<Number> | ImTuple3<Number> | ImTuple4<Number>
         v_min: Number,
         v_max: Number,
         format: String? = definedExternally /* null */,
@@ -2707,32 +2398,8 @@ external object ImGui {
         flags: com.hiperbou.imguijs.ImGuiSliderFlags /* Number? /* 0 */ | Number? /* 16 */ | Number? /* 32 */ | Number? /* 64 */ | Number? /* 128 */ | Number? /* 1879048207 */ */ = definedExternally /* null */
     ): Boolean = definedExternally
 
-    fun SliderFloat2(
-        label: String,
-        v: ImTuple2<Number>,
-        v_min: Number,
-        v_max: Number,
-        format: String? = definedExternally /* null */,
-        flags: com.hiperbou.imguijs.ImGuiSliderFlags /* Number? /* 0 */ | Number? /* 16 */ | Number? /* 32 */ | Number? /* 64 */ | Number? /* 128 */ | Number? /* 1879048207 */ */ = definedExternally /* null */
-    ): Boolean = definedExternally
 
-    fun SliderFloat2(
-        label: String,
-        v: ImTuple3<Number>,
-        v_min: Number,
-        v_max: Number,
-        format: String? = definedExternally /* null */,
-        flags: com.hiperbou.imguijs.ImGuiSliderFlags /* Number? /* 0 */ | Number? /* 16 */ | Number? /* 32 */ | Number? /* 64 */ | Number? /* 128 */ | Number? /* 1879048207 */ */ = definedExternally /* null */
-    ): Boolean = definedExternally
 
-    fun SliderFloat2(
-        label: String,
-        v: ImTuple4<Number>,
-        v_min: Number,
-        v_max: Number,
-        format: String? = definedExternally /* null */,
-        flags: com.hiperbou.imguijs.ImGuiSliderFlags /* Number? /* 0 */ | Number? /* 16 */ | Number? /* 32 */ | Number? /* 64 */ | Number? /* 128 */ | Number? /* 1879048207 */ */ = definedExternally /* null */
-    ): Boolean = definedExternally
 
     fun SliderFloat2(
         label: String,
@@ -2763,21 +2430,13 @@ external object ImGui {
 
     fun SliderFloat3(
         label: String,
-        v: ImTuple3<Number>,
+        v: ImTuple<Number>, // allowed legacy aliases: ImTuple3<Number> | ImTuple4<Number>
         v_min: Number,
         v_max: Number,
         format: String? = definedExternally /* null */,
         flags: com.hiperbou.imguijs.ImGuiSliderFlags /* Number? /* 0 */ | Number? /* 16 */ | Number? /* 32 */ | Number? /* 64 */ | Number? /* 128 */ | Number? /* 1879048207 */ */ = definedExternally /* null */
     ): Boolean = definedExternally
 
-    fun SliderFloat3(
-        label: String,
-        v: ImTuple4<Number>,
-        v_min: Number,
-        v_max: Number,
-        format: String? = definedExternally /* null */,
-        flags: com.hiperbou.imguijs.ImGuiSliderFlags /* Number? /* 0 */ | Number? /* 16 */ | Number? /* 32 */ | Number? /* 64 */ | Number? /* 128 */ | Number? /* 1879048207 */ */ = definedExternally /* null */
-    ): Boolean = definedExternally
 
     fun SliderFloat4(
         label: String,
@@ -2808,7 +2467,7 @@ external object ImGui {
 
     fun SliderAngle(
         label: String,
-        v_rad: ImScalar<Number>,
+        v_rad: ImTuple<Number>, // allowed legacy aliases: ImScalar<Number> | ImTuple2<Number> | ImTuple3<Number> | ImTuple4<Number>
         v_degrees_min: Number? = definedExternally /* null */,
         v_degrees_max: Number? = definedExternally /* null */,
         format: String? = definedExternally /* null */,
@@ -2842,32 +2501,8 @@ external object ImGui {
         flags: com.hiperbou.imguijs.ImGuiSliderFlags /* Number? /* 0 */ | Number? /* 16 */ | Number? /* 32 */ | Number? /* 64 */ | Number? /* 128 */ | Number? /* 1879048207 */ */ = definedExternally /* null */
     ): Boolean = definedExternally
 
-    fun SliderAngle(
-        label: String,
-        v_rad: ImTuple2<Number>,
-        v_degrees_min: Number? = definedExternally /* null */,
-        v_degrees_max: Number? = definedExternally /* null */,
-        format: String? = definedExternally /* null */,
-        flags: com.hiperbou.imguijs.ImGuiSliderFlags /* Number? /* 0 */ | Number? /* 16 */ | Number? /* 32 */ | Number? /* 64 */ | Number? /* 128 */ | Number? /* 1879048207 */ */ = definedExternally /* null */
-    ): Boolean = definedExternally
 
-    fun SliderAngle(
-        label: String,
-        v_rad: ImTuple3<Number>,
-        v_degrees_min: Number? = definedExternally /* null */,
-        v_degrees_max: Number? = definedExternally /* null */,
-        format: String? = definedExternally /* null */,
-        flags: com.hiperbou.imguijs.ImGuiSliderFlags /* Number? /* 0 */ | Number? /* 16 */ | Number? /* 32 */ | Number? /* 64 */ | Number? /* 128 */ | Number? /* 1879048207 */ */ = definedExternally /* null */
-    ): Boolean = definedExternally
 
-    fun SliderAngle(
-        label: String,
-        v_rad: ImTuple4<Number>,
-        v_degrees_min: Number? = definedExternally /* null */,
-        v_degrees_max: Number? = definedExternally /* null */,
-        format: String? = definedExternally /* null */,
-        flags: com.hiperbou.imguijs.ImGuiSliderFlags /* Number? /* 0 */ | Number? /* 16 */ | Number? /* 32 */ | Number? /* 64 */ | Number? /* 128 */ | Number? /* 1879048207 */ */ = definedExternally /* null */
-    ): Boolean = definedExternally
 
     fun SliderAngle3(
         label: String,
@@ -2889,21 +2524,13 @@ external object ImGui {
 
     fun SliderAngle3(
         label: String,
-        v_rad: ImTuple3<Number>,
+        v_rad: ImTuple<Number>, // allowed legacy aliases: ImTuple3<Number> | ImTuple4<Number>
         v_degrees_min: Number? = definedExternally /* null */,
         v_degrees_max: Number? = definedExternally /* null */,
         format: String? = definedExternally /* null */,
         flags: com.hiperbou.imguijs.ImGuiSliderFlags /* Number? /* 0 */ | Number? /* 16 */ | Number? /* 32 */ | Number? /* 64 */ | Number? /* 128 */ | Number? /* 1879048207 */ */ = definedExternally /* null */
     ): Boolean = definedExternally
 
-    fun SliderAngle3(
-        label: String,
-        v_rad: ImTuple4<Number>,
-        v_degrees_min: Number? = definedExternally /* null */,
-        v_degrees_max: Number? = definedExternally /* null */,
-        format: String? = definedExternally /* null */,
-        flags: com.hiperbou.imguijs.ImGuiSliderFlags /* Number? /* 0 */ | Number? /* 16 */ | Number? /* 32 */ | Number? /* 64 */ | Number? /* 128 */ | Number? /* 1879048207 */ */ = definedExternally /* null */
-    ): Boolean = definedExternally
 
     fun SliderInt(
         label: String,
@@ -2916,7 +2543,7 @@ external object ImGui {
 
     fun SliderInt(
         label: String,
-        v: ImScalar<Int>,
+        v: ImTuple<Int>, // allowed legacy aliases: ImScalar<Int> | ImTuple2<Int> | ImTuple3<Int> | ImTuple4<Int>
         v_min: Number,
         v_max: Number,
         format: String? = definedExternally /* null */,
@@ -2950,32 +2577,8 @@ external object ImGui {
         flags: com.hiperbou.imguijs.ImGuiSliderFlags /* Number? /* 0 */ | Number? /* 16 */ | Number? /* 32 */ | Number? /* 64 */ | Number? /* 128 */ | Number? /* 1879048207 */ */ = definedExternally /* null */
     ): Boolean = definedExternally
 
-    fun SliderInt(
-        label: String,
-        v: ImTuple2<Int>,
-        v_min: Number,
-        v_max: Number,
-        format: String? = definedExternally /* null */,
-        flags: com.hiperbou.imguijs.ImGuiSliderFlags /* Number? /* 0 */ | Number? /* 16 */ | Number? /* 32 */ | Number? /* 64 */ | Number? /* 128 */ | Number? /* 1879048207 */ */ = definedExternally /* null */
-    ): Boolean = definedExternally
 
-    fun SliderInt(
-        label: String,
-        v: ImTuple3<Int>,
-        v_min: Number,
-        v_max: Number,
-        format: String? = definedExternally /* null */,
-        flags: com.hiperbou.imguijs.ImGuiSliderFlags /* Number? /* 0 */ | Number? /* 16 */ | Number? /* 32 */ | Number? /* 64 */ | Number? /* 128 */ | Number? /* 1879048207 */ */ = definedExternally /* null */
-    ): Boolean = definedExternally
 
-    fun SliderInt(
-        label: String,
-        v: ImTuple4<Int>,
-        v_min: Number,
-        v_max: Number,
-        format: String? = definedExternally /* null */,
-        flags: com.hiperbou.imguijs.ImGuiSliderFlags /* Number? /* 0 */ | Number? /* 16 */ | Number? /* 32 */ | Number? /* 64 */ | Number? /* 128 */ | Number? /* 1879048207 */ */ = definedExternally /* null */
-    ): Boolean = definedExternally
 
     fun SliderInt2(
         label: String,
@@ -3006,30 +2609,14 @@ external object ImGui {
 
     fun SliderInt2(
         label: String,
-        v: ImTuple2<Number>,
+        v: ImTuple<Number>, // allowed legacy aliases: ImTuple2<Number> | ImTuple3<Number> | ImTuple4<Number>
         v_min: Number,
         v_max: Number,
         format: String? = definedExternally /* null */,
         flags: com.hiperbou.imguijs.ImGuiSliderFlags /* Number? /* 0 */ | Number? /* 16 */ | Number? /* 32 */ | Number? /* 64 */ | Number? /* 128 */ | Number? /* 1879048207 */ */ = definedExternally /* null */
     ): Boolean = definedExternally
 
-    fun SliderInt2(
-        label: String,
-        v: ImTuple3<Number>,
-        v_min: Number,
-        v_max: Number,
-        format: String? = definedExternally /* null */,
-        flags: com.hiperbou.imguijs.ImGuiSliderFlags /* Number? /* 0 */ | Number? /* 16 */ | Number? /* 32 */ | Number? /* 64 */ | Number? /* 128 */ | Number? /* 1879048207 */ */ = definedExternally /* null */
-    ): Boolean = definedExternally
 
-    fun SliderInt2(
-        label: String,
-        v: ImTuple4<Number>,
-        v_min: Number,
-        v_max: Number,
-        format: String? = definedExternally /* null */,
-        flags: com.hiperbou.imguijs.ImGuiSliderFlags /* Number? /* 0 */ | Number? /* 16 */ | Number? /* 32 */ | Number? /* 64 */ | Number? /* 128 */ | Number? /* 1879048207 */ */ = definedExternally /* null */
-    ): Boolean = definedExternally
 
     fun SliderInt3(
         label: String,
@@ -3051,21 +2638,13 @@ external object ImGui {
 
     fun SliderInt3(
         label: String,
-        v: ImTuple3<Number>,
+        v: ImTuple<Number>, // allowed legacy aliases: ImTuple3<Number> | ImTuple4<Number>
         v_min: Number,
         v_max: Number,
         format: String? = definedExternally /* null */,
         flags: com.hiperbou.imguijs.ImGuiSliderFlags /* Number? /* 0 */ | Number? /* 16 */ | Number? /* 32 */ | Number? /* 64 */ | Number? /* 128 */ | Number? /* 1879048207 */ */ = definedExternally /* null */
     ): Boolean = definedExternally
 
-    fun SliderInt3(
-        label: String,
-        v: ImTuple4<Number>,
-        v_min: Number,
-        v_max: Number,
-        format: String? = definedExternally /* null */,
-        flags: com.hiperbou.imguijs.ImGuiSliderFlags /* Number? /* 0 */ | Number? /* 16 */ | Number? /* 32 */ | Number? /* 64 */ | Number? /* 128 */ | Number? /* 1879048207 */ */ = definedExternally /* null */
-    ): Boolean = definedExternally
 
     fun SliderInt4(
         label: String,
@@ -3170,7 +2749,7 @@ external object ImGui {
     fun VSliderFloat(
         label: String,
         size: Any?,
-        v: ImScalar<Number>,
+        v: ImTuple<Number>, // allowed legacy aliases: ImScalar<Number> | ImTuple2<Number> | ImTuple3<Number> | ImTuple4<Number>
         v_min: Number,
         v_max: Number,
         format: String? = definedExternally /* null */,
@@ -3207,35 +2786,8 @@ external object ImGui {
         flags: com.hiperbou.imguijs.ImGuiSliderFlags /* Number? /* 0 */ | Number? /* 16 */ | Number? /* 32 */ | Number? /* 64 */ | Number? /* 128 */ | Number? /* 1879048207 */ */ = definedExternally /* null */
     ): Boolean = definedExternally
 
-    fun VSliderFloat(
-        label: String,
-        size: Any?,
-        v: ImTuple2<Number>,
-        v_min: Number,
-        v_max: Number,
-        format: String? = definedExternally /* null */,
-        flags: com.hiperbou.imguijs.ImGuiSliderFlags /* Number? /* 0 */ | Number? /* 16 */ | Number? /* 32 */ | Number? /* 64 */ | Number? /* 128 */ | Number? /* 1879048207 */ */ = definedExternally /* null */
-    ): Boolean = definedExternally
 
-    fun VSliderFloat(
-        label: String,
-        size: Any?,
-        v: ImTuple3<Number>,
-        v_min: Number,
-        v_max: Number,
-        format: String? = definedExternally /* null */,
-        flags: com.hiperbou.imguijs.ImGuiSliderFlags /* Number? /* 0 */ | Number? /* 16 */ | Number? /* 32 */ | Number? /* 64 */ | Number? /* 128 */ | Number? /* 1879048207 */ */ = definedExternally /* null */
-    ): Boolean = definedExternally
 
-    fun VSliderFloat(
-        label: String,
-        size: Any?,
-        v: ImTuple4<Number>,
-        v_min: Number,
-        v_max: Number,
-        format: String? = definedExternally /* null */,
-        flags: com.hiperbou.imguijs.ImGuiSliderFlags /* Number? /* 0 */ | Number? /* 16 */ | Number? /* 32 */ | Number? /* 64 */ | Number? /* 128 */ | Number? /* 1879048207 */ */ = definedExternally /* null */
-    ): Boolean = definedExternally
 
     fun VSliderInt(
         label: String,
@@ -3250,7 +2802,7 @@ external object ImGui {
     fun VSliderInt(
         label: String,
         size: Any?,
-        v: ImScalar<Number>,
+        v: ImTuple<Number>, // allowed legacy aliases: ImScalar<Number> | ImTuple2<Number> | ImTuple3<Number> | ImTuple4<Number>
         v_min: Number,
         v_max: Number,
         format: String? = definedExternally /* null */,
@@ -3287,35 +2839,8 @@ external object ImGui {
         flags: com.hiperbou.imguijs.ImGuiSliderFlags /* Number? /* 0 */ | Number? /* 16 */ | Number? /* 32 */ | Number? /* 64 */ | Number? /* 128 */ | Number? /* 1879048207 */ */ = definedExternally /* null */
     ): Boolean = definedExternally
 
-    fun VSliderInt(
-        label: String,
-        size: Any?,
-        v: ImTuple2<Number>,
-        v_min: Number,
-        v_max: Number,
-        format: String? = definedExternally /* null */,
-        flags: com.hiperbou.imguijs.ImGuiSliderFlags /* Number? /* 0 */ | Number? /* 16 */ | Number? /* 32 */ | Number? /* 64 */ | Number? /* 128 */ | Number? /* 1879048207 */ */ = definedExternally /* null */
-    ): Boolean = definedExternally
 
-    fun VSliderInt(
-        label: String,
-        size: Any?,
-        v: ImTuple3<Number>,
-        v_min: Number,
-        v_max: Number,
-        format: String? = definedExternally /* null */,
-        flags: com.hiperbou.imguijs.ImGuiSliderFlags /* Number? /* 0 */ | Number? /* 16 */ | Number? /* 32 */ | Number? /* 64 */ | Number? /* 128 */ | Number? /* 1879048207 */ */ = definedExternally /* null */
-    ): Boolean = definedExternally
 
-    fun VSliderInt(
-        label: String,
-        size: Any?,
-        v: ImTuple4<Number>,
-        v_min: Number,
-        v_max: Number,
-        format: String? = definedExternally /* null */,
-        flags: com.hiperbou.imguijs.ImGuiSliderFlags /* Number? /* 0 */ | Number? /* 16 */ | Number? /* 32 */ | Number? /* 64 */ | Number? /* 128 */ | Number? /* 1879048207 */ */ = definedExternally /* null */
-    ): Boolean = definedExternally
 
     fun VSliderScalar(
         label: String,
@@ -3437,7 +2962,7 @@ external object ImGui {
 
     fun InputFloat(
         label: String,
-        v: ImScalar<Number>,
+        v: ImTuple<Number>, // allowed legacy aliases: ImScalar<Number> | ImTuple2<Number> | ImTuple3<Number> | ImTuple4<Number>
         step: Number? = definedExternally /* null */,
         step_fast: Number? = definedExternally /* null */,
         format: String? = definedExternally /* null */,
@@ -3471,32 +2996,8 @@ external object ImGui {
         flags: com.hiperbou.imguijs.ImGuiInputTextFlags /* Number /* 0 */ | Number /* 1 */ | Number /* 2 */ | Number /* 4 */ | Number /* 8 */ | Number /* 16 */ | Number /* 32 */ | Number /* 64 */ | Number /* 128 */ | Number /* 256 */ | Number /* 512 */ | Number /* 1024 */ | Number /* 2048 */ | Number /* 4096 */ | Number /* 8192 */ | Number /* 16384 */ | Number /* 32768 */ | Number /* 65536 */ | Number /* 131072 */ | Number /* 262144 */ | Number /* 524288 */ | Number /* 1048576 */ | Number /* 2097152 */ */ = definedExternally /* null */
     ): Boolean = definedExternally
 
-    fun InputFloat(
-        label: String,
-        v: ImTuple2<Number>,
-        step: Number? = definedExternally /* null */,
-        step_fast: Number? = definedExternally /* null */,
-        format: String? = definedExternally /* null */,
-        flags: com.hiperbou.imguijs.ImGuiInputTextFlags /* Number /* 0 */ | Number /* 1 */ | Number /* 2 */ | Number /* 4 */ | Number /* 8 */ | Number /* 16 */ | Number /* 32 */ | Number /* 64 */ | Number /* 128 */ | Number /* 256 */ | Number /* 512 */ | Number /* 1024 */ | Number /* 2048 */ | Number /* 4096 */ | Number /* 8192 */ | Number /* 16384 */ | Number /* 32768 */ | Number /* 65536 */ | Number /* 131072 */ | Number /* 262144 */ | Number /* 524288 */ | Number /* 1048576 */ | Number /* 2097152 */ */ = definedExternally /* null */
-    ): Boolean = definedExternally
 
-    fun InputFloat(
-        label: String,
-        v: ImTuple3<Number>,
-        step: Number? = definedExternally /* null */,
-        step_fast: Number? = definedExternally /* null */,
-        format: String? = definedExternally /* null */,
-        flags: com.hiperbou.imguijs.ImGuiInputTextFlags /* Number /* 0 */ | Number /* 1 */ | Number /* 2 */ | Number /* 4 */ | Number /* 8 */ | Number /* 16 */ | Number /* 32 */ | Number /* 64 */ | Number /* 128 */ | Number /* 256 */ | Number /* 512 */ | Number /* 1024 */ | Number /* 2048 */ | Number /* 4096 */ | Number /* 8192 */ | Number /* 16384 */ | Number /* 32768 */ | Number /* 65536 */ | Number /* 131072 */ | Number /* 262144 */ | Number /* 524288 */ | Number /* 1048576 */ | Number /* 2097152 */ */ = definedExternally /* null */
-    ): Boolean = definedExternally
 
-    fun InputFloat(
-        label: String,
-        v: ImTuple4<Number>,
-        step: Number? = definedExternally /* null */,
-        step_fast: Number? = definedExternally /* null */,
-        format: String? = definedExternally /* null */,
-        flags: com.hiperbou.imguijs.ImGuiInputTextFlags /* Number /* 0 */ | Number /* 1 */ | Number /* 2 */ | Number /* 4 */ | Number /* 8 */ | Number /* 16 */ | Number /* 32 */ | Number /* 64 */ | Number /* 128 */ | Number /* 256 */ | Number /* 512 */ | Number /* 1024 */ | Number /* 2048 */ | Number /* 4096 */ | Number /* 8192 */ | Number /* 16384 */ | Number /* 32768 */ | Number /* 65536 */ | Number /* 131072 */ | Number /* 262144 */ | Number /* 524288 */ | Number /* 1048576 */ | Number /* 2097152 */ */ = definedExternally /* null */
-    ): Boolean = definedExternally
 
     fun InputFloat2(
         label: String,
@@ -3521,21 +3022,7 @@ external object ImGui {
 
     fun InputFloat2(
         label: String,
-        v: ImTuple2<Number>,
-        format: String? = definedExternally /* null */,
-        flags: com.hiperbou.imguijs.ImGuiInputTextFlags /* Number /* 0 */ | Number /* 1 */ | Number /* 2 */ | Number /* 4 */ | Number /* 8 */ | Number /* 16 */ | Number /* 32 */ | Number /* 64 */ | Number /* 128 */ | Number /* 256 */ | Number /* 512 */ | Number /* 1024 */ | Number /* 2048 */ | Number /* 4096 */ | Number /* 8192 */ | Number /* 16384 */ | Number /* 32768 */ | Number /* 65536 */ | Number /* 131072 */ | Number /* 262144 */ | Number /* 524288 */ | Number /* 1048576 */ | Number /* 2097152 */ */ = definedExternally /* null */
-    ): Boolean = definedExternally
-
-    fun InputFloat2(
-        label: String,
-        v: ImTuple3<Number>,
-        format: String? = definedExternally /* null */,
-        flags: com.hiperbou.imguijs.ImGuiInputTextFlags /* Number /* 0 */ | Number /* 1 */ | Number /* 2 */ | Number /* 4 */ | Number /* 8 */ | Number /* 16 */ | Number /* 32 */ | Number /* 64 */ | Number /* 128 */ | Number /* 256 */ | Number /* 512 */ | Number /* 1024 */ | Number /* 2048 */ | Number /* 4096 */ | Number /* 8192 */ | Number /* 16384 */ | Number /* 32768 */ | Number /* 65536 */ | Number /* 131072 */ | Number /* 262144 */ | Number /* 524288 */ | Number /* 1048576 */ | Number /* 2097152 */ */ = definedExternally /* null */
-    ): Boolean = definedExternally
-
-    fun InputFloat2(
-        label: String,
-        v: ImTuple4<Number>,
+        v: ImTuple<Number>, // allowed legacy aliases: ImTuple2<Number> | ImTuple3<Number> | ImTuple4<Number>
         format: String? = definedExternally /* null */,
         flags: com.hiperbou.imguijs.ImGuiInputTextFlags /* Number /* 0 */ | Number /* 1 */ | Number /* 2 */ | Number /* 4 */ | Number /* 8 */ | Number /* 16 */ | Number /* 32 */ | Number /* 64 */ | Number /* 128 */ | Number /* 256 */ | Number /* 512 */ | Number /* 1024 */ | Number /* 2048 */ | Number /* 4096 */ | Number /* 8192 */ | Number /* 16384 */ | Number /* 32768 */ | Number /* 65536 */ | Number /* 131072 */ | Number /* 262144 */ | Number /* 524288 */ | Number /* 1048576 */ | Number /* 2097152 */ */ = definedExternally /* null */
     ): Boolean = definedExternally
@@ -3556,14 +3043,7 @@ external object ImGui {
 
     fun InputFloat3(
         label: String,
-        v: ImTuple3<Number>,
-        format: String? = definedExternally /* null */,
-        flags: com.hiperbou.imguijs.ImGuiInputTextFlags /* Number /* 0 */ | Number /* 1 */ | Number /* 2 */ | Number /* 4 */ | Number /* 8 */ | Number /* 16 */ | Number /* 32 */ | Number /* 64 */ | Number /* 128 */ | Number /* 256 */ | Number /* 512 */ | Number /* 1024 */ | Number /* 2048 */ | Number /* 4096 */ | Number /* 8192 */ | Number /* 16384 */ | Number /* 32768 */ | Number /* 65536 */ | Number /* 131072 */ | Number /* 262144 */ | Number /* 524288 */ | Number /* 1048576 */ | Number /* 2097152 */ */ = definedExternally /* null */
-    ): Boolean = definedExternally
-
-    fun InputFloat3(
-        label: String,
-        v: ImTuple4<Number>,
+        v: ImTuple<Number>, // allowed legacy aliases: ImTuple3<Number> | ImTuple4<Number>
         format: String? = definedExternally /* null */,
         flags: com.hiperbou.imguijs.ImGuiInputTextFlags /* Number /* 0 */ | Number /* 1 */ | Number /* 2 */ | Number /* 4 */ | Number /* 8 */ | Number /* 16 */ | Number /* 32 */ | Number /* 64 */ | Number /* 128 */ | Number /* 256 */ | Number /* 512 */ | Number /* 1024 */ | Number /* 2048 */ | Number /* 4096 */ | Number /* 8192 */ | Number /* 16384 */ | Number /* 32768 */ | Number /* 65536 */ | Number /* 131072 */ | Number /* 262144 */ | Number /* 524288 */ | Number /* 1048576 */ | Number /* 2097152 */ */ = definedExternally /* null */
     ): Boolean = definedExternally
@@ -3592,7 +3072,7 @@ external object ImGui {
 
     fun InputInt(
         label: String,
-        v: ImScalar<Number>,
+        v: ImTuple<Number>, // allowed legacy aliases: ImScalar<Number> | ImTuple2<Number> | ImTuple3<Number> | ImTuple4<Number>
         step: Number? = definedExternally /* null */,
         step_fast: Number? = definedExternally /* null */,
         flags: com.hiperbou.imguijs.ImGuiInputTextFlags /* Number /* 0 */ | Number /* 1 */ | Number /* 2 */ | Number /* 4 */ | Number /* 8 */ | Number /* 16 */ | Number /* 32 */ | Number /* 64 */ | Number /* 128 */ | Number /* 256 */ | Number /* 512 */ | Number /* 1024 */ | Number /* 2048 */ | Number /* 4096 */ | Number /* 8192 */ | Number /* 16384 */ | Number /* 32768 */ | Number /* 65536 */ | Number /* 131072 */ | Number /* 262144 */ | Number /* 524288 */ | Number /* 1048576 */ | Number /* 2097152 */ */ = definedExternally /* null */
@@ -3622,29 +3102,8 @@ external object ImGui {
         flags: com.hiperbou.imguijs.ImGuiInputTextFlags /* Number /* 0 */ | Number /* 1 */ | Number /* 2 */ | Number /* 4 */ | Number /* 8 */ | Number /* 16 */ | Number /* 32 */ | Number /* 64 */ | Number /* 128 */ | Number /* 256 */ | Number /* 512 */ | Number /* 1024 */ | Number /* 2048 */ | Number /* 4096 */ | Number /* 8192 */ | Number /* 16384 */ | Number /* 32768 */ | Number /* 65536 */ | Number /* 131072 */ | Number /* 262144 */ | Number /* 524288 */ | Number /* 1048576 */ | Number /* 2097152 */ */ = definedExternally /* null */
     ): Boolean = definedExternally
 
-    fun InputInt(
-        label: String,
-        v: ImTuple2<Number>,
-        step: Number? = definedExternally /* null */,
-        step_fast: Number? = definedExternally /* null */,
-        flags: com.hiperbou.imguijs.ImGuiInputTextFlags /* Number /* 0 */ | Number /* 1 */ | Number /* 2 */ | Number /* 4 */ | Number /* 8 */ | Number /* 16 */ | Number /* 32 */ | Number /* 64 */ | Number /* 128 */ | Number /* 256 */ | Number /* 512 */ | Number /* 1024 */ | Number /* 2048 */ | Number /* 4096 */ | Number /* 8192 */ | Number /* 16384 */ | Number /* 32768 */ | Number /* 65536 */ | Number /* 131072 */ | Number /* 262144 */ | Number /* 524288 */ | Number /* 1048576 */ | Number /* 2097152 */ */ = definedExternally /* null */
-    ): Boolean = definedExternally
 
-    fun InputInt(
-        label: String,
-        v: ImTuple3<Number>,
-        step: Number? = definedExternally /* null */,
-        step_fast: Number? = definedExternally /* null */,
-        flags: com.hiperbou.imguijs.ImGuiInputTextFlags /* Number /* 0 */ | Number /* 1 */ | Number /* 2 */ | Number /* 4 */ | Number /* 8 */ | Number /* 16 */ | Number /* 32 */ | Number /* 64 */ | Number /* 128 */ | Number /* 256 */ | Number /* 512 */ | Number /* 1024 */ | Number /* 2048 */ | Number /* 4096 */ | Number /* 8192 */ | Number /* 16384 */ | Number /* 32768 */ | Number /* 65536 */ | Number /* 131072 */ | Number /* 262144 */ | Number /* 524288 */ | Number /* 1048576 */ | Number /* 2097152 */ */ = definedExternally /* null */
-    ): Boolean = definedExternally
 
-    fun InputInt(
-        label: String,
-        v: ImTuple4<Number>,
-        step: Number? = definedExternally /* null */,
-        step_fast: Number? = definedExternally /* null */,
-        flags: com.hiperbou.imguijs.ImGuiInputTextFlags /* Number /* 0 */ | Number /* 1 */ | Number /* 2 */ | Number /* 4 */ | Number /* 8 */ | Number /* 16 */ | Number /* 32 */ | Number /* 64 */ | Number /* 128 */ | Number /* 256 */ | Number /* 512 */ | Number /* 1024 */ | Number /* 2048 */ | Number /* 4096 */ | Number /* 8192 */ | Number /* 16384 */ | Number /* 32768 */ | Number /* 65536 */ | Number /* 131072 */ | Number /* 262144 */ | Number /* 524288 */ | Number /* 1048576 */ | Number /* 2097152 */ */ = definedExternally /* null */
-    ): Boolean = definedExternally
 
     fun InputInt2(
         label: String,
@@ -3666,19 +3125,7 @@ external object ImGui {
 
     fun InputInt2(
         label: String,
-        v: ImTuple2<Number>,
-        flags: com.hiperbou.imguijs.ImGuiInputTextFlags /* Number /* 0 */ | Number /* 1 */ | Number /* 2 */ | Number /* 4 */ | Number /* 8 */ | Number /* 16 */ | Number /* 32 */ | Number /* 64 */ | Number /* 128 */ | Number /* 256 */ | Number /* 512 */ | Number /* 1024 */ | Number /* 2048 */ | Number /* 4096 */ | Number /* 8192 */ | Number /* 16384 */ | Number /* 32768 */ | Number /* 65536 */ | Number /* 131072 */ | Number /* 262144 */ | Number /* 524288 */ | Number /* 1048576 */ | Number /* 2097152 */ */ = definedExternally /* null */
-    ): Boolean = definedExternally
-
-    fun InputInt2(
-        label: String,
-        v: ImTuple3<Number>,
-        flags: com.hiperbou.imguijs.ImGuiInputTextFlags /* Number /* 0 */ | Number /* 1 */ | Number /* 2 */ | Number /* 4 */ | Number /* 8 */ | Number /* 16 */ | Number /* 32 */ | Number /* 64 */ | Number /* 128 */ | Number /* 256 */ | Number /* 512 */ | Number /* 1024 */ | Number /* 2048 */ | Number /* 4096 */ | Number /* 8192 */ | Number /* 16384 */ | Number /* 32768 */ | Number /* 65536 */ | Number /* 131072 */ | Number /* 262144 */ | Number /* 524288 */ | Number /* 1048576 */ | Number /* 2097152 */ */ = definedExternally /* null */
-    ): Boolean = definedExternally
-
-    fun InputInt2(
-        label: String,
-        v: ImTuple4<Number>,
+        v: ImTuple<Number>, // allowed legacy aliases: ImTuple2<Number> | ImTuple3<Number> | ImTuple4<Number>
         flags: com.hiperbou.imguijs.ImGuiInputTextFlags /* Number /* 0 */ | Number /* 1 */ | Number /* 2 */ | Number /* 4 */ | Number /* 8 */ | Number /* 16 */ | Number /* 32 */ | Number /* 64 */ | Number /* 128 */ | Number /* 256 */ | Number /* 512 */ | Number /* 1024 */ | Number /* 2048 */ | Number /* 4096 */ | Number /* 8192 */ | Number /* 16384 */ | Number /* 32768 */ | Number /* 65536 */ | Number /* 131072 */ | Number /* 262144 */ | Number /* 524288 */ | Number /* 1048576 */ | Number /* 2097152 */ */ = definedExternally /* null */
     ): Boolean = definedExternally
 
@@ -3696,15 +3143,10 @@ external object ImGui {
 
     fun InputInt3(
         label: String,
-        v: ImTuple3<Number>,
+        v: ImTuple<Number>, // allowed legacy aliases: ImTuple3<Number> | ImTuple4<Number>
         flags: com.hiperbou.imguijs.ImGuiInputTextFlags /* Number /* 0 */ | Number /* 1 */ | Number /* 2 */ | Number /* 4 */ | Number /* 8 */ | Number /* 16 */ | Number /* 32 */ | Number /* 64 */ | Number /* 128 */ | Number /* 256 */ | Number /* 512 */ | Number /* 1024 */ | Number /* 2048 */ | Number /* 4096 */ | Number /* 8192 */ | Number /* 16384 */ | Number /* 32768 */ | Number /* 65536 */ | Number /* 131072 */ | Number /* 262144 */ | Number /* 524288 */ | Number /* 1048576 */ | Number /* 2097152 */ */ = definedExternally /* null */
     ): Boolean = definedExternally
 
-    fun InputInt3(
-        label: String,
-        v: ImTuple4<Number>,
-        flags: com.hiperbou.imguijs.ImGuiInputTextFlags /* Number /* 0 */ | Number /* 1 */ | Number /* 2 */ | Number /* 4 */ | Number /* 8 */ | Number /* 16 */ | Number /* 32 */ | Number /* 64 */ | Number /* 128 */ | Number /* 256 */ | Number /* 512 */ | Number /* 1024 */ | Number /* 2048 */ | Number /* 4096 */ | Number /* 8192 */ | Number /* 16384 */ | Number /* 32768 */ | Number /* 65536 */ | Number /* 131072 */ | Number /* 262144 */ | Number /* 524288 */ | Number /* 1048576 */ | Number /* 2097152 */ */ = definedExternally /* null */
-    ): Boolean = definedExternally
 
     fun InputInt4(
         label: String,
@@ -3729,7 +3171,7 @@ external object ImGui {
 
     fun InputDouble(
         label: String,
-        v: ImScalar<Number>,
+        v: ImTuple<Number>, // allowed legacy aliases: ImScalar<Number> | ImTuple2<Number> | ImTuple3<Number> | ImTuple4<Number>
         step: Number? = definedExternally /* null */,
         step_fast: Number? = definedExternally /* null */,
         format: String? = definedExternally /* null */,
@@ -3763,32 +3205,8 @@ external object ImGui {
         flags: com.hiperbou.imguijs.ImGuiInputTextFlags /* Number /* 0 */ | Number /* 1 */ | Number /* 2 */ | Number /* 4 */ | Number /* 8 */ | Number /* 16 */ | Number /* 32 */ | Number /* 64 */ | Number /* 128 */ | Number /* 256 */ | Number /* 512 */ | Number /* 1024 */ | Number /* 2048 */ | Number /* 4096 */ | Number /* 8192 */ | Number /* 16384 */ | Number /* 32768 */ | Number /* 65536 */ | Number /* 131072 */ | Number /* 262144 */ | Number /* 524288 */ | Number /* 1048576 */ | Number /* 2097152 */ */ = definedExternally /* null */
     ): Boolean = definedExternally
 
-    fun InputDouble(
-        label: String,
-        v: ImTuple2<Number>,
-        step: Number? = definedExternally /* null */,
-        step_fast: Number? = definedExternally /* null */,
-        format: String? = definedExternally /* null */,
-        flags: com.hiperbou.imguijs.ImGuiInputTextFlags /* Number /* 0 */ | Number /* 1 */ | Number /* 2 */ | Number /* 4 */ | Number /* 8 */ | Number /* 16 */ | Number /* 32 */ | Number /* 64 */ | Number /* 128 */ | Number /* 256 */ | Number /* 512 */ | Number /* 1024 */ | Number /* 2048 */ | Number /* 4096 */ | Number /* 8192 */ | Number /* 16384 */ | Number /* 32768 */ | Number /* 65536 */ | Number /* 131072 */ | Number /* 262144 */ | Number /* 524288 */ | Number /* 1048576 */ | Number /* 2097152 */ */ = definedExternally /* null */
-    ): Boolean = definedExternally
 
-    fun InputDouble(
-        label: String,
-        v: ImTuple3<Number>,
-        step: Number? = definedExternally /* null */,
-        step_fast: Number? = definedExternally /* null */,
-        format: String? = definedExternally /* null */,
-        flags: com.hiperbou.imguijs.ImGuiInputTextFlags /* Number /* 0 */ | Number /* 1 */ | Number /* 2 */ | Number /* 4 */ | Number /* 8 */ | Number /* 16 */ | Number /* 32 */ | Number /* 64 */ | Number /* 128 */ | Number /* 256 */ | Number /* 512 */ | Number /* 1024 */ | Number /* 2048 */ | Number /* 4096 */ | Number /* 8192 */ | Number /* 16384 */ | Number /* 32768 */ | Number /* 65536 */ | Number /* 131072 */ | Number /* 262144 */ | Number /* 524288 */ | Number /* 1048576 */ | Number /* 2097152 */ */ = definedExternally /* null */
-    ): Boolean = definedExternally
 
-    fun InputDouble(
-        label: String,
-        v: ImTuple4<Number>,
-        step: Number? = definedExternally /* null */,
-        step_fast: Number? = definedExternally /* null */,
-        format: String? = definedExternally /* null */,
-        flags: com.hiperbou.imguijs.ImGuiInputTextFlags /* Number /* 0 */ | Number /* 1 */ | Number /* 2 */ | Number /* 4 */ | Number /* 8 */ | Number /* 16 */ | Number /* 32 */ | Number /* 64 */ | Number /* 128 */ | Number /* 256 */ | Number /* 512 */ | Number /* 1024 */ | Number /* 2048 */ | Number /* 4096 */ | Number /* 8192 */ | Number /* 16384 */ | Number /* 32768 */ | Number /* 65536 */ | Number /* 131072 */ | Number /* 262144 */ | Number /* 524288 */ | Number /* 1048576 */ | Number /* 2097152 */ */ = definedExternally /* null */
-    ): Boolean = definedExternally
 
     fun InputScalar(
         label: String,
@@ -3876,15 +3294,10 @@ external object ImGui {
 
     fun ColorEdit3(
         label: String,
-        col: ImTuple3<Number>,
+        col: ImTuple<Number>, // allowed legacy aliases: ImTuple3<Number> | ImTuple4<Number>
         flags: dynamic /* Number /* 0 */ | Number /* 2 */ | Number /* 4 */ | Number /* 8 */ | Number /* 16 */ | Number /* 32 */ | Number /* 64 */ | Number /* 128 */ | Number /* 256 */ | Number /* 512 */ | Number /* 1024 */ | Number /* 65536 */ | Number /* 131072 */ | Number /* 262144 */ | Number /* 524288 */ | Number /* 1048576 */ | Number /* 2097152 */ | Number /* 4194304 */ | Number /* 8388608 */ | Number /* 16777216 */ | Number /* 33554432 */ | Number /* 67108864 */ | Number /* 134217728 */ | Number /* 268435456 */ | Number /* 177209344 */ | Number /* 7340032 */ | Number /* 25165824 */ | Number /* 100663296 */ | Number /* 402653184 */ */ = definedExternally /* null */
     ): Boolean = definedExternally
 
-    fun ColorEdit3(
-        label: String,
-        col: ImTuple4<Number>,
-        flags: dynamic /* Number /* 0 */ | Number /* 2 */ | Number /* 4 */ | Number /* 8 */ | Number /* 16 */ | Number /* 32 */ | Number /* 64 */ | Number /* 128 */ | Number /* 256 */ | Number /* 512 */ | Number /* 1024 */ | Number /* 65536 */ | Number /* 131072 */ | Number /* 262144 */ | Number /* 524288 */ | Number /* 1048576 */ | Number /* 2097152 */ | Number /* 4194304 */ | Number /* 8388608 */ | Number /* 16777216 */ | Number /* 33554432 */ | Number /* 67108864 */ | Number /* 134217728 */ | Number /* 268435456 */ | Number /* 177209344 */ | Number /* 7340032 */ | Number /* 25165824 */ | Number /* 100663296 */ | Number /* 402653184 */ */ = definedExternally /* null */
-    ): Boolean = definedExternally
 
     fun ColorEdit3(
         label: String,
@@ -3924,15 +3337,10 @@ external object ImGui {
 
     fun ColorPicker3(
         label: String,
-        col: ImTuple3<Number>,
+        col: ImTuple<Number>, // allowed legacy aliases: ImTuple3<Number> | ImTuple4<Number>
         flags: dynamic /* Number /* 0 */ | Number /* 2 */ | Number /* 4 */ | Number /* 8 */ | Number /* 16 */ | Number /* 32 */ | Number /* 64 */ | Number /* 128 */ | Number /* 256 */ | Number /* 512 */ | Number /* 1024 */ | Number /* 65536 */ | Number /* 131072 */ | Number /* 262144 */ | Number /* 524288 */ | Number /* 1048576 */ | Number /* 2097152 */ | Number /* 4194304 */ | Number /* 8388608 */ | Number /* 16777216 */ | Number /* 33554432 */ | Number /* 67108864 */ | Number /* 134217728 */ | Number /* 268435456 */ | Number /* 177209344 */ | Number /* 7340032 */ | Number /* 25165824 */ | Number /* 100663296 */ | Number /* 402653184 */ */ = definedExternally /* null */
     ): Boolean = definedExternally
 
-    fun ColorPicker3(
-        label: String,
-        col: ImTuple4<Number>,
-        flags: dynamic /* Number /* 0 */ | Number /* 2 */ | Number /* 4 */ | Number /* 8 */ | Number /* 16 */ | Number /* 32 */ | Number /* 64 */ | Number /* 128 */ | Number /* 256 */ | Number /* 512 */ | Number /* 1024 */ | Number /* 65536 */ | Number /* 131072 */ | Number /* 262144 */ | Number /* 524288 */ | Number /* 1048576 */ | Number /* 2097152 */ | Number /* 4194304 */ | Number /* 8388608 */ | Number /* 16777216 */ | Number /* 33554432 */ | Number /* 67108864 */ | Number /* 134217728 */ | Number /* 268435456 */ | Number /* 177209344 */ | Number /* 7340032 */ | Number /* 25165824 */ | Number /* 100663296 */ | Number /* 402653184 */ */ = definedExternally /* null */
-    ): Boolean = definedExternally
 
     fun ColorPicker3(
         label: String,
@@ -4054,20 +3462,12 @@ external object ImGui {
         flags: dynamic /* Number /* 0 */ | Number /* 1 */ | Number /* 2 */ | Number /* 4 */ | Number /* 8 */ | Number /* 16 */ | Number /* 32 */ | Number /* 64 */ | Number /* 128 */ | Number /* 256 */ | Number /* 512 */ | Number /* 1024 */ | Number /* 2048 */ | Number /* 4096 */ | Number /* 8192 */ | Number /* 26 */ */ = definedExternally /* null */
     ): Boolean = definedExternally
 
-    fun SetNextItemOpen(is_open: Boolean, cond: Number? /* 0 */ = definedExternally /* null */): Unit =
+    fun SetNextItemOpen(is_open: Boolean, cond: Number? /* 0, 1, 2, 4, 8 */ = definedExternally /* null */): Unit =
         definedExternally
 
-    fun SetNextItemOpen(is_open: Boolean, cond: Number? /* 1 */ = definedExternally /* null */): Unit =
-        definedExternally
 
-    fun SetNextItemOpen(is_open: Boolean, cond: Number? /* 2 */ = definedExternally /* null */): Unit =
-        definedExternally
 
-    fun SetNextItemOpen(is_open: Boolean, cond: Number? /* 4 */ = definedExternally /* null */): Unit =
-        definedExternally
 
-    fun SetNextItemOpen(is_open: Boolean, cond: Number? /* 8 */ = definedExternally /* null */): Unit =
-        definedExternally
 
     fun Selectable(
         label: String,
@@ -4472,14 +3872,10 @@ external object ImGui {
 
     fun EndTable(): Unit = definedExternally
     fun TableNextRow(
-        row_flags: com.hiperbou.imguijs.ImGuiTableRowFlags? /* 0 */ = definedExternally /* null */,
+        row_flags: com.hiperbou.imguijs.ImGuiTableRowFlags? /* 0, 1 */ = definedExternally /* null */,
         min_row_height: Number? = definedExternally /* null */
     ): Unit = definedExternally
 
-    fun TableNextRow(
-        row_flags: com.hiperbou.imguijs.ImGuiTableRowFlags? /* 1 */ = definedExternally /* null */,
-        min_row_height: Number? = definedExternally /* null */
-    ): Unit = definedExternally
 
     fun TableNextColumn(): Boolean = definedExternally
     fun TableSetColumnIndex(column_n: Number): Boolean = definedExternally
@@ -4503,20 +3899,11 @@ external object ImGui {
 
     fun TableSetColumnEnabled(column_n: Number, v: Boolean): Unit = definedExternally
     fun TableSetBgColor(
-        target: Number /* 0 */, color: ImU32, column_n: Number? = definedExternally /* null */
+        target: Number /* 0, 1, 2, 3 */, color: ImU32, column_n: Number? = definedExternally /* null */
     ): Unit = definedExternally
 
-    fun TableSetBgColor(
-        target: Number /* 1 */, color: ImU32, column_n: Number? = definedExternally /* null */
-    ): Unit = definedExternally
 
-    fun TableSetBgColor(
-        target: Number /* 2 */, color: ImU32, column_n: Number? = definedExternally /* null */
-    ): Unit = definedExternally
 
-    fun TableSetBgColor(
-        target: Number /* 3 */, color: ImU32, column_n: Number? = definedExternally /* null */
-    ): Unit = definedExternally
 
     fun Columns(
         count: Number? = definedExternally /* null */,
@@ -4609,23 +3996,7 @@ external object ImGui {
         definedExternally
 
     fun <T> SetDragDropPayload(
-        type: String, data: T, cond: Number? /* 0 */ = definedExternally /* null */
-    ): Boolean = definedExternally
-
-    fun <T> SetDragDropPayload(
-        type: String, data: T, cond: Number? /* 1 */ = definedExternally /* null */
-    ): Boolean = definedExternally
-
-    fun <T> SetDragDropPayload(
-        type: String, data: T, cond: Number? /* 2 */ = definedExternally /* null */
-    ): Boolean = definedExternally
-
-    fun <T> SetDragDropPayload(
-        type: String, data: T, cond: Number? /* 4 */ = definedExternally /* null */
-    ): Boolean = definedExternally
-
-    fun <T> SetDragDropPayload(
-        type: String, data: T, cond: Number? /* 8 */ = definedExternally /* null */
+        type: String, data: T, cond: Number? /* 0, 1, 2, 4, 8 */ = definedExternally /* null */
     ): Boolean = definedExternally
 
     fun EndDragDropSource(): Unit = definedExternally
@@ -4651,13 +4022,10 @@ external object ImGui {
 
     fun IsItemActive(): Boolean = definedExternally
     fun IsItemFocused(): Boolean = definedExternally
-    fun IsItemClicked(mouse_button: Number? /* 0 */ = definedExternally /* null */): Boolean = definedExternally
+    fun IsItemClicked(mouse_button: Number? /* 0, 1, 2, 5 */ = definedExternally /* null */): Boolean = definedExternally
 
-    fun IsItemClicked(mouse_button: Number? /* 1 */ = definedExternally /* null */): Boolean = definedExternally
 
-    fun IsItemClicked(mouse_button: Number? /* 2 */ = definedExternally /* null */): Boolean = definedExternally
 
-    fun IsItemClicked(mouse_button: Number? /* 5 */ = definedExternally /* null */): Boolean = definedExternally
 
     fun IsItemVisible(): Boolean = definedExternally
     fun IsItemEdited(): Boolean = definedExternally

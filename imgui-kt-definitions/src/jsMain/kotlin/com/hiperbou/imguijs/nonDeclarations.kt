@@ -28,10 +28,11 @@ fun <T>ImAccess(currentValue: KMutableProperty0<T>):ImAccess<T>/*:ImAccess<dynam
 
 fun <T>ImAccess<T>.value():T = this.asDynamic()()
 
-typealias ImScalar<T> = Array<T>//[ T ];
-typealias ImTuple2<T> = Array<T>//[ T, T ];
-typealias ImTuple3<T> = Array<T>//[ T, T, T ];
-typealias ImTuple4<T> = Array<T>//[ T, T, T, T ];
+typealias ImTuple<T> = Array<T>
+typealias ImScalar<T> = ImTuple<T>//[ T ];
+typealias ImTuple2<T> = ImTuple<T>//[ T, T ];
+typealias ImTuple3<T> = ImTuple<T>//[ T, T, T ];
+typealias ImTuple4<T> = ImTuple<T>//[ T, T, T, T ];
 
 typealias ImGuiCol = Number
 
