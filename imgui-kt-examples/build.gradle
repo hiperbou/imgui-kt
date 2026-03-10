@@ -1,5 +1,5 @@
 plugins {
-    id 'org.jetbrains.kotlin.js' version '1.7.10'
+    id 'org.jetbrains.kotlin.js' version '1.8.22'
 }
 
 group = 'com.nospoon'
@@ -15,12 +15,10 @@ dependencies {
 }
 
 kotlin {
-    js(LEGACY) {
+    js(IR) {
         browser {
             binaries.executable()
-            commonWebpackConfig {
-                cssSupport.enabled = true
-            }
+
             tasks.getByName(compilations.main.compileKotlinTaskName).kotlinOptions {
                 //sourceMap = true //create source maps for js files
                 //sourceMapEmbedSources = "always" //embed the kotlin files into the sourcemaps for viewing in the browser
@@ -37,8 +35,8 @@ kotlin {
             //implementation 'org.jetbrains.kotlin:kotlin-stdlib-js'
             //implementation "org.jetbrains.kotlinx:kotlinx-serialization-core:$serialization_version"
             //implementation "org.jetbrains.kotlinx:kotlinx-serialization-runtime-js:$serialization_version"
-            implementation "io.github.hiperbou.imgui-kt:imgui-kt-definitions:0.0.2"
-            implementation "io.github.hiperbou.imgui-kt:imgui-kt:0.0.1"
+            implementation "io.github.hiperbou.imgui-kt:imgui-kt-definitions:0.1.0"
+            implementation "io.github.hiperbou.imgui-kt:imgui-kt:0.1.0"
 
             //implementation npm('karma', '4.3.1')
         }

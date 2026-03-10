@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "io.github.hiperbou.imgui-kt"
-version = "0.0.3"
+version = "0.1.0"
 
 repositories {
     mavenLocal()
@@ -20,7 +20,7 @@ kotlin {
         val jsMain by getting
 
         jsMain.dependencies {
-            implementation("io.github.hiperbou.imgui-kt:imgui-kt-definitions:0.0.3")
+            implementation("io.github.hiperbou.imgui-kt:imgui-kt-definitions:0.1.0")
         }
     }
 

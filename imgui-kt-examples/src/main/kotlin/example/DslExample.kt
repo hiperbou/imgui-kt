@@ -90,7 +90,7 @@ class DslExample: ExampleBase() {
         }
 
         if (show_another_window) {
-            window("Another Window", ImAccess(::show_another_window), ImGuiWindowFlags.AlwaysAutoResize.ordinal) {
+            window("Another Window", ImAccess(::show_another_window), ImGuiWindowFlags.AlwaysAutoResize) {
                 text("Hello from another window!")
                 button("Close Me") {
                     show_another_window = false
