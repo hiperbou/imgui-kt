@@ -50,9 +50,9 @@ publishing {
     // Configure maven central repository
     repositories {
         maven {
-            name = "sonatype"
-            setUrl("https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/")
-            //setUrl("https://s01.oss.sonatype.org/content/repositories/snapshots/")
+            name = "ossrh-staging-api"
+            setUrl("https://ossrh-staging-api.central.sonatype.com/service/local/staging/deploy/maven2/")
+            //setUrl("https://ossrh-staging-api.central.sonatype.com/content/repositories/snapshots/")
             credentials {
                 username = getExtraString("ossrhUsername")
                 password = getExtraString("ossrhPassword")
@@ -85,6 +85,8 @@ publishing {
                 }
             }
             scm {
+                connection.set("scm:git:git://github.com/hiperbou/imgui-kt.git")
+                developerConnection.set("scm:git:ssh://github.com:hiperbou/imgui-kt.git")
                 url.set("https://github.com/hiperbou/imgui-kt")
             }
         }
@@ -94,4 +96,65 @@ publishing {
 // Signing artifacts. Signing.* extra properties values will be used
 signing {
     sign(publishing.publications)
+}
+
+
+// Task to ensure deployment visibility in Central Publisher Portal
+// This calls the manual upload API endpoint as required by the OSSRH Staging API migration docs
+tasks.register("uploadToCentralPortal") {
+    group = "publishing"
+    description = "Upload staged artifacts to Central Publisher Portal for visibility"
+
+    doLast {
+        val namespace = project.group.toString()
+        val username = getExtraString("ossrhUsername")
+        val password = getExtraString("ossrhPassword")
+
+        if (username.isNullOrEmpty() || password.isNullOrEmpty()) {
+            throw GradleException("ossrhUsername and ossrhPassword must be set for Central Portal upload")
+        }
+
+        // Encode credentials as Base64 for Bearer token
+        val credentials = "$username:$password"
+        val encodedCredentials = java.util.Base64.getEncoder().encodeToString(credentials.toByteArray())
+
+        val url = "https://ossrh-staging-api.central.sonatype.com/manual/upload/defaultRepository/$namespace"
+
+        logger.lifecycle("Uploading deployment to Central Publisher Portal...")
+        logger.lifecycle("Namespace: $namespace")
+        logger.lifecycle("Endpoint: $url")
+
+        try {
+            val connection = java.net.URL(url).openConnection() as java.net.HttpURLConnection
+            connection.requestMethod = "POST"
+            connection.setRequestProperty("Authorization", "Bearer $encodedCredentials")
+            connection.setRequestProperty("Content-Type", "application/json")
+            connection.doOutput = true
+
+            // Optional: set publishing_type parameter (default is user_managed)
+            val requestBody = """{"publishing_type": "user_managed"}"""
+            connection.outputStream.use { os ->
+                os.write(requestBody.toByteArray())
+            }
+
+            val responseCode = connection.responseCode
+            val responseMessage = connection.responseMessage
+
+            if (responseCode == 200 || responseCode == 201) {
+                logger.lifecycle("✅ Successfully uploaded to Central Publisher Portal!")
+                logger.lifecycle("Response: $responseCode $responseMessage")
+                logger.lifecycle("Check your deployments at: https://central.sonatype.com/publishing/deployments")
+            } else {
+                val errorStream = connection.errorStream
+                val errorMessage = if (errorStream != null) {
+                    errorStream.bufferedReader().use { it.readText() }
+                } else {
+                    responseMessage
+                }
+                throw GradleException("Failed to upload to Central Portal: $responseCode $responseMessage\nError: $errorMessage")
+            }
+        } catch (e: Exception) {
+            throw GradleException("Error calling Central Portal API: ${e.message}", e)
+        }
+    }
 }
